@@ -12,6 +12,7 @@ import UserNotifications
 struct TeaTimerView: View {
     @State private var infusion = 1
     @State private var seconds = 0
+    @State private var initialSeconds = 0
     @State private var paused = true
     @State private var isComplete = false
     @State private var showingTeaSelection = false
@@ -579,16 +580,23 @@ struct TeaTimerView: View {
                             }
                             .padding(.top, 6)
                         } else if paused {
-                            HStack(spacing: 20) {
-                                controlButton(title: "Reset") {
-                                    resetTimer()
-                                }
-                                
-                                controlButton(title: "Resume") {
+                            if seconds == initialSeconds {
+                                controlButton(title: "Begin Steep") {
                                     startTimer()
                                 }
+                                .padding(.top, 6)
+                            } else {
+                                HStack(spacing: 20) {
+                                    controlButton(title: "Reset") {
+                                        resetTimer()
+                                    }
+                                    
+                                    controlButton(title: "Resume") {
+                                        startTimer()
+                                    }
+                                }
+                                .padding(.top, 6)
                             }
-                            .padding(.top, 6)
                         } else {
                             controlButton(title: "Pause") {
                                 pauseTimer()
@@ -660,6 +668,7 @@ struct TeaTimerView: View {
         }
         .onChange(of: selectedMinutes) { _ in
             seconds = selectedMinutes * 60
+            initialSeconds = seconds
             paused = true
             isComplete = false
             timer?.invalidate()
@@ -696,6 +705,7 @@ struct TeaTimerView: View {
         let duration = selectedTea.steepingDuration(for: infusion)
         selectedMinutes = duration.minimum
         seconds = selectedMinutes * 60
+        initialSeconds = seconds
         paused = true
         isComplete = false
     }
