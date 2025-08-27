@@ -1,0 +1,376 @@
+[
+  {
+    "tea_name": "Sencha Green Tea",
+    "region_of_origin": "Japan",
+    "traditional_name": "Sencha",
+    "amount_of_caffiene": 3,
+    "main_tea_type": "Green",
+    "number_of_steeps": {"minimum": 2, "maximum": 3},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 158, "maximum": 176},
+        "duration": {"minimum": 1, "maximum": 1},
+        "steep_number": 1,
+        "steep_taste_description": "Fresh, grassy, umami, slightly sweet"
+      },
+      {
+        "temperature": {"minimum": 158, "maximum": 176},
+        "duration": {"minimum": 0.5, "maximum": 0.5},
+        "steep_number": 2,
+        "steep_taste_description": "Lighter, still fresh and grassy"
+      },
+      {
+        "temperature": {"minimum": 158, "maximum": 176},
+        "duration": {"minimum": 1.5, "maximum": 1.5},
+        "steep_number": 3,
+        "steep_taste_description": "Milder, subtle notes"
+      }
+    ],
+    "overall_taste_description": "Grassy, fresh, vegetal, umami, sometimes oceanic, nutty, fruity, floral, with notes of sweet corn, edamame, miso soup, and baby spinach.",
+    "short_summary": "A popular Japanese green tea known for its fresh, grassy, and umami flavor profile, often with a slightly sweet aftertaste.",
+    "overall_tea_description": "Sencha is the most commonly consumed green tea in Japan, made from tea leaves grown in direct sunlight. It is characterized by its vibrant green color, refreshing aroma, and a balanced flavor that can range from vegetal and grassy to slightly sweet and oceanic, depending on the specific grade and preparation. It is rich in antioxidants and offers various health benefits."
+  }
+]
+
+
+,
+  {
+    "tea_name": "Matcha Green Tea",
+    "region_of_origin": "Japan (originated in China)",
+    "traditional_name": "Matcha",
+    "amount_of_caffiene": 4,
+    "main_tea_type": "Green",
+    "number_of_steeps": {"minimum": 1, "maximum": 1},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 160, "maximum": 175},
+        "duration": {"minimum": 0.5, "maximum": 1},
+        "steep_number": 1,
+        "steep_taste_description": "Vibrant, vegetal, umami, slightly bitter with a sweet finish"
+      }
+    ],
+    "overall_taste_description": "Bright, vegetal, slightly bitter, with notes of sweetness and umami. Can be grassy, earthy, and have a creamy finish, especially ceremonial grade.",
+    "short_summary": "A finely ground Japanese green tea powder known for its vibrant color, rich umami flavor, and high caffeine content, traditionally prepared by whisking into hot water.",
+    "overall_tea_description": "Matcha is a powdered green tea that originated in China but was popularized in Japan, particularly in tea ceremonies. It is made from shade-grown tea leaves, which contributes to its vibrant green color and unique flavor profile. Matcha is rich in antioxidants and L-theanine, providing a sustained energy boost without the jitters often associated with coffee."
+  }
+
+
+,
+  {
+    "tea_name": "Gyokuro Green Tea",
+    "region_of_origin": "Japan (primarily Fukuoka, Kyoto, and Mie prefectures)",
+    "traditional_name": "Gyokuro",
+    "amount_of_caffiene": 4,
+    "main_tea_type": "Green",
+    "number_of_steeps": {"minimum": 2, "maximum": 3},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 122, "maximum": 158},
+        "duration": {"minimum": 1.5, "maximum": 3},
+        "steep_number": 1,
+        "steep_taste_description": "Rich umami, sweet, savory, brothy, smooth"
+      },
+      {
+        "temperature": {"minimum": 122, "maximum": 158},
+        "duration": {"minimum": 0.5, "maximum": 0.5},
+        "steep_number": 2,
+        "steep_taste_description": "Still rich, slightly less intense umami"
+      },
+      {
+        "temperature": {"minimum": 122, "maximum": 158},
+        "duration": {"minimum": 0.5, "maximum": 0.5},
+        "steep_number": 3,
+        "steep_taste_description": "Lighter, refreshing, subtle sweetness"
+      }
+    ],
+    "overall_taste_description": "Deep umami, sweet, savory, brothy, sometimes described as seaweed-like, with a smooth and thick mouthfeel.",
+    "short_summary": "A highly prized Japanese shade-grown green tea known for its intense umami flavor, sweetness, and smooth texture.",
+    "overall_tea_description": "Gyokuro, meaning 'jade dew,' is one of Japan's most exquisite green teas. It is cultivated by shading the tea plants for several weeks before harvest, which increases chlorophyll and amino acid content, resulting in a unique rich umami flavor, vibrant green color, and sweet aroma. It is typically brewed at lower temperatures to bring out its delicate characteristics."
+  }
+,
+  {
+    "tea_name": "Dragonwell Green Tea",
+    "region_of_origin": "Zhejiang Province, China (specifically Longjing Village, Hangzhou)",
+    "traditional_name": "Longjing",
+    "amount_of_caffiene": 3,
+    "main_tea_type": "Green",
+    "number_of_steeps": {"minimum": 2, "maximum": 3},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 1.5, "maximum": 3},
+        "steep_number": 1,
+        "steep_taste_description": "Fresh, mellow, crisp, nutty, buttery, sweet"
+      },
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 0.5, "maximum": 1},
+        "steep_number": 2,
+        "steep_taste_description": "Lighter, still nutty and sweet"
+      },
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 1, "maximum": 2},
+        "steep_number": 3,
+        "steep_taste_description": "Subtle, refreshing, with lingering sweetness"
+      }
+    ],
+    "overall_taste_description": "Fresh, mellow, crisp, with a distinctive nutty, buttery, and slightly sweet flavor. Often described with notes of toasted nuts, cereal, peas, and a smooth, velvety texture.",
+    "short_summary": "A famous pan-roasted Chinese green tea from Hangzhou, known for its distinctive flat leaves and a sweet, nutty, and buttery flavor profile.",
+    "overall_tea_description": "Dragonwell, or Longjing, is one of China's most renowned green teas, originating from Hangzhou, Zhejiang Province. Its unique flat, sword-like leaves are a result of meticulous pan-firing. The tea is celebrated for its fresh aroma, jade-green liquor, and a complex flavor that combines nutty, buttery, and subtly sweet notes, often with a hint of a fresh, vegetal character. It is a highly sought-after tea due to its rich history and delicate taste."
+  }
+
+
+,
+  {
+    "tea_name": "Jasmine Green Tea",
+    "region_of_origin": "China (primarily Fujian province)",
+    "traditional_name": "Jasmine Green Tea",
+    "amount_of_caffiene": 2,
+    "main_tea_type": "Green",
+    "number_of_steeps": {"minimum": 1, "maximum": 2},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 160, "maximum": 180},
+        "duration": {"minimum": 2, "maximum": 4},
+        "steep_number": 1,
+        "steep_taste_description": "Delicate, fragrant, floral, subtly sweet"
+      },
+      {
+        "temperature": {"minimum": 160, "maximum": 180},
+        "duration": {"minimum": 3, "maximum": 5},
+        "steep_number": 2,
+        "steep_taste_description": "Lighter floral notes, refreshing"
+      }
+    ],
+    "overall_taste_description": "A delicate and fragrant tea with a prominent floral aroma and taste from jasmine blossoms, balanced with the fresh, sometimes slightly grassy notes of green tea. Can be subtly sweet.",
+    "short_summary": "A popular scented green tea from China, infused with the aroma of jasmine blossoms, offering a delicate floral and refreshing taste.",
+    "overall_tea_description": "Jasmine Green Tea is a type of scented tea made by infusing green tea leaves with the aroma of jasmine flowers. Originating in China, it is celebrated for its intoxicating floral fragrance and delicate flavor. The green tea base provides a fresh, sometimes slightly vegetal backdrop, which is beautifully complemented by the sweet and aromatic notes of jasmine. It is often enjoyed for its calming properties and refreshing taste."
+  }
+
+
+,
+  {
+    "tea_name": "Bancha Green Tea",
+    "region_of_origin": "Japan (various regions including Shizuoka and Kyoto)",
+    "traditional_name": "Bancha",
+    "amount_of_caffiene": 1,
+    "main_tea_type": "Green",
+    "number_of_steeps": {"minimum": 1, "maximum": 2},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 160, "maximum": 175},
+        "duration": {"minimum": 0.5, "maximum": 1.5},
+        "steep_number": 1,
+        "steep_taste_description": "Light, refreshing, grassy, vegetal"
+      },
+      {
+        "temperature": {"minimum": 160, "maximum": 175},
+        "duration": {"minimum": 1, "maximum": 2},
+        "steep_number": 2,
+        "steep_taste_description": "Milder, still refreshing, subtle vegetal notes"
+      }
+    ],
+    "overall_taste_description": "Light and refreshing with grassy, vegetal notes, sometimes described with hints of celery, wet wood, seaweed, mandarin orange, or lemon. It has a mild, sometimes slightly assertive flavor.",
+    "short_summary": "A common Japanese green tea harvested from later flushes, known for its lower caffeine content and light, refreshing, and vegetal flavor.",
+    "overall_tea_description": "Bancha is a Japanese green tea harvested from the second flush of sencha, typically in summer or autumn. It is characterized by its larger, more mature leaves and stems, which contribute to its lower caffeine content compared to other green teas like Sencha or Gyokuro. Bancha offers a light, refreshing, and often grassy or vegetal flavor, making it a popular everyday tea in Japan."
+  }
+
+
+,
+  {
+    "tea_name": "Gunpowder Green Tea",
+    "region_of_origin": "China (primarily Zhejiang, Anhui, and Hubei provinces)",
+    "traditional_name": "Zhū Chá (Pearl Tea)",
+    "amount_of_caffiene": 3,
+    "main_tea_type": "Green",
+    "number_of_steeps": {"minimum": 2, "maximum": 3},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 175, "maximum": 195},
+        "duration": {"minimum": 1, "maximum": 3},
+        "steep_number": 1,
+        "steep_taste_description": "Bold, smoky, nutty, slightly bitter"
+      },
+      {
+        "temperature": {"minimum": 175, "maximum": 195},
+        "duration": {"minimum": 2, "maximum": 4},
+        "steep_number": 2,
+        "steep_taste_description": "Milder, still smoky and nutty"
+      },
+      {
+        "temperature": {"minimum": 175, "maximum": 195},
+        "duration": {"minimum": 3, "maximum": 5},
+        "steep_number": 3,
+        "steep_taste_description": "Very mild, subtle notes"
+      }
+    ],
+    "overall_taste_description": "Bold, smoky, and nutty, often with a slightly bitter finish. The flavor can be described as robust and sometimes with a hint of roasted notes.",
+    "short_summary": "A Chinese green tea characterized by its tightly rolled, pellet-like leaves resembling gunpowder, offering a bold, smoky, and nutty flavor.",
+    "overall_tea_description": "Gunpowder tea is a distinctive Chinese green tea where each leaf is rolled into a small, shiny pellet, resembling gunpowder. This rolling process helps to preserve the tea's flavor and aroma. It typically yields a bold, smoky, and sometimes nutty brew with a slightly bitter undertone. It is a versatile tea that can be enjoyed on its own or used as a base for flavored teas, such as Moroccan mint tea."
+  }
+
+
+,
+  {
+    "tea_name": "Hojicha Green Tea",
+    "region_of_origin": "Kyoto, Japan",
+    "traditional_name": "Hojicha",
+    "amount_of_caffiene": 1,
+    "main_tea_type": "Green",
+    "number_of_steeps": {"minimum": 1, "maximum": 2},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 175, "maximum": 212},
+        "duration": {"minimum": 1, "maximum": 2},
+        "steep_number": 1,
+        "steep_taste_description": "Toasty, nutty, caramel, mild, sweet"
+      },
+      {
+        "temperature": {"minimum": 175, "maximum": 212},
+        "duration": {"minimum": 1.5, "maximum": 3},
+        "steep_number": 2,
+        "steep_taste_description": "Lighter toastiness, subtle sweetness"
+      }
+    ],
+    "overall_taste_description": "Distinctively roasted, with a nutty, toasty, and often caramel-like flavor. It has a mild, sweet taste with very low astringency, sometimes described with hints of chocolate or earthy notes.",
+    "short_summary": "A Japanese green tea that is roasted over charcoal, giving it a unique reddish-brown color and a distinctive nutty, toasty flavor with very low caffeine.",
+    "overall_tea_description": "Hojicha is a Japanese green tea that stands out due to its roasting process, typically over charcoal. This roasting gives the tea a distinctive reddish-brown color and a unique nutty, toasty aroma and flavor, often with notes of caramel. The roasting process also significantly reduces its caffeine content, making it a popular choice for evening consumption or for those sensitive to caffeine. It is known for its mildness and low astringency."
+  }
+
+
+,
+  {
+    "tea_name": "Genmaicha Green Tea",
+    "region_of_origin": "Japan (various regions including Kyoto, Shizuoka, and Kagoshima)",
+    "traditional_name": "Genmaicha",
+    "amount_of_caffiene": 1,
+    "main_tea_type": "Green",
+    "number_of_steeps": {"minimum": 2, "maximum": 3},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 176, "maximum": 212},
+        "duration": {"minimum": 0.5, "maximum": 1},
+        "steep_number": 1,
+        "steep_taste_description": "Nutty, roasted, slightly sweet, savory"
+      },
+      {
+        "temperature": {"minimum": 176, "maximum": 212},
+        "duration": {"minimum": 1, "maximum": 2},
+        "steep_number": 2,
+        "steep_taste_description": "Milder nutty and roasted notes, refreshing"
+      },
+      {
+        "temperature": {"minimum": 176, "maximum": 212},
+        "duration": {"minimum": 1.5, "maximum": 3},
+        "steep_number": 3,
+        "steep_taste_description": "Subtle, light, comforting"
+      }
+    ],
+    "overall_taste_description": "A unique blend of green tea and roasted brown rice, offering a nutty, toasty, and slightly sweet flavor with a savory undertone. Often described as having notes of popcorn or toasted grains.",
+    "short_summary": "A Japanese green tea blended with roasted brown rice, known for its distinctive nutty aroma and savory, comforting flavor.",
+    "overall_tea_description": "Genmaicha is a traditional Japanese green tea made by combining green tea leaves (often Sencha or Bancha) with roasted brown rice. Some of the rice grains may pop during the roasting process, giving it the nickname 'popcorn tea.' This blend results in a unique flavor profile that is nutty, warm, and slightly savory, with a comforting aroma. It has a lower caffeine content than pure green teas, making it a popular choice for any time of day."
+  }
+
+
+,
+  {
+    "tea_name": "Anji Bai Cha Green Tea",
+    "region_of_origin": "Anji County, Zhejiang Province, China",
+    "traditional_name": "Anji Bai Cha",
+    "amount_of_caffiene": 1,
+    "main_tea_type": "Green",
+    "number_of_steeps": {"minimum": 2, "maximum": 3},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 160, "maximum": 175},
+        "duration": {"minimum": 0.5, "maximum": 1},
+        "steep_number": 1,
+        "steep_taste_description": "Sweet, delicate, fresh, floral, nutty, citrus"
+      },
+      {
+        "temperature": {"minimum": 160, "maximum": 175},
+        "duration": {"minimum": 1, "maximum": 2},
+        "steep_number": 2,
+        "steep_taste_description": "Lighter, still sweet and floral, refreshing"
+      },
+      {
+        "temperature": {"minimum": 160, "maximum": 175},
+        "duration": {"minimum": 1.5, "maximum": 3},
+        "steep_number": 3,
+        "steep_taste_description": "Subtle, clean, with lingering sweetness"
+      }
+    ],
+    "overall_taste_description": "Known for its delicate, sweet, and fresh flavor profile with prominent floral notes, often described as reminiscent of morning dew or a spring meadow. It can also have hints of citrus and nuttiness, with a very smooth and clean finish.",
+    "short_summary": "A rare and highly prized Chinese green tea from Zhejiang province, known for its unique pale leaves and exceptionally sweet, delicate, and floral flavor.",
+    "overall_tea_description": "Anji Bai Cha, despite its name meaning 'white tea,' is a type of green tea from Anji County in Zhejiang Province, China. It is distinguished by its unique 'white leaf' cultivar, which produces pale, almost white leaves during early spring. This tea is celebrated for its exceptionally delicate, sweet, and fresh flavor, often with pronounced floral and sometimes nutty or citrus notes. It has a naturally low caffeine content and is rich in amino acids, contributing to its smooth and mellow character."
+  }
+
+
+,
+  {
+    "tea_name": "Mao Feng Green Tea",
+    "region_of_origin": "Huangshan (Yellow Mountain), Anhui Province, China",
+    "traditional_name": "Huangshan Maofeng",
+    "amount_of_caffiene": 2,
+    "main_tea_type": "Green",
+    "number_of_steeps": {"minimum": 2, "maximum": 3},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 155, "maximum": 185},
+        "duration": {"minimum": 2, "maximum": 3},
+        "steep_number": 1,
+        "steep_taste_description": "Fresh, clean, smooth, sweet floral, mellow, savory, vegetal"
+      },
+      {
+        "temperature": {"minimum": 155, "maximum": 185},
+        "duration": {"minimum": 1, "maximum": 2},
+        "steep_number": 2,
+        "steep_taste_description": "Lighter, still fresh and floral, subtle sweetness"
+      },
+      {
+        "temperature": {"minimum": 155, "maximum": 185},
+        "duration": {"minimum": 1.5, "maximum": 2.5},
+        "steep_number": 3,
+        "steep_taste_description": "Very mild, refreshing, clean finish"
+      }
+    ],
+    "overall_taste_description": "Fresh, clean, and smooth with a sweet floral aroma and a mellow, savory, vegetal flavor. Often described with notes of sugar snap peas, butter, and a hint of spice. It is known for its light and refreshing character.",
+    "short_summary": "A famous Chinese green tea from Huangshan, known for its delicate, fresh, and sweet floral notes with a clean finish.",
+    "overall_tea_description": "Mao Feng, particularly Huangshan Maofeng, is one of China's most celebrated green teas, originating from the Yellow Mountains in Anhui Province. It is characterized by its slightly curled, yellowish-green leaves with fine white hairs. The tea offers a fresh, clean, and smooth taste with a distinctive sweet floral aroma and a mellow, savory, and vegetal flavor. It is prized for its delicate profile and lack of bitterness, even with longer steeping times."
+  }
+
+
+,
+  {
+    "tea_name": "Bi Luo Chun Green Tea",
+    "region_of_origin": "Dongting Mountain, Jiangsu Province, China",
+    "traditional_name": "Bi Luo Chun (Green Snail Spring)",
+    "amount_of_caffiene": 3,
+    "main_tea_type": "Green",
+    "number_of_steeps": {"minimum": 2, "maximum": 3},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 170, "maximum": 185},
+        "duration": {"minimum": 0.5, "maximum": 1},
+        "steep_number": 1,
+        "steep_taste_description": "Strong fruity and floral aroma, gentle yet full sweet flavor, fresh cut grass, melon"
+      },
+      {
+        "temperature": {"minimum": 170, "maximum": 185},
+        "duration": {"minimum": 1, "maximum": 2},
+        "steep_number": 2,
+        "steep_taste_description": "Lighter floral and fruity notes, still sweet"
+      },
+      {
+        "temperature": {"minimum": 170, "maximum": 185},
+        "duration": {"minimum": 1.5, "maximum": 3},
+        "steep_number": 3,
+        "steep_taste_description": "Subtle, refreshing, clean finish"
+      }
+    ],
+    "overall_taste_description": "Known for its strong fruity and floral aroma, often described with notes of fresh cut grass, sweet hay, apple, and melon. It has a gentle yet full sweet flavor with a clean, crisp finish.",
+    "short_summary": "A famous Chinese green tea characterized by its tightly curled leaves resembling snails, offering a strong fruity and floral aroma with a sweet and mellow taste.",
+    "overall_tea_description": "Bi Luo Chun, meaning \'Green Snail Spring,\' is a highly acclaimed Chinese green tea from the Dongting Mountain region in Jiangsu Province. Its distinctive appearance comes from its tightly curled, snail-like leaves, often covered in fine white hairs. The tea is celebrated for its intense fruity and floral aroma, often compared to peaches or apricots, and a sweet, mellow taste with a refreshing, lingering aftertaste. It is typically harvested in early spring, yielding a delicate and complex brew."
+  }
+]

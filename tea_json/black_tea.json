@@ -1,0 +1,401 @@
+
+[
+  {
+    "tea_name": "Assam Black Tea",
+    "region_of_origin": "Assam, India",
+    "traditional_name": "Assam",
+    "amount_of_caffiene": 4,
+    "main_tea_type": "Black",
+    "number_of_steeps": {"minimum": 1, "maximum": 2},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 200, "maximum": 212},
+        "duration": {"minimum": 3, "maximum": 5},
+        "steep_number": 1,
+        "steep_taste_description": "Strong, malty, brisk"
+      }
+    ],
+    "overall_taste_description": "Bold, malty, and brisk with a rich, robust flavor. Often described as having notes of caramel, chocolate, or dried fruit.",
+    "short_summary": "A strong, malty black tea from India, known for its robust flavor and high caffeine content.",
+    "overall_tea_description": "Assam tea is a black tea named after the Assam region in India, where it is grown. It is known for its distinctive malty flavor, strong body, and bright color. Assam tea is often used in breakfast tea blends due to its invigorating properties and high caffeine content. It can be enjoyed with milk and sugar."
+  }
+]
+
+
+,
+  {
+    "tea_name": "Darjeeling Black Tea",
+    "region_of_origin": "Darjeeling, West Bengal, India",
+    "traditional_name": "Darjeeling",
+    "amount_of_caffiene": 3,
+    "main_tea_type": "Black",
+    "number_of_steeps": {"minimum": 1, "maximum": 2},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 3, "maximum": 5},
+        "steep_number": 1,
+        "steep_taste_description": "Light, floral, muscatel notes"
+      }
+    ],
+    "overall_taste_description": "Delicate and complex with floral, fruity (muscatel), and sometimes spicy notes. Often described as having a 'champagne-like' quality.",
+    "short_summary": "A highly prized black tea from India, known for its delicate flavor and muscatel notes, often called the 'Champagne of Teas'.",
+    "overall_tea_description": "Darjeeling tea is grown in the Darjeeling district of West Bengal, India. It is renowned for its unique and delicate flavor profile, often referred to as the 'muscatel' flavor, which is a distinctive fruity and floral note. Darjeeling teas are often categorized by 'flushes' (harvest periods), each offering a slightly different character. It can be enjoyed on its own without milk or sugar."
+  }
+
+
+,
+  {
+    "tea_name": "Nilgiri Black Tea",
+    "region_of_origin": "Nilgiri Mountains, Southern India",
+    "traditional_name": "Nilgiri",
+    "amount_of_caffiene": 3,
+    "main_tea_type": "Black",
+    "number_of_steeps": {"minimum": 1, "maximum": 2},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 190, "maximum": 212},
+        "duration": {"minimum": 3, "maximum": 5},
+        "steep_number": 1,
+        "steep_taste_description": "Bright, clean, brisk, with notes of citrus and fruit"
+      }
+    ],
+    "overall_taste_description": "Bright, clean, and brisk with a smooth, mellow flavor. Often described as having notes of citrus, fruit, and a hint of mint.",
+    "short_summary": "A refreshing black tea from Southern India, known for its bright, clean flavor and smooth finish.",
+    "overall_tea_description": "Nilgiri tea is grown in the Nilgiri Mountains of Southern India, often referred to as the \"Blue Mountains.\" It is known for its consistent quality throughout the year due to the region's unique climate. Nilgiri teas are typically bright, clean, and brisk, making them excellent for iced tea or as a base for blends. They offer a smooth taste with notes of citrus and fruit, and are less astringent than some other black teas."
+  }
+
+
+,
+  {
+    "tea_name": "Ceylon Black Tea",
+    "region_of_origin": "Sri Lanka (formerly Ceylon)",
+    "traditional_name": "Ceylon",
+    "amount_of_caffiene": 3,
+    "main_tea_type": "Black",
+    "number_of_steeps": {"minimum": 1, "maximum": 2},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 200, "maximum": 212},
+        "duration": {"minimum": 3, "maximum": 5},
+        "steep_number": 1,
+        "steep_taste_description": "Brisk, bold, with notes of citrus and spice"
+      }
+    ],
+    "overall_taste_description": "Brisk, bold, and full-bodied with a clean finish. Depending on the region, it can have notes of citrus, chocolate, or spice.",
+    "short_summary": "A diverse black tea from Sri Lanka, known for its briskness and wide range of flavors depending on its growing region.",
+    "overall_tea_description": "Ceylon tea refers to teas produced in Sri Lanka, formerly known as Ceylon. It encompasses a wide variety of black, green, and white teas, though black Ceylon is the most common. The flavor profile varies significantly based on the altitude and region of cultivation, ranging from light and floral to strong and malty. Generally, Ceylon black teas are known for their briskness and bright, clean taste, often with citrusy undertones. It is a popular choice for iced tea and blends."
+  }
+
+
+,
+  {
+    "tea_name": "Keemun Black Tea",
+    "region_of_origin": "Qimen County, Anhui Province, China",
+    "traditional_name": "Keemun",
+    "amount_of_caffiene": 3,
+    "main_tea_type": "Black",
+    "number_of_steeps": {"minimum": 1, "maximum": 3},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 200, "maximum": 212},
+        "duration": {"minimum": 3, "maximum": 5},
+        "steep_number": 1,
+        "steep_taste_description": "Malty, fruity, with hints of pine and orchid"
+      }
+    ],
+    "overall_taste_description": "Smooth, malty, and slightly smoky with hints of fruit, orchid, and sometimes cocoa. It has a complex and nuanced flavor.",
+    "short_summary": "A famous Chinese black tea known for its distinctive aroma, often described as having notes of orchid and a hint of smoke.",
+    "overall_tea_description": "Keemun tea is a renowned black tea from Qimen County in Anhui Province, China. It is celebrated for its unique \"Keemun aroma,\" which is often compared to orchid or floral notes, with a subtle hint of smoke or pine. The tea brews to a reddish-brown liquor and offers a smooth, mellow taste with a lingering sweetness. It is a versatile tea that can be enjoyed on its own or with a touch of milk."
+  }
+
+
+,
+  {
+    "tea_name": "Lapsang Souchong Black Tea",
+    "region_of_origin": "Wuyi Mountains, Fujian Province, China",
+    "traditional_name": "Lapsang Souchong (Zhengshan Xiaozhong)",
+    "amount_of_caffiene": 3,
+    "main_tea_type": "Black",
+    "number_of_steeps": {"minimum": 1, "maximum": 2},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 195, "maximum": 212},
+        "duration": {"minimum": 2, "maximum": 5},
+        "steep_number": 1,
+        "steep_taste_description": "Strongly smoky, with notes of pine and wood"
+      }
+    ],
+    "overall_taste_description": "Distinctively smoky, with a rich, robust flavor often compared to wood smoke, pine, or even whiskey. Some variations may have underlying sweet or malty notes.",
+    "short_summary": "A unique Chinese black tea famous for its intense smoky aroma and flavor, achieved through pine wood smoking.",
+    "overall_tea_description": "Lapsang Souchong is a black tea originating from the Wuyi Mountains in Fujian Province, China. Its most distinctive characteristic is its smoky flavor, which is imparted during the drying process by smoking the tea leaves over pine wood fires. This gives the tea a bold and robust taste, often described as having notes of wood smoke, pine, and sometimes a hint of sweetness. It is a tea that evokes strong opinions and is often enjoyed by those who appreciate its unique and assertive character."
+  }
+
+
+,
+  {
+    "tea_name": "Yunnan (Dianhong) Black Tea",
+    "region_of_origin": "Yunnan Province, China",
+    "traditional_name": "Dianhong",
+    "amount_of_caffiene": 4,
+    "main_tea_type": "Black",
+    "number_of_steeps": {"minimum": 1, "maximum": 3},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 185, "maximum": 212},
+        "duration": {"minimum": 3, "maximum": 5},
+        "steep_number": 1,
+        "steep_taste_description": "Malty, sweet, with notes of chocolate and sometimes spice"
+      }
+    ],
+    "overall_taste_description": "Smooth, malty, and sweet with a rich, full-bodied flavor. Often has notes of chocolate, caramel, and sometimes a hint of spice or fruit.",
+    "short_summary": "A high-quality Chinese black tea from Yunnan, known for its malty sweetness and golden tips.",
+    "overall_tea_description": "Yunnan tea, also known as Dianhong, is a black tea produced in the Yunnan Province of China. It is characterized by its abundance of golden tips (buds), which contribute to its smooth, malty, and sweet flavor. Dianhong teas are known for their rich, full-bodied liquor and often have notes of chocolate, caramel, or even a subtle spiciness. It is a popular choice for those who enjoy a robust yet smooth black tea."
+  }
+
+
+,
+  {
+    "tea_name": "Kenyan Black Tea",
+    "region_of_origin": "Kenya",
+    "traditional_name": "Kenyan",
+    "amount_of_caffiene": 4,
+    "main_tea_type": "Black",
+    "number_of_steeps": {"minimum": 1, "maximum": 2},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 200, "maximum": 212},
+        "duration": {"minimum": 2, "maximum": 5},
+        "steep_number": 1,
+        "steep_taste_description": "Brisk, bold, and full-bodied"
+      }
+    ],
+    "overall_taste_description": "Brisk, bold, and full-bodied with a bright, coppery liquor. Often described as having a clean, refreshing taste, sometimes with notes of citrus or a slightly floral aroma.",
+    "short_summary": "A strong and brisk black tea from Kenya, often used in breakfast blends due to its robust flavor.",
+    "overall_tea_description": "Kenyan tea is primarily black tea, known for its bright color, brisk flavor, and strong character. Most Kenyan tea is produced using the CTC (Crush, Tear, Curl) method, which results in a consistent and quick-brewing tea. Grown in the highlands of Kenya, these teas are often used in breakfast blends and are well-suited for drinking with milk and sugar. While black tea is the most common, Kenya also produces some green and purple teas."
+  }
+
+
+,
+  {
+    "tea_name": "Turkish (Rize) Black Tea",
+    "region_of_origin": "Rize Province, Turkey",
+    "traditional_name": "Çay (Rize tea)",
+    "amount_of_caffiene": 4,
+    "main_tea_type": "Black",
+    "number_of_steeps": {"minimum": 1, "maximum": 1},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 200, "maximum": 212},
+        "duration": {"minimum": 10, "maximum": 15},
+        "steep_number": 1,
+        "steep_taste_description": "Strong, bold, and slightly bitter, often with earthy notes"
+      }
+    ],
+    "overall_taste_description": "Strong, bold, and robust with a distinctive earthy and sometimes slightly bitter taste. It is typically consumed without milk, often with sugar cubes.",
+    "short_summary": "A strong black tea from Turkey, traditionally prepared in a double teapot and known for its robust flavor.",
+    "overall_tea_description": "Turkish tea, or Çay, is a black tea primarily grown in the Rize Province on the Black Sea coast of Turkey. It is traditionally prepared in a unique double teapot called a çaydanlık, where the tea is brewed as a strong concentrate in the upper pot and diluted with hot water from the lower pot. Rize tea is known for its bold, robust flavor and is a staple of Turkish culture, consumed throughout the day, often with sugar but without milk."
+  }
+
+
+,
+  {
+    "tea_name": "Nepalese Tea",
+    "region_of_origin": "Nepal",
+    "traditional_name": "Nepali Chiya",
+    "amount_of_caffiene": 3,
+    "main_tea_type": "Black",
+    "number_of_steeps": {"minimum": 1, "maximum": 3},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 200, "maximum": 212},
+        "duration": {"minimum": 3, "maximum": 5},
+        "steep_number": 1,
+        "steep_taste_description": "Bright, floral, and malty, often with notes of caramel or honey"
+      }
+    ],
+    "overall_taste_description": "Bright, floral, and often malty, with a complex flavor profile that can include notes of caramel, honey, and a hint of fruit. It is often compared to Darjeeling tea due to similar growing conditions.",
+    "short_summary": "A high-quality tea from Nepal, known for its bright, floral notes and often compared to Darjeeling tea.",
+    "overall_tea_description": "Nepalese tea, often referred to as Nepali Chiya, is grown in the high-altitude regions of Nepal, sharing a similar terroir with Darjeeling. It produces a bright, floral, and often malty cup, with a complex flavor profile that can include notes of caramel, honey, and a hint of fruit. While black tea is the most common, Nepal also produces green, oolong, and white teas. It is gaining recognition for its unique characteristics and high quality."
+  }
+
+
+,
+  {
+    "tea_name": "English Breakfast Tea",
+    "region_of_origin": "Blended (Assam, Ceylon, Kenyan)",
+    "traditional_name": "English Breakfast",
+    "amount_of_caffiene": 4,
+    "main_tea_type": "Black",
+    "number_of_steeps": {"minimum": 1, "maximum": 3},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 200, "maximum": 212},
+        "duration": {"minimum": 3, "maximum": 5},
+        "steep_number": 1,
+        "steep_taste_description": "Strong, robust, malty, and sometimes slightly bitter"
+      }
+    ],
+    "overall_taste_description": "Strong, robust, and full-bodied with a malty flavor. It is designed to be invigorating and pairs well with milk and sugar.",
+    "short_summary": "A classic blend of black teas, known for its strong, robust flavor, traditionally enjoyed with breakfast.",
+    "overall_tea_description": "English Breakfast tea is a traditional blend of black teas, typically originating from Assam, Ceylon, and Kenya. It is known for its strong, robust, and full-bodied flavor, making it a popular choice to start the day. The blend is designed to be invigorating and is commonly consumed with milk and sugar. The exact composition of English Breakfast tea can vary between different brands, but the goal is always a rich and satisfying cup."
+  }
+
+
+,
+  {
+    "tea_name": "Irish Breakfast Tea",
+    "region_of_origin": "Blended (Assam, Ceylon, Kenyan)",
+    "traditional_name": "Irish Breakfast",
+    "amount_of_caffiene": 5,
+    "main_tea_type": "Black",
+    "number_of_steeps": {"minimum": 1, "maximum": 2},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 200, "maximum": 212},
+        "duration": {"minimum": 3, "maximum": 5},
+        "steep_number": 1,
+        "steep_taste_description": "Very strong, malty, and robust"
+      }
+    ],
+    "overall_taste_description": "Very strong, robust, and malty, often with a rich, deep flavor. It is designed to be a potent morning tea, typically enjoyed with milk and sugar.",
+    "short_summary": "A very strong and malty black tea blend, popular in Ireland for its invigorating properties.",
+    "overall_tea_description": "Irish Breakfast tea is a blend of black teas, predominantly Assam, often with contributions from Ceylon and Kenyan teas. It is known for being even stronger and more robust than English Breakfast tea, with a pronounced malty flavor. This blend is designed to be a hearty morning tea, capable of standing up to milk and sugar, and providing a significant caffeine boost to start the day."
+  }
+
+
+,
+  {
+    "tea_name": "Scottish Breakfast Tea",
+    "region_of_origin": "Blended (Assam, Ceylon, Kenyan, sometimes Chinese)",
+    "traditional_name": "Scottish Breakfast",
+    "amount_of_caffiene": 5,
+    "main_tea_type": "Black",
+    "number_of_steeps": {"minimum": 1, "maximum": 2},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 205, "maximum": 212},
+        "duration": {"minimum": 3, "maximum": 5},
+        "steep_number": 1,
+        "steep_taste_description": "Very strong, malty, and robust, often with a smoky or earthy undertone"
+      }
+    ],
+    "overall_taste_description": "Extremely strong, robust, and malty, often with a more pronounced smoky or earthy character than other breakfast blends. It is designed to be a very hearty tea, typically consumed with milk and sugar.",
+    "short_summary": "A very strong and full-bodied black tea blend, known for its intense flavor, popular in Scotland.",
+    "overall_tea_description": "Scottish Breakfast tea is a blend of black teas, often with a higher proportion of Assam teas, and sometimes including teas from Ceylon, Kenya, and even China. It is renowned for being the strongest and most full-bodied of the breakfast tea blends, designed to stand up to the soft water prevalent in Scotland. It offers a rich, malty flavor, often with a slightly smoky or earthy undertone, and is traditionally enjoyed with milk and sugar."
+  }
+
+
+,
+  {
+    "tea_name": "Russian Caravan Tea",
+    "region_of_origin": "Blended (China, India, Formosa)",
+    "traditional_name": "Russian Caravan",
+    "amount_of_caffiene": 3,
+    "main_tea_type": "Black",
+    "number_of_steeps": {"minimum": 1, "maximum": 2},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 195, "maximum": 212},
+        "duration": {"minimum": 3, "maximum": 5},
+        "steep_number": 1,
+        "steep_taste_description": "Smoky, malty, and sweet, with a hint of dried fruit"
+      }
+    ],
+    "overall_taste_description": "A complex blend with a distinctive smoky aroma and flavor, balanced by malty sweetness and sometimes notes of dried fruit. The smokiness is less intense than Lapsang Souchong.",
+    "short_summary": "A blended black tea with a smoky aroma, reminiscent of the teas transported by camel caravans from China to Russia.",
+    "overall_tea_description": "Russian Caravan tea is a blend of black teas, often including Lapsang Souchong, Keemun, and Oolong, designed to evoke the smoky flavor of teas transported by camel caravans along the ancient tea routes from China to Russia. The journey itself was said to impart a smoky character to the tea. It offers a balanced flavor profile with a distinctive smoky note, complemented by malty and sweet undertones. It is a popular choice for those who enjoy a smoky tea but find Lapsang Souchong too intense."
+  }
+
+
+,
+  {
+    "tea_name": "Chai (Masala Chai)",
+    "region_of_origin": "Indian Subcontinent",
+    "traditional_name": "Masala Chai",
+    "amount_of_caffiene": 3,
+    "main_tea_type": "Black",
+    "number_of_steeps": {"minimum": 1, "maximum": 1},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 200, "maximum": 212},
+        "duration": {"minimum": 4, "maximum": 6},
+        "steep_number": 1,
+        "steep_taste_description": "Spicy, sweet, creamy, with strong black tea notes"
+      }
+    ],
+    "overall_taste_description": "Aromatic and flavorful, with a dominant blend of spices (ginger, cardamom, cinnamon, cloves, black pepper) balanced by strong black tea and often sweetened with milk and sugar.",
+    "short_summary": "A spiced milk tea from the Indian subcontinent, known for its warming and aromatic blend of black tea and various spices.",
+    "overall_tea_description": "Chai, or Masala Chai, is a traditional spiced tea beverage originating from the Indian subcontinent. It is made by brewing black tea with a mixture of aromatic Indian spices, typically including ginger, cardamom, cinnamon, cloves, and black pepper. It is commonly prepared with milk and sweetened, offering a warming, invigorating, and flavorful experience. The exact blend of spices can vary regionally and personally, leading to a diverse range of taste profiles."
+  }
+
+
+,
+  {
+    "tea_name": "Earl Grey Black Tea",
+    "region_of_origin": "Blended (various, flavored in UK)",
+    "traditional_name": "Earl Grey",
+    "amount_of_caffiene": 3,
+    "main_tea_type": "Black",
+    "number_of_steeps": {"minimum": 1, "maximum": 2},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 195, "maximum": 208},
+        "duration": {"minimum": 3, "maximum": 5},
+        "steep_number": 1,
+        "steep_taste_description": "Citrusy, floral, with a brisk black tea base"
+      }
+    ],
+    "overall_taste_description": "Distinctive citrusy flavor from bergamot oil, balanced with a brisk and sometimes malty black tea base. It is aromatic and refreshing.",
+    "short_summary": "A popular black tea flavored with bergamot oil, known for its distinctive citrus aroma and taste.",
+    "overall_tea_description": "Earl Grey tea is a black tea blend flavored with oil of bergamot, an aromatic citrus fruit. The tea is named after Charles Grey, 2nd Earl Grey, British Prime Minister in the 1830s. While the exact origin is debated, it is widely associated with British tea culture. The base tea is typically a black tea from China, India, or Sri Lanka. Earl Grey is cherished for its distinctive citrusy aroma and flavor, making it a popular choice for both morning and afternoon tea, often enjoyed with or without milk and sugar."
+  }
+
+
+,
+  {
+    "tea_name": "Lady Grey Black Tea",
+    "region_of_origin": "Blended (various, created in UK)",
+    "traditional_name": "Lady Grey",
+    "amount_of_caffiene": 3,
+    "main_tea_type": "Black",
+    "number_of_steeps": {"minimum": 1, "maximum": 2},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 195, "maximum": 208},
+        "duration": {"minimum": 2, "maximum": 4},
+        "steep_number": 1,
+        "steep_taste_description": "Citrusy, floral, with notes of orange and lemon"
+      }
+    ],
+    "overall_taste_description": "A lighter and more delicate version of Earl Grey, with prominent notes of orange and lemon peel alongside the bergamot, resulting in a brighter and more floral citrus flavor.",
+    "short_summary": "A variation of Earl Grey tea with added orange and lemon peel, offering a lighter and more floral citrus flavor.",
+    "overall_tea_description": "Lady Grey tea is a trademarked variation of Earl Grey tea, created by Twinings. It is a black tea flavored with bergamot oil, but with the addition of orange and lemon peel. This gives Lady Grey a lighter, brighter, and more floral citrus aroma and taste compared to the more intense bergamot of traditional Earl Grey. It is often enjoyed by those who prefer a less assertive citrus flavor or a more nuanced aromatic experience."
+  }
+
+
+,
+  {
+    "tea_name": "Prince of Wales Black Tea",
+    "region_of_origin": "Blended (China)",
+    "traditional_name": "Prince of Wales",
+    "amount_of_caffiene": 3,
+    "main_tea_type": "Black",
+    "number_of_steeps": {"minimum": 1, "maximum": 2},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 200, "maximum": 212},
+        "duration": {"minimum": 3, "maximum": 5},
+        "steep_number": 1,
+        "steep_taste_description": "Light, smooth, and mellow, with a hint of floral notes"
+      }
+    ],
+    "overall_taste_description": "Light, smooth, and mellow with a delicate flavor profile. It is less robust than other breakfast teas, often with subtle floral or fruity notes.",
+    "short_summary": "A delicate and smooth Chinese black tea blend, traditionally enjoyed in the afternoon.",
+    "overall_tea_description": "Prince of Wales tea is a blend of Chinese black teas, typically from the Hunan, Jiangxi, Anhui, and Yunnan provinces. It was originally blended by Twinings for Edward, Prince of Wales (later King Edward VIII) in 1921. This tea is known for its light, smooth, and mellow character, making it a more delicate option compared to the stronger breakfast blends. It is often enjoyed in the afternoon, with or without milk and sugar, and is appreciated for its subtle floral and sometimes fruity notes."
+  }
+
+
+
+]
+

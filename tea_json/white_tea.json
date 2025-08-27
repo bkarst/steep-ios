@@ -1,0 +1,913 @@
+[
+  {
+    "tea_name": "Silver Needle White Tea",
+    "region_of_origin": "Fujian Province, China",
+    "traditional_name": "Baihao Yinzhen",
+    "amount_of_caffiene": 3,
+    "main_tea_type": "White",
+    "number_of_steeps": {"minimum": 3, "maximum": 5},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 2, "maximum": 3},
+        "steep_number": 1,
+        "steep_taste_description": "Light, delicate, floral with sweet notes"
+      },
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 3, "maximum": 4},
+        "steep_number": 2,
+        "steep_taste_description": "More pronounced sweetness, subtle hay or nutty undertones"
+      },
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 4, "maximum": 5},
+        "steep_number": 3,
+        "steep_taste_description": "Milder, still sweet with a clean finish"
+      }
+    ],
+    "overall_taste_description": "Elegant, delicate, and refreshing with notes of hay, honey, and floral undertones. Smooth and sweet with a clean finish.",
+    "short_summary": "A prized white tea from Fujian, China, made from only the unopened buds, known for its delicate flavor and silvery appearance.",
+    "overall_tea_description": "Silver Needle, or Baihao Yinzhen, is considered the highest grade of white tea. It is exclusively made from the tender, unopened leaf buds of the tea plant, which are covered in fine, silvery-white hairs. Originating from Fujian Province in China, this tea is minimally processed, undergoing only wilting and drying. Its delicate processing preserves its natural sweetness and subtle flavors. The liquor is typically pale yellow, offering a clean, smooth, and refreshing taste with floral, honey, and sometimes hay-like notes. Despite its delicate nature, some sources indicate it can have a moderate caffeine content due to being made from young buds. It can be steeped multiple times, with each infusion revealing new nuances."
+  },
+    {
+    "tea_name": "Silver Needle White Tea",
+    "region_of_origin": "Fujian Province, China",
+    "traditional_name": "Baihao Yinzhen",
+    "amount_of_caffiene": 3,
+    "main_tea_type": "White",
+    "number_of_steeps": {"minimum": 3, "maximum": 5},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 2, "maximum": 3},
+        "steep_number": 1,
+        "steep_taste_description": "Light, delicate, floral with sweet notes"
+      },
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 3, "maximum": 4},
+        "steep_number": 2,
+        "steep_taste_description": "More pronounced sweetness, subtle hay or nutty undertones"
+      },
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 4, "maximum": 5},
+        "steep_number": 3,
+        "steep_taste_description": "Milder, still sweet with a clean finish"
+      }
+    ],
+    "overall_taste_description": "Elegant, delicate, and refreshing with notes of hay, honey, and floral undertones. Smooth and sweet with a clean finish.",
+    "short_summary": "A prized white tea from Fujian, China, made from only the unopened buds, known for its delicate flavor and silvery appearance.",
+    "overall_tea_description": "Silver Needle, or Baihao Yinzhen, is considered the highest grade of white tea. It is exclusively made from the tender, unopened leaf buds of the tea plant, which are covered in fine, silvery-white hairs. Originating from Fujian Province in China, this tea is minimally processed, undergoing only wilting and drying. Its delicate processing preserves its natural sweetness and subtle flavors. The liquor is typically pale yellow, offering a clean, smooth, and refreshing taste with floral, honey, and sometimes hay-like notes. Despite its delicate nature, some sources indicate it can have a moderate caffeine content due to being made from young buds. It can be steeped multiple times, with each infusion revealing new nuances."
+  }
+]
+
+
+,
+  {
+    "tea_name": "White Peony White Tea",
+    "region_of_origin": "Fujian Province, China",
+    "traditional_name": "Bai Mudan",
+    "amount_of_caffiene": 2,
+    "main_tea_type": "White",
+    "number_of_steeps": {"minimum": 3, "maximum": 5},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 180, "maximum": 190},
+        "duration": {"minimum": 2, "maximum": 3},
+        "steep_number": 1,
+        "steep_taste_description": "Mellow, sweet, with floral and fruity notes"
+      },
+      {
+        "temperature": {"minimum": 180, "maximum": 190},
+        "duration": {"minimum": 3, "maximum": 4},
+        "steep_number": 2,
+        "steep_taste_description": "More pronounced sweetness, subtle vegetal or nutty undertones"
+      },
+      {
+        "temperature": {"minimum": 180, "maximum": 190},
+        "duration": {"minimum": 4, "maximum": 5},
+        "steep_number": 3,
+        "steep_taste_description": "Lighter, still sweet with a clean and refreshing finish"
+      }
+    ],
+    "overall_taste_description": "A smooth and mellow white tea with a delicate balance of floral, fruity, and sometimes nutty or vegetal notes. It has a lingering sweetness and a refreshing aftertaste.",
+    "short_summary": "A popular white tea from Fujian, China, made from one bud and one or two leaves, offering a fuller body than Silver Needle with a delicate, sweet flavor.",
+    "overall_tea_description": "White Peony, or Bai Mudan, is a renowned white tea from Fujian Province, China. It is crafted from one bud and one or two young leaves, giving it a slightly fuller body and more complex flavor profile than Silver Needle. The processing is minimal, involving wilting and drying, which helps preserve its natural characteristics. Bai Mudan typically yields a pale golden liquor with a smooth, mellow taste, often described as having floral, fruity (like dried apricots), and sometimes subtle nutty or vegetal notes. Its caffeine content is generally lower than black or green teas, making it suitable for anytime enjoyment. It can be steeped multiple times, with each infusion revealing different layers of its nuanced flavor."
+  }
+]
+
+
+,
+  {
+    "tea_name": "Tribute Eyebrow White Tea",
+    "region_of_origin": "Fujian Province, China",
+    "traditional_name": "Gong Mei",
+    "amount_of_caffiene": 2,
+    "main_tea_type": "White",
+    "number_of_steeps": {"minimum": 3, "maximum": 5},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 190, "maximum": 200},
+        "duration": {"minimum": 2, "maximum": 3},
+        "steep_number": 1,
+        "steep_taste_description": "Bolder than other white teas, with fruity and slightly earthy notes"
+      },
+      {
+        "temperature": {"minimum": 190, "maximum": 200},
+        "duration": {"minimum": 3, "maximum": 4},
+        "steep_number": 2,
+        "steep_taste_description": "Enhanced fruitiness, with a smooth and mellow character"
+      },
+      {
+        "temperature": {"minimum": 190, "maximum": 200},
+        "duration": {"minimum": 4, "maximum": 5},
+        "steep_number": 3,
+        "steep_taste_description": "Milder, yet still flavorful with lingering sweetness"
+      }
+    ],
+    "overall_taste_description": "A more robust white tea with a stronger flavor profile compared to Silver Needle and White Peony. It often presents with fruity, slightly earthy, and sometimes floral notes, offering a smooth and mellow experience.",
+    "short_summary": "A white tea from Fujian, China, made from more mature leaves than Bai Mudan, resulting in a bolder flavor with fruity and earthy characteristics.",
+    "overall_tea_description": "Tribute Eyebrow, or Gong Mei, is a white tea primarily produced in Fujian Province, China. It is made from more mature leaves and sometimes buds, harvested later in the season than Silver Needle or White Peony. This gives Gong Mei a bolder and more complex flavor profile, often described as having distinct fruity notes (like peach or apricot), a pleasant earthiness, and sometimes a hint of floral sweetness. Its processing is similar to other white teas, involving minimal oxidation through wilting and drying. Gong Mei typically has a moderate caffeine content and can be steeped multiple times, with each infusion offering a slightly different nuance of its rich flavor."
+  }
+]
+
+
+,
+  {
+    "tea_name": "Longevity Eyebrow White Tea",
+    "region_of_origin": "Fujian Province, China",
+    "traditional_name": "Shou Mei",
+    "amount_of_caffiene": 2,
+    "main_tea_type": "White",
+    "number_of_steeps": {"minimum": 4, "maximum": 6},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 195, "maximum": 205},
+        "duration": {"minimum": 2, "maximum": 3},
+        "steep_number": 1,
+        "steep_taste_description": "Full-bodied with fruity, earthy, and sometimes woody notes"
+      },
+      {
+        "temperature": {"minimum": 195, "maximum": 205},
+        "duration": {"minimum": 3, "maximum": 4},
+        "steep_number": 2,
+        "steep_taste_description": "Enhanced sweetness and complexity, with lingering fruitiness"
+      },
+      {
+        "temperature": {"minimum": 195, "maximum": 205},
+        "duration": {"minimum": 4, "maximum": 5},
+        "steep_number": 3,
+        "steep_taste_description": "Milder, yet still rich with a smooth and comforting finish"
+      }
+    ],
+    "overall_taste_description": "A robust and full-bodied white tea with a complex flavor profile that can include fruity, earthy, woody, and sometimes spicy notes. It often has a smooth, sweet, and comforting finish.",
+    "short_summary": "A rustic white tea from Fujian, China, made from more mature leaves and stems, known for its bold flavor and ability to age well.",
+    "overall_tea_description": "Longevity Eyebrow, or Shou Mei, is a white tea produced in Fujian Province, China, and is known for its more rustic appearance and robust flavor compared to other white teas. It is made from more mature leaves and stems, often harvested later in the season. This gives Shou Mei a darker liquor and a bolder taste profile, with notes that can range from fruity and earthy to woody and slightly spicy. It is also highly regarded for its aging potential, with aged Shou Mei developing deeper and more complex flavors over time. Its caffeine content is generally moderate. Shou Mei can withstand multiple infusions, making it a versatile and satisfying tea."
+  }
+]
+
+
+,
+  {
+    "tea_name": "Fujian New Craft White Tea",
+    "region_of_origin": "Fujian Province, China",
+    "traditional_name": "Xin Gong Yi",
+    "amount_of_caffiene": 3,
+    "main_tea_type": "White",
+    "number_of_steeps": {"minimum": 2, "maximum": 4},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 180, "maximum": 190},
+        "duration": {"minimum": 2, "maximum": 3},
+        "steep_number": 1,
+        "steep_taste_description": "Bolder flavor than other white teas, with a full and robust character, sometimes with a unique minty or herbal note."
+      },
+      {
+        "temperature": {"minimum": 180, "maximum": 190},
+        "duration": {"minimum": 3, "maximum": 4},
+        "steep_number": 2,
+        "steep_taste_description": "Continued bold flavor, with enhanced depth and a smooth finish."
+      }
+    ],
+    "overall_taste_description": "A unique white tea with a bolder and fuller flavor profile compared to more delicate white teas. It can have a robust, sometimes minty or herbal taste with a clean and satisfying finish.",
+    "short_summary": "A newer white tea from Fujian, China, known for its distinctively bolder flavor and fuller body, often with unique herbal notes.",
+    "overall_tea_description": "Fujian New Craft, or Xin Gong Yi, is a white tea developed in Fujian Province, China, in the late 1960s to meet growing demand. Unlike traditional white teas that primarily use buds or young leaves, Fujian New Craft utilizes slightly more mature leaves, which contributes to its distinctively bolder and fuller flavor profile. It undergoes minimal processing, similar to other white teas, involving wilting and drying. This tea offers a more robust taste experience, often described as having a darker, fuller flavor with a bold finish, and sometimes unique medicinal or spearmint notes. Its caffeine content is moderate, and it can be steeped multiple times, providing a satisfying and flavorful cup."
+  }
+]
+
+
+,
+  {
+    "tea_name": "Darjeeling White Tea",
+    "region_of_origin": "Darjeeling, West Bengal, India",
+    "traditional_name": "Darjeeling White",
+    "amount_of_caffiene": 2,
+    "main_tea_type": "White",
+    "number_of_steeps": {"minimum": 2, "maximum": 3},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 2, "maximum": 3},
+        "steep_number": 1,
+        "steep_taste_description": "Delicate, floral, and sweet with subtle muscatel notes"
+      },
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 3, "maximum": 4},
+        "steep_number": 2,
+        "steep_taste_description": "Continued floral and sweet notes, with a slightly more pronounced body"
+      }
+    ],
+    "overall_taste_description": "A delicate and fragrant white tea with characteristic floral and sweet notes, often accompanied by a subtle muscatel flavor unique to Darjeeling teas. It has a light body and a clean finish.",
+    "short_summary": "A white tea from the Darjeeling region of India, known for its delicate floral aroma, sweet taste, and subtle muscatel notes.",
+    "overall_tea_description": "Darjeeling White Tea is a prized white tea produced in the Darjeeling region of West Bengal, India, often referred to as the 'Champagne of Teas.' It is made from young tea buds and leaves, minimally processed to preserve its delicate flavor and aroma. Darjeeling White tea is characterized by its light, floral, and sweet taste, often with the distinctive muscatel notes found in Darjeeling teas. Its caffeine content is generally low to moderate. It can be steeped multiple times, offering a refreshing and nuanced tea experience."
+  }
+]
+
+
+,
+  {
+    "tea_name": "Assam White Tea",
+    "region_of_origin": "Assam, India",
+    "traditional_name": "Assam White",
+    "amount_of_caffiene": 3,
+    "main_tea_type": "White",
+    "number_of_steeps": {"minimum": 2, "maximum": 3},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 190, "maximum": 200},
+        "duration": {"minimum": 2, "maximum": 3},
+        "steep_number": 1,
+        "steep_taste_description": "Full-bodied with malty, honey, and sometimes fruity notes, smoother than black Assam."
+      },
+      {
+        "temperature": {"minimum": 190, "maximum": 200},
+        "duration": {"minimum": 3, "maximum": 4},
+        "steep_number": 2,
+        "steep_taste_description": "Continued malty sweetness, with a lingering smooth finish."
+      }
+    ],
+    "overall_taste_description": "A full-bodied white tea with characteristic malty notes, often accompanied by hints of honey, fruit, and a smooth, rich finish. It offers a bolder flavor profile than more delicate white teas.",
+    "short_summary": "A white tea from the Assam region of India, known for its malty and full-bodied flavor, a unique characteristic for a white tea.",
+    "overall_tea_description": "Assam White Tea is a less common but distinctive white tea produced in the Assam region of India, primarily known for its robust black teas. Unlike many delicate white teas, Assam White often possesses a fuller body and a malty character, derived from the Camellia sinensis var. assamica tea plant. It typically features notes of honey, fruit, and a smooth finish, offering a unique white tea experience that is bolder than its Chinese counterparts. Its caffeine content can be moderate to high for a white tea, similar to some green teas. It can be steeped multiple times, providing a satisfying and flavorful cup."
+  }
+]
+
+
+,
+  {
+    "tea_name": "Nilgiri White Tea",
+    "region_of_origin": "Nilgiri Mountains, India",
+    "traditional_name": "Nilgiri White",
+    "amount_of_caffiene": 2,
+    "main_tea_type": "White",
+    "number_of_steeps": {"minimum": 2, "maximum": 3},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 3, "maximum": 5},
+        "steep_number": 1,
+        "steep_taste_description": "Delicate, floral, and sometimes fruity with a smooth, clean finish."
+      },
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 4, "maximum": 6},
+        "steep_number": 2,
+        "steep_taste_description": "Continued floral sweetness, with a slightly more pronounced body and lingering notes."
+      }
+    ],
+    "overall_taste_description": "A delicate and refreshing white tea with prominent floral and sometimes fruity notes, a smooth mouthfeel, and a clean, crisp finish. It is known for its bright and lively character.",
+    "short_summary": "A white tea from the Nilgiri Mountains of India, characterized by its delicate floral and fruity notes and a bright, refreshing character.",
+    "overall_tea_description": "Nilgiri White Tea originates from the Nilgiri Mountains in Southern India, a region known for its high-grown teas. This white tea is minimally processed, typically made from young buds and leaves, resulting in a delicate and refreshing brew. It is characterized by its bright, floral, and sometimes fruity notes, often with hints of peach or pear, and a smooth, clean finish. Its caffeine content is generally low, making it a good choice for any time of day. Nilgiri White tea offers a distinct flavor profile that sets it apart from Chinese white teas, showcasing the unique terroir of the Nilgiri region."
+  }
+]
+
+
+,
+  {
+    "tea_name": "Sri Lankan White Tea",
+    "region_of_origin": "Sri Lanka (Ceylon)",
+    "traditional_name": "Ceylon Silver Tips",
+    "amount_of_caffiene": 2,
+    "main_tea_type": "White",
+    "number_of_steeps": {"minimum": 2, "maximum": 3},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 2, "maximum": 3},
+        "steep_number": 1,
+        "steep_taste_description": "Light, delicate, with notes of pine, honey, and a subtle sweetness."
+      },
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 3, "maximum": 4},
+        "steep_number": 2,
+        "steep_taste_description": "Continued delicate sweetness, with a smooth and refreshing character."
+      }
+    ],
+    "overall_taste_description": "A light and delicate white tea with unique notes of pine, honey, and a subtle sweetness. It offers a refreshing and smooth experience with a clean finish.",
+    "short_summary": "A rare white tea from Sri Lanka, made from unopened buds, known for its delicate flavor with notes of pine and honey.",
+    "overall_tea_description": "Sri Lankan White Tea, often referred to as Ceylon Silver Tips, is a highly prized and rare white tea produced in the mountainous regions of Sri Lanka. It is made exclusively from the unopened, silvery-white buds of the tea plant, hand-picked and sun-dried. This minimal processing preserves its delicate flavor profile, which often includes notes of pine, honey, and a subtle sweetness. It is known for its light golden liquor and smooth, refreshing taste. Ceylon Silver Tips generally has a low caffeine content, making it a soothing beverage for any time of day. It can be steeped multiple times, offering a nuanced and elegant tea experience."
+  }
+]
+
+
+,
+  {
+    "tea_name": "Kenyan White Tea",
+    "region_of_origin": "Kenya",
+    "traditional_name": "Kenyan White",
+    "amount_of_caffiene": 2,
+    "main_tea_type": "White",
+    "number_of_steeps": {"minimum": 2, "maximum": 3},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 3, "maximum": 4},
+        "steep_number": 1,
+        "steep_taste_description": "Delicate, creamy, with notes of white chocolate and honeysuckle, sometimes fruity."
+      },
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 4, "maximum": 5},
+        "steep_number": 2,
+        "steep_taste_description": "Continued creamy sweetness, with a smooth and clean finish."
+      }
+    ],
+    "overall_taste_description": "A delicate and creamy white tea with unique notes of white chocolate and honeysuckle, often with a subtle fruitiness. It offers a smooth, clean, and refreshing taste.",
+    "short_summary": "A white tea from Kenya, known for its delicate, creamy flavor with notes of white chocolate and honeysuckle.",
+    "overall_tea_description": "Kenyan White Tea is a relatively new but increasingly popular white tea from Kenya, a country traditionally known for its black tea production. It is often made from young buds and leaves, similar to Chinese white teas, and undergoes minimal processing. Kenyan White Tea is celebrated for its unique flavor profile, which can include delicate, creamy notes reminiscent of white chocolate and honeysuckle, sometimes with hints of dried fruit. Its caffeine content is generally low, making it a pleasant and soothing beverage. It can be steeped multiple times, offering a refreshing and subtly sweet experience."
+  }
+]
+
+
+,
+  {
+    "tea_name": "Nepalese White Tea",
+    "region_of_origin": "Nepal (Himalayan region)",
+    "traditional_name": "Nepalese White",
+    "amount_of_caffiene": 2,
+    "main_tea_type": "White",
+    "number_of_steeps": {"minimum": 2, "maximum": 4},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 170, "maximum": 180},
+        "duration": {"minimum": 2, "maximum": 3},
+        "steep_number": 1,
+        "steep_taste_description": "Light, airy, floral, and crisp with notes of muscat grape and white rose."
+      },
+      {
+        "temperature": {"minimum": 170, "maximum": 180},
+        "duration": {"minimum": 3, "maximum": 4},
+        "steep_number": 2,
+        "steep_taste_description": "Continued floral sweetness, with enhanced complexity and a smooth finish."
+      }
+    ],
+    "overall_taste_description": "A light, airy, and crisp white tea with prominent floral notes, often hints of muscat grape, white rose, and sometimes a creamy caramel finish. It is known for its delicate yet complex flavor profile.",
+    "short_summary": "A white tea from the Himalayan region of Nepal, offering a delicate, floral, and crisp flavor with unique notes of muscat grape and white rose.",
+    "overall_tea_description": "Nepalese White Tea, originating from the high-altitude regions of Nepal, is a relatively new but highly regarded white tea. It is typically made from young buds and leaves, often from specific cultivars, and processed minimally. Nepalese White Tea is celebrated for its delicate, airy, and crisp flavor profile, which can include floral notes, hints of muscat grape, white rose, and sometimes a creamy caramel finish. Its unique terroir contributes to its distinct character. The caffeine content is generally low, making it a soothing and enjoyable tea. It can be steeped multiple times, revealing different layers of its nuanced flavor."
+  }
+]
+
+
+,
+  {
+    "tea_name": "White Earl Grey",
+    "region_of_origin": "Global (typically Chinese white tea base with Italian bergamot)",
+    "traditional_name": "White Earl Grey",
+    "amount_of_caffiene": 2,
+    "main_tea_type": "White",
+    "number_of_steeps": {"minimum": 2, "maximum": 3},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 2, "maximum": 3},
+        "steep_number": 1,
+        "steep_taste_description": "Delicate white tea notes with bright, citrusy bergamot and floral undertones."
+      },
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 3, "maximum": 4},
+        "steep_number": 2,
+        "steep_taste_description": "Continued citrus and floral notes, with a smooth and refreshing character."
+      }
+    ],
+    "overall_taste_description": "A delicate and aromatic white tea infused with the distinctive citrusy flavor of bergamot. It offers a light body, floral notes, and a refreshing, bright finish.",
+    "short_summary": "A white tea blend flavored with bergamot oil, offering a lighter and more delicate version of the classic Earl Grey.",
+    "overall_tea_description": "White Earl Grey is a popular flavored white tea that combines the delicate characteristics of white tea with the distinctive citrusy aroma and flavor of bergamot oil. While traditional Earl Grey uses a black tea base, White Earl Grey offers a lighter and often more floral alternative. The white tea base is typically from China, and the bergamot is often sourced from Italy. It is minimally processed, allowing the natural sweetness and subtle notes of the white tea to complement the bright, fragrant bergamot. Its caffeine content is generally low, making it a pleasant and aromatic beverage for any time of day."
+  }
+]
+
+
+,
+  {
+    "tea_name": "Jasmine White Tea",
+    "region_of_origin": "Fujian Province, China (jasmine from Guangxi Province)",
+    "traditional_name": "Mo Li Yin Zhen (Jasmine Silver Needle)",
+    "amount_of_caffiene": 2,
+    "main_tea_type": "White",
+    "number_of_steeps": {"minimum": 2, "maximum": 4},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 2, "maximum": 3},
+        "steep_number": 1,
+        "steep_taste_description": "Delicate white tea notes beautifully complemented by the fragrant aroma and sweet taste of jasmine blossoms."
+      },
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 3, "maximum": 4},
+        "steep_number": 2,
+        "steep_taste_description": "Continued jasmine fragrance with a smooth, lingering sweetness and a clean finish."
+      }
+    ],
+    "overall_taste_description": "A highly aromatic and delicate white tea with a prominent floral bouquet from jasmine blossoms. It offers a sweet, smooth, and refreshing taste with a lingering fragrant finish.",
+    "short_summary": "A white tea scented with fresh jasmine blossoms, known for its exquisite floral aroma and delicate, sweet flavor.",
+    "overall_tea_description": "Jasmine White Tea is a fragrant and delicate tea created by scenting white tea leaves with fresh jasmine blossoms. The white tea base, often Silver Needle, provides a subtle and sweet foundation that beautifully absorbs the intoxicating aroma of the jasmine flowers. This tea is typically produced in Fujian Province, China, with the jasmine often sourced from Guangxi Province. The process involves layering tea leaves with jasmine petals, allowing the tea to absorb the floral fragrance, and then removing the petals. The result is a tea with an exquisite floral aroma and a delicate, sweet flavor. Its caffeine content is generally low, making it a soothing and aromatic beverage."
+  }
+]
+
+
+,
+  {
+    "tea_name": "Peach Mango White Tea",
+    "region_of_origin": "Global (white tea base typically from China, flavored)",
+    "traditional_name": "Peach Mango White",
+    "amount_of_caffiene": 2,
+    "main_tea_type": "White",
+    "number_of_steeps": {"minimum": 1, "maximum": 2},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 2, "maximum": 3},
+        "steep_number": 1,
+        "steep_taste_description": "Sweet and fruity with prominent peach and tropical mango flavors, balanced by the delicate white tea base."
+      },
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 3, "maximum": 4},
+        "steep_number": 2,
+        "steep_taste_description": "Continued fruitiness, with a smooth and refreshing finish."
+      }
+    ],
+    "overall_taste_description": "A delightful and refreshing white tea blend bursting with the sweet and tropical flavors of ripe peaches and juicy mangoes. The delicate white tea base provides a smooth and clean backdrop for the vibrant fruit notes.",
+    "short_summary": "A flavored white tea combining the delicate notes of white tea with the sweet and tropical essence of peach and mango.",
+    "overall_tea_description": "Peach Mango White Tea is a popular flavored white tea that blends the subtle characteristics of white tea with the vibrant and sweet flavors of peach and mango. The white tea base, often from China, provides a light and delicate foundation that allows the fruit essences to shine. This tea is known for its refreshing and aromatic profile, making it a favorite for both hot and iced preparations. Its caffeine content is typically low, making it a pleasant and enjoyable beverage throughout the day. The combination of natural fruit flavors with the gentle white tea creates a harmonious and delightful sensory experience."
+  }
+]
+
+
+,
+  {
+    "tea_name": "Vanilla White Tea",
+    "region_of_origin": "Global (white tea base typically from China, flavored)",
+    "traditional_name": "Vanilla White",
+    "amount_of_caffiene": 2,
+    "main_tea_type": "White",
+    "number_of_steeps": {"minimum": 1, "maximum": 2},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 2, "maximum": 3},
+        "steep_number": 1,
+        "steep_taste_description": "Delicate white tea notes with a sweet, creamy, and comforting vanilla flavor."
+      },
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 3, "maximum": 4},
+        "steep_number": 2,
+        "steep_taste_description": "Continued vanilla sweetness, with a smooth and mellow finish."
+      }
+    ],
+    "overall_taste_description": "A comforting and aromatic white tea blend featuring the delicate notes of white tea enhanced by the sweet and creamy essence of vanilla. It offers a smooth and mellow taste with a lingering sweet finish.",
+    "short_summary": "A flavored white tea combining the delicate notes of white tea with the sweet and creamy essence of vanilla.",
+    "overall_tea_description": "Vanilla White Tea is a delightful flavored white tea that marries the subtle characteristics of white tea with the rich and comforting aroma and taste of vanilla. The white tea base, often sourced from China, provides a light and gentle backdrop that beautifully complements the sweet and creamy vanilla notes. This blend offers a soothing and aromatic experience, making it a popular choice for those seeking a comforting and flavorful cup. Its caffeine content is typically low, making it suitable for enjoyment throughout the day. The harmonious combination of delicate tea and sweet vanilla creates a truly indulgent and satisfying beverage."
+  }
+]
+
+
+,
+  {
+    "tea_name": "White Peony White Tea",
+    "region_of_origin": "Fujian Province, China",
+    "traditional_name": "Bai Mudan",
+    "amount_of_caffiene": 2,
+    "main_tea_type": "White",
+    "number_of_steeps": {"minimum": 3, "maximum": 5},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 180, "maximum": 190},
+        "duration": {"minimum": 2, "maximum": 3},
+        "steep_number": 1,
+        "steep_taste_description": "Mellow, sweet, with floral and fruity notes"
+      },
+      {
+        "temperature": {"minimum": 180, "maximum": 190},
+        "duration": {"minimum": 3, "maximum": 4},
+        "steep_number": 2,
+        "steep_taste_description": "More pronounced sweetness, subtle vegetal or nutty undertones"
+      },
+      {
+        "temperature": {"minimum": 180, "maximum": 190},
+        "duration": {"minimum": 4, "maximum": 5},
+        "steep_number": 3,
+        "steep_taste_description": "Lighter, still sweet with a clean and refreshing finish"
+      }
+    ],
+    "overall_taste_description": "A smooth and mellow white tea with a delicate balance of floral, fruity, and sometimes nutty or vegetal notes. It has a lingering sweetness and a refreshing aftertaste.",
+    "short_summary": "A popular white tea from Fujian, China, made from one bud and one or two leaves, offering a fuller body than Silver Needle with a delicate, sweet flavor.",
+    "overall_tea_description": "White Peony, or Bai Mudan, is a renowned white tea from Fujian Province, China. It is crafted from one bud and one or two young leaves, giving it a slightly fuller body and more complex flavor profile than Silver Needle. The processing is minimal, involving wilting and drying, which helps preserve its natural characteristics. Bai Mudan typically yields a pale golden liquor with a smooth, mellow taste, often described as having floral, fruity (like dried apricots), and sometimes subtle nutty or vegetal notes. Its caffeine content is generally lower than black or green teas, making it suitable for anytime enjoyment. It can be steeped multiple times, with each infusion revealing different layers of its nuanced flavor."
+  }
+]
+
+
+,
+  {
+    "tea_name": "Tribute Eyebrow White Tea",
+    "region_of_origin": "Fujian Province, China",
+    "traditional_name": "Gong Mei",
+    "amount_of_caffiene": 2,
+    "main_tea_type": "White",
+    "number_of_steeps": {"minimum": 3, "maximum": 5},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 190, "maximum": 200},
+        "duration": {"minimum": 2, "maximum": 3},
+        "steep_number": 1,
+        "steep_taste_description": "Bolder than other white teas, with fruity and slightly earthy notes"
+      },
+      {
+        "temperature": {"minimum": 190, "maximum": 200},
+        "duration": {"minimum": 3, "maximum": 4},
+        "steep_number": 2,
+        "steep_taste_description": "Enhanced fruitiness, with a smooth and mellow character"
+      },
+      {
+        "temperature": {"minimum": 190, "maximum": 200},
+        "duration": {"minimum": 4, "maximum": 5},
+        "steep_number": 3,
+        "steep_taste_description": "Milder, yet still flavorful with lingering sweetness"
+      }
+    ],
+    "overall_taste_description": "A more robust white tea with a stronger flavor profile compared to Silver Needle and White Peony. It often presents with fruity, slightly earthy, and sometimes floral notes, offering a smooth and mellow experience.",
+    "short_summary": "A white tea from Fujian, China, made from more mature leaves than Bai Mudan, resulting in a bolder flavor with fruity and earthy characteristics.",
+    "overall_tea_description": "Tribute Eyebrow, or Gong Mei, is a white tea primarily produced in Fujian Province, China. It is made from more mature leaves and sometimes buds, harvested later in the season than Silver Needle or White Peony. This gives Gong Mei a bolder and more complex flavor profile, often described as having distinct fruity notes (like peach or apricot), a pleasant earthiness, and sometimes a hint of floral sweetness. Its processing is similar to other white teas, involving minimal oxidation through wilting and drying. Gong Mei typically has a moderate caffeine content and can be steeped multiple times, with each infusion offering a slightly different nuance of its rich flavor."
+  }
+]
+
+
+,
+  {
+    "tea_name": "Longevity Eyebrow White Tea",
+    "region_of_origin": "Fujian Province, China",
+    "traditional_name": "Shou Mei",
+    "amount_of_caffiene": 2,
+    "main_tea_type": "White",
+    "number_of_steeps": {"minimum": 4, "maximum": 6},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 195, "maximum": 205},
+        "duration": {"minimum": 2, "maximum": 3},
+        "steep_number": 1,
+        "steep_taste_description": "Full-bodied with fruity, earthy, and sometimes woody notes"
+      },
+      {
+        "temperature": {"minimum": 195, "maximum": 205},
+        "duration": {"minimum": 3, "maximum": 4},
+        "steep_number": 2,
+        "steep_taste_description": "Enhanced sweetness and complexity, with lingering fruitiness"
+      },
+      {
+        "temperature": {"minimum": 195, "maximum": 205},
+        "duration": {"minimum": 4, "maximum": 5},
+        "steep_number": 3,
+        "steep_taste_description": "Milder, yet still rich with a smooth and comforting finish"
+      }
+    ],
+    "overall_taste_description": "A robust and full-bodied white tea with a complex flavor profile that can include fruity, earthy, woody, and sometimes spicy notes. It often has a smooth, sweet, and comforting finish.",
+    "short_summary": "A rustic white tea from Fujian, China, made from more mature leaves and stems, known for its bold flavor and ability to age well.",
+    "overall_tea_description": "Longevity Eyebrow, or Shou Mei, is a white tea produced in Fujian Province, China, and is known for its more rustic appearance and robust flavor compared to other white teas. It is made from more mature leaves and stems, often harvested later in the season. This gives Shou Mei a darker liquor and a bolder taste profile, with notes that can range from fruity and earthy to woody and slightly spicy. It is also highly regarded for its aging potential, with aged Shou Mei developing deeper and more complex flavors over time. Its caffeine content is generally moderate. Shou Mei can withstand multiple infusions, making it a versatile and satisfying tea."
+  }
+]
+
+
+,
+  {
+    "tea_name": "Fujian New Craft White Tea",
+    "region_of_origin": "Fujian Province, China",
+    "traditional_name": "Xin Gong Yi",
+    "amount_of_caffiene": 3,
+    "main_tea_type": "White",
+    "number_of_steeps": {"minimum": 2, "maximum": 4},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 180, "maximum": 190},
+        "duration": {"minimum": 2, "maximum": 3},
+        "steep_number": 1,
+        "steep_taste_description": "Bolder flavor than other white teas, with a full and robust character, sometimes with a unique minty or herbal note."
+      },
+      {
+        "temperature": {"minimum": 180, "maximum": 190},
+        "duration": {"minimum": 3, "maximum": 4},
+        "steep_number": 2,
+        "steep_taste_description": "Continued bold flavor, with enhanced depth and a smooth finish."
+      }
+    ],
+    "overall_taste_description": "A unique white tea with a bolder and fuller flavor profile compared to more delicate white teas. It can have a robust, sometimes minty or herbal taste with a clean and satisfying finish.",
+    "short_summary": "A newer white tea from Fujian, China, known for its distinctively bolder flavor and fuller body, often with unique herbal notes.",
+    "overall_tea_description": "Fujian New Craft, or Xin Gong Yi, is a white tea developed in Fujian Province, China, in the late 1960s to meet growing demand. Unlike traditional white teas that primarily use buds or young leaves, Fujian New Craft utilizes slightly more mature leaves, which contributes to its distinctively bolder and fuller flavor profile. It undergoes minimal processing, similar to other white teas, involving wilting and drying. This tea offers a more robust taste experience, often described as having a darker, fuller flavor with a bold finish, and sometimes unique medicinal or spearmint notes. Its caffeine content is moderate, and it can be steeped multiple times, providing a satisfying and flavorful cup."
+  }
+]
+
+
+,
+  {
+    "tea_name": "Darjeeling White Tea",
+    "region_of_origin": "Darjeeling, West Bengal, India",
+    "traditional_name": "Darjeeling White",
+    "amount_of_caffiene": 2,
+    "main_tea_type": "White",
+    "number_of_steeps": {"minimum": 2, "maximum": 3},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 2, "maximum": 3},
+        "steep_number": 1,
+        "steep_taste_description": "Delicate, floral, and sweet with subtle muscatel notes"
+      },
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 3, "maximum": 4},
+        "steep_number": 2,
+        "steep_taste_description": "Continued floral and sweet notes, with a slightly more pronounced body"
+      }
+    ],
+    "overall_taste_description": "A delicate and fragrant white tea with characteristic floral and sweet notes, often accompanied by a subtle muscatel flavor unique to Darjeeling teas. It has a light body and a clean finish.",
+    "short_summary": "A white tea from the Darjeeling region of India, known for its delicate floral aroma, sweet taste, and subtle muscatel notes.",
+    "overall_tea_description": "Darjeeling White Tea is a prized white tea produced in the Darjeeling region of West Bengal, India, often referred to as the 'Champagne of Teas.' It is made from young tea buds and leaves, minimally processed to preserve its delicate flavor and aroma. Darjeeling White tea is characterized by its light, floral, and sweet taste, often with the distinctive muscatel notes found in Darjeeling teas. Its caffeine content is generally low to moderate. It can be steeped multiple times, offering a refreshing and nuanced tea experience."
+  }
+]
+
+
+,
+  {
+    "tea_name": "Assam White Tea",
+    "region_of_origin": "Assam, India",
+    "traditional_name": "Assam White",
+    "amount_of_caffiene": 3,
+    "main_tea_type": "White",
+    "number_of_steeps": {"minimum": 2, "maximum": 3},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 190, "maximum": 200},
+        "duration": {"minimum": 2, "maximum": 3},
+        "steep_number": 1,
+        "steep_taste_description": "Full-bodied with malty, honey, and sometimes fruity notes, smoother than black Assam."
+      },
+      {
+        "temperature": {"minimum": 190, "maximum": 200},
+        "duration": {"minimum": 3, "maximum": 4},
+        "steep_number": 2,
+        "steep_taste_description": "Continued malty sweetness, with a lingering smooth finish."
+      }
+    ],
+    "overall_taste_description": "A full-bodied white tea with characteristic malty notes, often accompanied by hints of honey, fruit, and a smooth, rich finish. It offers a bolder flavor profile than more delicate white teas.",
+    "short_summary": "A white tea from the Assam region of India, known for its malty and full-bodied flavor, a unique characteristic for a white tea.",
+    "overall_tea_description": "Assam White Tea is a less common but distinctive white tea produced in the Assam region of India, primarily known for its robust black teas. Unlike many delicate white teas, Assam White often possesses a fuller body and a malty character, derived from the Camellia sinensis var. assamica tea plant. It typically features notes of honey, fruit, and a smooth finish, offering a unique white tea experience that is bolder than its Chinese counterparts. Its caffeine content can be moderate to high for a white tea, similar to some green teas. It can be steeped multiple times, providing a satisfying and flavorful cup."
+  }
+]
+
+
+,
+  {
+    "tea_name": "Nilgiri White Tea",
+    "region_of_origin": "Nilgiri Mountains, India",
+    "traditional_name": "Nilgiri White",
+    "amount_of_caffiene": 2,
+    "main_tea_type": "White",
+    "number_of_steeps": {"minimum": 2, "maximum": 3},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 3, "maximum": 5},
+        "steep_number": 1,
+        "steep_taste_description": "Delicate, floral, and sometimes fruity with a smooth, clean finish."
+      },
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 4, "maximum": 6},
+        "steep_number": 2,
+        "steep_taste_description": "Continued floral sweetness, with a slightly more pronounced body and lingering notes."
+      }
+    ],
+    "overall_taste_description": "A delicate and refreshing white tea with prominent floral and sometimes fruity notes, a smooth mouthfeel, and a clean, crisp finish. It is known for its bright and lively character.",
+    "short_summary": "A white tea from the Nilgiri Mountains of India, characterized by its delicate floral and fruity notes and a bright, refreshing character.",
+    "overall_tea_description": "Nilgiri White Tea originates from the Nilgiri Mountains in Southern India, a region known for its high-grown teas. This white tea is minimally processed, typically made from young buds and leaves, resulting in a delicate and refreshing brew. It is characterized by its bright, floral, and sometimes fruity notes, often with hints of peach or pear, and a smooth, clean finish. Its caffeine content is generally low, making it a good choice for any time of day. Nilgiri White tea offers a distinct flavor profile that sets it apart from Chinese white teas, showcasing the unique terroir of the Nilgiri region."
+  }
+]
+
+
+,
+  {
+    "tea_name": "Sri Lankan White Tea",
+    "region_of_origin": "Sri Lanka (Ceylon)",
+    "traditional_name": "Ceylon Silver Tips",
+    "amount_of_caffiene": 2,
+    "main_tea_type": "White",
+    "number_of_steeps": {"minimum": 2, "maximum": 3},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 2, "maximum": 3},
+        "steep_number": 1,
+        "steep_taste_description": "Light, delicate, with notes of pine, honey, and a subtle sweetness."
+      },
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 3, "maximum": 4},
+        "steep_number": 2,
+        "steep_taste_description": "Continued delicate sweetness, with a smooth and refreshing character."
+      }
+    ],
+    "overall_taste_description": "A light and delicate white tea with unique notes of pine, honey, and a subtle sweetness. It offers a refreshing and smooth experience with a clean finish.",
+    "short_summary": "A rare white tea from Sri Lanka, made from unopened buds, known for its delicate flavor with notes of pine and honey.",
+    "overall_tea_description": "Sri Lankan White Tea, often referred to as Ceylon Silver Tips, is a highly prized and rare white tea produced in the mountainous regions of Sri Lanka. It is made exclusively from the unopened, silvery-white buds of the tea plant, hand-picked and sun-dried. This minimal processing preserves its delicate flavor profile, which often includes notes of pine, honey, and a subtle sweetness. It is known for its light golden liquor and smooth, refreshing taste. Ceylon Silver Tips generally has a low caffeine content, making it a soothing beverage for any time of day. It can be steeped multiple times, offering a nuanced and elegant tea experience."
+  }
+]
+
+
+,
+  {
+    "tea_name": "Kenyan White Tea",
+    "region_of_origin": "Kenya",
+    "traditional_name": "Kenyan White",
+    "amount_of_caffiene": 2,
+    "main_tea_type": "White",
+    "number_of_steeps": {"minimum": 2, "maximum": 3},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 3, "maximum": 4},
+        "steep_number": 1,
+        "steep_taste_description": "Delicate, creamy, with notes of white chocolate and honeysuckle, sometimes fruity."
+      },
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 4, "maximum": 5},
+        "steep_number": 2,
+        "steep_taste_description": "Continued creamy sweetness, with a smooth and clean finish."
+      }
+    ],
+    "overall_taste_description": "A delicate and creamy white tea with unique notes of white chocolate and honeysuckle, often with a subtle fruitiness. It offers a smooth, clean, and refreshing taste.",
+    "short_summary": "A white tea from Kenya, known for its delicate, creamy flavor with notes of white chocolate and honeysuckle.",
+    "overall_tea_description": "Kenyan White Tea is a relatively new but increasingly popular white tea from Kenya, a country traditionally known for its black tea production. It is often made from young buds and leaves, similar to Chinese white teas, and undergoes minimal processing. Kenyan White Tea is celebrated for its unique flavor profile, which can include delicate, creamy notes reminiscent of white chocolate and honeysuckle, sometimes with hints of dried fruit. Its caffeine content is generally low, making it a pleasant and soothing beverage. It can be steeped multiple times, offering a refreshing and subtly sweet experience."
+  }
+]
+
+
+,
+  {
+    "tea_name": "Nepalese White Tea",
+    "region_of_origin": "Nepal (Himalayan region)",
+    "traditional_name": "Nepalese White",
+    "amount_of_caffiene": 2,
+    "main_tea_type": "White",
+    "number_of_steeps": {"minimum": 2, "maximum": 4},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 170, "maximum": 180},
+        "duration": {"minimum": 2, "maximum": 3},
+        "steep_number": 1,
+        "steep_taste_description": "Light, airy, floral, and crisp with notes of muscat grape and white rose."
+      },
+      {
+        "temperature": {"minimum": 170, "maximum": 180},
+        "duration": {"minimum": 3, "maximum": 4},
+        "steep_number": 2,
+        "steep_taste_description": "Continued floral sweetness, with enhanced complexity and a smooth finish."
+      }
+    ],
+    "overall_taste_description": "A light, airy, and crisp white tea with prominent floral notes, often hints of muscat grape, white rose, and sometimes a creamy caramel finish. It is known for its delicate yet complex flavor profile.",
+    "short_summary": "A white tea from the Himalayan region of Nepal, offering a delicate, floral, and crisp flavor with unique notes of muscat grape and white rose.",
+    "overall_tea_description": "Nepalese White Tea, originating from the high-altitude regions of Nepal, is a relatively new but highly regarded white tea. It is typically made from young buds and leaves, often from specific cultivars, and processed minimally. Nepalese White Tea is celebrated for its delicate, airy, and crisp flavor profile, which can include floral notes, hints of muscat grape, white rose, and sometimes a creamy caramel finish. Its unique terroir contributes to its distinct character. The caffeine content is generally low, making it a soothing and enjoyable tea. It can be steeped multiple times, revealing different layers of its nuanced flavor."
+  }
+]
+
+
+,
+  {
+    "tea_name": "White Earl Grey",
+    "region_of_origin": "Global (typically Chinese white tea base with Italian bergamot)",
+    "traditional_name": "White Earl Grey",
+    "amount_of_caffiene": 2,
+    "main_tea_type": "White",
+    "number_of_steeps": {"minimum": 2, "maximum": 3},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 2, "maximum": 3},
+        "steep_number": 1,
+        "steep_taste_description": "Delicate white tea notes with bright, citrusy bergamot and floral undertones."
+      },
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 3, "maximum": 4},
+        "steep_number": 2,
+        "steep_taste_description": "Continued citrus and floral notes, with a smooth and refreshing character."
+      }
+    ],
+    "overall_taste_description": "A delicate and aromatic white tea infused with the distinctive citrusy flavor of bergamot. It offers a light body, floral notes, and a refreshing, bright finish.",
+    "short_summary": "A white tea blend flavored with bergamot oil, offering a lighter and more delicate version of the classic Earl Grey.",
+    "overall_tea_description": "White Earl Grey is a popular flavored white tea that combines the delicate characteristics of white tea with the distinctive citrusy aroma and flavor of bergamot oil. While traditional Earl Grey uses a black tea base, White Earl Grey offers a lighter and often more floral alternative. The white tea base is typically from China, and the bergamot is often sourced from Italy. It is minimally processed, allowing the natural sweetness and subtle notes of the white tea to complement the bright, fragrant bergamot. Its caffeine content is generally low, making it a pleasant and aromatic beverage for any time of day."
+  }
+]
+
+
+,
+  {
+    "tea_name": "Jasmine White Tea",
+    "region_of_origin": "Fujian Province, China (jasmine from Guangxi Province)",
+    "traditional_name": "Mo Li Yin Zhen (Jasmine Silver Needle)",
+    "amount_of_caffiene": 2,
+    "main_tea_type": "White",
+    "number_of_steeps": {"minimum": 2, "maximum": 4},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 2, "maximum": 3},
+        "steep_number": 1,
+        "steep_taste_description": "Delicate white tea notes beautifully complemented by the fragrant aroma and sweet taste of jasmine blossoms."
+      },
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 3, "maximum": 4},
+        "steep_number": 2,
+        "steep_taste_description": "Continued jasmine fragrance with a smooth, lingering sweetness and a clean finish."
+      }
+    ],
+    "overall_taste_description": "A highly aromatic and delicate white tea with a prominent floral bouquet from jasmine blossoms. It offers a sweet, smooth, and refreshing taste with a lingering fragrant finish.",
+    "short_summary": "A white tea scented with fresh jasmine blossoms, known for its exquisite floral aroma and delicate, sweet flavor.",
+    "overall_tea_description": "Jasmine White Tea is a fragrant and delicate tea created by scenting white tea leaves with fresh jasmine blossoms. The white tea base, often Silver Needle, provides a subtle and sweet foundation that beautifully absorbs the intoxicating aroma of the jasmine flowers. This tea is typically produced in Fujian Province, China, with the jasmine often sourced from Guangxi Province. The process involves layering tea leaves with jasmine petals, allowing the tea to absorb the floral fragrance, and then removing the petals. The result is a tea with an exquisite floral aroma and a delicate, sweet flavor. Its caffeine content is generally low, making it a soothing and aromatic beverage."
+  }
+]
+
+
+,
+  {
+    "tea_name": "Peach Mango White Tea",
+    "region_of_origin": "Global (white tea base typically from China, flavored)",
+    "traditional_name": "Peach Mango White",
+    "amount_of_caffiene": 2,
+    "main_tea_type": "White",
+    "number_of_steeps": {"minimum": 1, "maximum": 2},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 2, "maximum": 3},
+        "steep_number": 1,
+        "steep_taste_description": "Sweet and fruity with prominent peach and tropical mango flavors, balanced by the delicate white tea base."
+      },
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 3, "maximum": 4},
+        "steep_number": 2,
+        "steep_taste_description": "Continued fruitiness, with a smooth and refreshing finish."
+      }
+    ],
+    "overall_taste_description": "A delightful and refreshing white tea blend bursting with the sweet and tropical flavors of ripe peaches and juicy mangoes. The delicate white tea base provides a smooth and clean backdrop for the vibrant fruit notes.",
+    "short_summary": "A flavored white tea combining the delicate notes of white tea with the sweet and tropical essence of peach and mango.",
+    "overall_tea_description": "Peach Mango White Tea is a popular flavored white tea that blends the subtle characteristics of white tea with the vibrant and sweet flavors of peach and mango. The white tea base, often from China, provides a light and delicate foundation that allows the fruit essences to shine. This tea is known for its refreshing and aromatic profile, making it a favorite for both hot and iced preparations. Its caffeine content is typically low, making it a pleasant and enjoyable beverage throughout the day. The combination of natural fruit flavors with the gentle white tea creates a harmonious and delightful sensory experience."
+  }
+]
+
+
+,
+  {
+    "tea_name": "Vanilla White Tea",
+    "region_of_origin": "Global (white tea base typically from China, flavored)",
+    "traditional_name": "Vanilla White",
+    "amount_of_caffiene": 2,
+    "main_tea_type": "White",
+    "number_of_steeps": {"minimum": 1, "maximum": 2},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 2, "maximum": 3},
+        "steep_number": 1,
+        "steep_taste_description": "Delicate white tea notes with a sweet, creamy, and comforting vanilla flavor."
+      },
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 3, "maximum": 4},
+        "steep_number": 2,
+        "steep_taste_description": "Continued vanilla sweetness, with a smooth and mellow finish."
+      }
+    ],
+    "overall_taste_description": "A comforting and aromatic white tea blend featuring the delicate notes of white tea enhanced by the sweet and creamy essence of vanilla. It offers a smooth and mellow taste with a lingering sweet finish.",
+    "short_summary": "A flavored white tea combining the delicate notes of white tea with the sweet and creamy essence of vanilla.",
+    "overall_tea_description": "Vanilla White Tea is a delightful flavored white tea that marries the subtle characteristics of white tea with the rich and comforting aroma and taste of vanilla. The white tea base, often sourced from China, provides a light and gentle backdrop that beautifully complements the sweet and creamy vanilla notes. This blend offers a soothing and aromatic experience, making it a popular choice for those seeking a comforting and flavorful cup. Its caffeine content is typically low, making it suitable for enjoyment throughout the day. The harmonious combination of delicate tea and sweet vanilla creates a truly indulgent and satisfying beverage."
+  }
+]
+

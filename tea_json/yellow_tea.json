@@ -1,0 +1,228 @@
+[
+  {
+    "tea_name": "Jun Shan Yin Zhen",
+    "region_of_origin": "Junshan Island, Hunan Province, China",
+    "traditional_name": "Junshan Silver Needle",
+    "amount_of_caffiene": 2,
+    "caffiene_mg_per_8_oz": 30,
+    "main_tea_type": "Yellow",
+    "number_of_steeps": {"minimum": 3, "maximum": 4},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 170, "maximum": 175},
+        "duration": {"minimum": 2, "maximum": 3},
+        "steep_number": 1,
+        "steep_taste_description": "Light, sweet, with notes of melon, muscatel, and sugarcane."
+      },
+      {
+        "temperature": {"minimum": 170, "maximum": 175},
+        "duration": {"minimum": 2, "maximum": 3},
+        "steep_number": 2,
+        "steep_taste_description": "Deeper yellow, more savory, herbal notes become more prominent."
+      },
+      {
+        "temperature": {"minimum": 170, "maximum": 175},
+        "duration": {"minimum": 3, "maximum": 4},
+        "steep_number": 3,
+        "steep_taste_description": "Full-bodied, slightly spicy with a lasting sweetness."
+      }
+    ],
+    "overall_taste_description": "Sweet, nutty undertones, with notes of melon, muscatel, sugarcane, and a comforting, stimulating character.",
+    "short_summary": "Jun Shan Yin Zhen is a rare and highly prized yellow tea from Hunan, China, known for its delicate flavor and unique processing.",
+    "overall_tea_description": "Jun Shan Yin Zhen, also known as Junshan Silver Needle, is considered one of China's rarest teas. It is produced on Junshan Island in Hunan Province and is characterized by its beautiful sage downy green and silvery buds. The tea has a sweet and nutty taste with notes of melon, muscatel, and sugarcane. It is lightly oxidized, resulting in a mellow flavor without the astringency of green tea. It can be steeped multiple times, with each steep revealing different nuances of its complex flavor profile."
+  }
+]
+
+
+,
+  {
+    "tea_name": "Meng Ding Huang Ya",
+    "region_of_origin": "Mount Meng, Sichuan Province, China",
+    "traditional_name": "Meng Ding Yellow Buds",
+    "amount_of_caffiene": 2,
+    "caffiene_mg_per_8_oz": 30,
+    "main_tea_type": "Yellow",
+    "number_of_steeps": {"minimum": 3, "maximum": 5},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 160, "maximum": 175},
+        "duration": {"minimum": 0.5, "maximum": 1},
+        "steep_number": 1,
+        "steep_taste_description": "Light, sweet, with hazelnut, vanilla, and herbal notes."
+      },
+      {
+        "temperature": {"minimum": 160, "maximum": 175},
+        "duration": {"minimum": 0.5, "maximum": 1},
+        "steep_number": 2,
+        "steep_taste_description": "Creamy texture, with hints of green apple and melon."
+      },
+      {
+        "temperature": {"minimum": 160, "maximum": 175},
+        "duration": {"minimum": 0.75, "maximum": 1.5},
+        "steep_number": 3,
+        "steep_taste_description": "Nutty and sweet, with a mild flavor and smooth finish."
+      }
+    ],
+    "overall_taste_description": "Sweet, nutty, with hints of vanilla, green apple, melon, and a creamy texture. Mellow and refreshing.",
+    "short_summary": "Meng Ding Huang Ya is a rare yellow tea from Sichuan, China, known for its sweet and nutty flavor profile.",
+    "overall_tea_description": "Meng Ding Huang Ya, also known as Meng Ding Yellow Buds, is a highly regarded yellow tea from Mount Meng in Sichuan Province, China. It is characterized by its long, straight leaf buds and light yellow liquor. The tea offers a delicate sweetness with notes of hazelnut, vanilla, and herbs, often complemented by hints of green apple and melon. Its processing involves a unique 'men huang' step that removes the grassy notes typically found in green teas, resulting in a smooth, mellow, and refreshing cup. It can be steeped multiple times, revealing a complex and evolving flavor."
+  }
+
+
+,
+  {
+    "tea_name": "Mo Gan Huang Ya",
+    "region_of_origin": "Moganshan, Zhejiang Province, China",
+    "traditional_name": "Mo Gan Yellow Buds",
+    "amount_of_caffiene": 2,
+    "caffiene_mg_per_8_oz": 30,
+    "main_tea_type": "Yellow",
+    "number_of_steeps": {"minimum": 3, "maximum": 5},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 170, "maximum": 185},
+        "duration": {"minimum": 2, "maximum": 3},
+        "steep_number": 1,
+        "steep_taste_description": "Smooth, creamy nuttiness, with hints of wildflower and honey."
+      },
+      {
+        "temperature": {"minimum": 170, "maximum": 185},
+        "duration": {"minimum": 3, "maximum": 4},
+        "steep_number": 2,
+        "steep_taste_description": "Thick broth-like infusion, with umami sweetness and a slight tingle."
+      },
+      {
+        "temperature": {"minimum": 170, "maximum": 185},
+        "duration": {"minimum": 4, "maximum": 5},
+        "steep_number": 3,
+        "steep_taste_description": "Lingering umami sweetness, with a clean, strong finish."
+      }
+    ],
+    "overall_taste_description": "Nutty, umami, with a thick mouthfeel, wildflower aroma, and a honeyed, lingering sweetness.",
+    "short_summary": "Mo Gan Huang Ya is a rare yellow tea from Zhejiang, China, known for its nutty, umami, and honeyed flavor.",
+    "overall_tea_description": "Mo Gan Huang Ya, also known as Mo Gan Yellow Buds, is a rare yellow tea produced in Moganshan, Zhejiang Province, China. It is made using complex yellow tea processing techniques, resulting in a unique flavor profile. The tea offers a smooth, creamy nuttiness, almost like sweetened peanut butter, with hints of wildflower and honey. It has a thick, broth-like infusion with an umami sweetness and a slight tingle on the tongue. This tea is known for its gentle yet deep flavor and naturally sweet taste due to its high amino acid content, with virtually no bitterness or grassy notes."
+  }
+
+
+,
+  {
+    "tea_name": "Huo Shan Huang Ya",
+    "region_of_origin": "Huo Shan, Anhui Province, China",
+    "traditional_name": "Huo Shan Yellow Buds",
+    "amount_of_caffiene": 2,
+    "caffiene_mg_per_8_oz": 30,
+    "main_tea_type": "Yellow",
+    "number_of_steeps": {"minimum": 3, "maximum": 5},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 1.5, "maximum": 2},
+        "steep_number": 1,
+        "steep_taste_description": "Sweet and nutty, with hints of chestnut and almond blossoms."
+      },
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 1.5, "maximum": 2.5},
+        "steep_number": 2,
+        "steep_taste_description": "Creamy, with vegetal and fruity notes, and a slight umami."
+      },
+      {
+        "temperature": {"minimum": 175, "maximum": 185},
+        "duration": {"minimum": 2, "maximum": 3},
+        "steep_number": 3,
+        "steep_taste_description": "Mellow, with a lasting sweetness and a clean finish."
+      }
+    ],
+    "overall_taste_description": "Sweet, nutty, with prominent chestnut flavor, hints of almond blossoms, vegetal and fruity notes, and a creamy texture.",
+    "short_summary": "Huo Shan Huang Ya is a yellow tea from Anhui, China, known for its distinct chestnut flavor and mellow taste.",
+    "overall_tea_description": "Huo Shan Huang Ya, also known as Huo Shan Yellow Buds, is a delicate and sweet yellow tea from Anhui Province, China. It is characterized by its sweet and nutty taste, often with a strong chestnut flavor. It also presents hints of almond blossoms, vegetal, and fruity notes, with a creamy mouthfeel. The tea is lightly oxidized, making it less tannic and sweeter than many green teas, while still retaining a fresh profile. It is considered one of the more accessible yellow teas and can be steeped multiple times."
+  }
+
+
+,
+  {
+    "tea_name": "Huang Ya Cha",
+    "region_of_origin": "Various regions in China (general category)",
+    "traditional_name": "Yellow Bud Tea",
+    "amount_of_caffiene": 2,
+    "caffiene_mg_per_8_oz": 30,
+    "main_tea_type": "Yellow",
+    "number_of_steeps": {"minimum": 2, "maximum": 4},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 170, "maximum": 185},
+        "duration": {"minimum": 1, "maximum": 2},
+        "steep_number": 1,
+        "steep_taste_description": "Pure and refreshing, with a delicate sweetness and mild floral notes."
+      },
+      {
+        "temperature": {"minimum": 170, "maximum": 185},
+        "duration": {"minimum": 1.5, "maximum": 2.5},
+        "steep_number": 2,
+        "steep_taste_description": "Mellow and smooth, with a balanced flavor and minimal astringency."
+      }
+    ],
+    "overall_taste_description": "Generally pure and refreshing, with delicate sweetness, mild floral notes, and a smooth, mellow character.",
+    "short_summary": "Huang Ya Cha is a general category of yellow tea characterized by its use of tender tea buds, offering a pure and refreshing taste.",
+    "overall_tea_description": "Huang Ya Cha, meaning Yellow Bud Tea, is a classification of yellow tea based on the picking standard, primarily consisting of tender tea buds. It is known for its pure and refreshing taste, often described as having a delicate sweetness and mild floral notes. Unlike green teas, Huang Ya Cha undergoes an additional 'men huang' process, which removes the grassy notes and results in a smoother, mellower flavor with minimal astringency. Specific characteristics can vary depending on the region of origin and processing methods, but generally, these teas offer a clean and balanced cup."
+  }
+
+
+,
+  {
+    "tea_name": "Huang Xiao Cha",
+    "region_of_origin": "Various regions in China (general category)",
+    "traditional_name": "Small Yellow Tea",
+    "amount_of_caffiene": 2,
+    "caffiene_mg_per_8_oz": 30,
+    "main_tea_type": "Yellow",
+    "number_of_steeps": {"minimum": 2, "maximum": 4},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 170, "maximum": 185},
+        "duration": {"minimum": 1, "maximum": 2},
+        "steep_number": 1,
+        "steep_taste_description": "Mellow and sweet, with floral notes and a smooth body."
+      },
+      {
+        "temperature": {"minimum": 170, "maximum": 185},
+        "duration": {"minimum": 1.5, "maximum": 2.5},
+        "steep_number": 2,
+        "steep_taste_description": "Fruity-sweet, with a comforting and relaxing character."
+      }
+    ],
+    "overall_taste_description": "Mellow and sweet, with floral and fruity-sweet notes, a smooth body, and a comforting character.",
+    "short_summary": "Huang Xiao Cha is a general category of yellow tea made from smaller, younger leaves, offering a mellow and sweet flavor.",
+    "overall_tea_description": "Huang Xiao Cha, meaning Small Yellow Tea, refers to yellow teas made from smaller, younger leaves, often including one bud and one to two leaves. These teas are known for their mellow and sweet flavor profile, often with floral notes. They undergo a similar 'men huang' process to other yellow teas, which contributes to their smooth taste and lack of bitterness or grassiness. Specific flavor characteristics can vary depending on the region and processing, but generally, Huang Xiao Cha offers a delicate and comforting tea experience."
+  }
+
+
+,
+  {
+    "tea_name": "Huang Da Cha",
+    "region_of_origin": "Various regions in China (general category, often associated with Huo Shan)",
+    "traditional_name": "Big Yellow Tea",
+    "amount_of_caffiene": 3,
+    "caffiene_mg_per_8_oz": 40,
+    "main_tea_type": "Yellow",
+    "number_of_steeps": {"minimum": 2, "maximum": 4},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 185, "maximum": 195},
+        "duration": {"minimum": 2, "maximum": 3},
+        "steep_number": 1,
+        "steep_taste_description": "Bold and toasty, with notes of roasted grains, chocolate, and a prominent nutty flavor."
+      },
+      {
+        "temperature": {"minimum": 185, "maximum": 195},
+        "duration": {"minimum": 2.5, "maximum": 3.5},
+        "steep_number": 2,
+        "steep_taste_description": "Rich and thick, with a lingering sweetness and hints of cereal and malt."
+      }
+    ],
+    "overall_taste_description": "Bold, toasty, and rich, with notes of roasted grains, chocolate, cereal, malt, and a prominent nutty flavor. Naturally sweet with a full-bodied character.",
+    "short_summary": "Huang Da Cha is a category of yellow tea made from larger, more mature leaves, known for its bold, roasted, and nutty flavor profile.",
+    "overall_tea_description": "Huang Da Cha, meaning Big Yellow Tea, refers to yellow teas made from larger, more mature leaves, often including stalks. It is known as the 'coffee of tea' due to its heavily roasted processing, which imparts a bold, toasty, and rich flavor. This tea often features notes of roasted grains, chocolate, cereal, and malt, with a prominent nutty taste. The inclusion of stalks contributes to its natural sweetness. Huang Da Cha offers a full-bodied character similar to green tea but without the typical grassy notes, making it a unique and comforting tea experience."
+  }
+]
+

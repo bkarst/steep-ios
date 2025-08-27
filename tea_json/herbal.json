@@ -1,0 +1,231 @@
+[
+  {
+    "tea_name": "Chamomile Tea",
+    "region_of_origin": "Europe, Middle East, Asia, Egypt",
+    "traditional_name": "German Chamomile, Roman Chamomile, Hungarian Chamomile, Ground Apple (from Greek etymology)",
+    "amount_of_caffiene": 1,
+    "caffiene_mg_per_8_oz": 0,
+    "main_tea_type": "Herbal",
+    "number_of_steeps": {"minimum": 1, "maximum": 2},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 194, "maximum": 212},
+        "duration": {"minimum": 5, "maximum": 15},
+        "steep_number": 1,
+        "steep_taste_description": "Mild, floral, slightly sweet with apple notes. Longer steeping increases intensity."
+      }
+    ],
+    "overall_taste_description": "Delicate, floral, with hints of sweetness and earthiness, often described as soothing and calming. Can have subtle apple notes.",
+    "short_summary": "A popular herbal tea known for its calming properties, often used to aid sleep and digestion. It is naturally caffeine-free and has a mild, floral taste.",
+    "overall_tea_description": "Chamomile tea is an herbal infusion made from the dried flowers of the chamomile plant. It has been used for centuries in traditional medicine for its soothing and relaxing effects. It is naturally caffeine-free, making it an ideal beverage for evening consumption. The flavor profile is generally mild, floral, and slightly sweet, with some varieties exhibiting subtle apple-like notes. It is widely consumed for its potential benefits in reducing anxiety, improving sleep quality, and aiding digestion."
+  }
+]
+
+
+,
+  {
+    "tea_name": "Peppermint Tea",
+    "region_of_origin": "Europe, Middle East (widely cultivated globally, notably in the Pacific Northwest USA and Maghreb region of Africa)",
+    "traditional_name": "American Mint, Balm Mint, Brandy Mint, Curled Mint, Lamb Mint, Maghrebi Mint Tea (in North Africa)",
+    "amount_of_caffiene": 1,
+    "caffiene_mg_per_8_oz": 0,
+    "main_tea_type": "Herbal",
+    "number_of_steeps": {"minimum": 1, "maximum": 1},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 190, "maximum": 212},
+        "duration": {"minimum": 3, "maximum": 15},
+        "steep_number": 1,
+        "steep_taste_description": "Fresh, cooling mint. Longer steeping can result in a stronger, more intense mint flavor."
+      }
+    ],
+    "overall_taste_description": "Crisp, clean, and refreshing with a strong, cooling mint flavor. Can have a slightly sweet and sometimes earthy undertone.",
+    "short_summary": "A popular herbal tea known for its refreshing taste and digestive benefits. It is naturally caffeine-free and offers a cooling sensation.",
+    "overall_tea_description": "Peppermint tea is an herbal infusion made from the dried leaves of the peppermint plant. It is widely consumed for its refreshing taste and its traditional use in aiding digestion, relieving headaches, and soothing upset stomachs. It is naturally caffeine-free, making it a suitable beverage at any time of day. The flavor is characterized by a strong, crisp, and cooling mint sensation, often with a slightly sweet or earthy finish."
+  }
+
+
+,
+  {
+    "tea_name": "Ginger Tea",
+    "region_of_origin": "Southeast Asia (widely cultivated in India, China, Brazil, Jamaica)",
+    "traditional_name": "Shōgayu (Japanese), Saenggang-cha (Korean), Teh Halia (Malay), Teh Jahe (Indonesian), Salabat (Filipino), Té de Jengibre (Spanish)",
+    "amount_of_caffiene": 1,
+    "caffiene_mg_per_8_oz": 0,
+    "main_tea_type": "Herbal",
+    "number_of_steeps": {"minimum": 1, "maximum": 1},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 195, "maximum": 212},
+        "duration": {"minimum": 5, "maximum": 20},
+        "steep_number": 1,
+        "steep_taste_description": "Spicy, warming, and pungent. Longer steeping increases the intensity and peppery notes."
+      }
+    ],
+    "overall_taste_description": "Pungent, spicy, and warming with a slightly sweet and peppery flavor. Can have citrusy undertones, especially when fresh ginger is used.",
+    "short_summary": "A warming herbal tea made from ginger root, known for its spicy flavor and traditional use in aiding digestion and soothing nausea. It is naturally caffeine-free.",
+    "overall_tea_description": "Ginger tea is a herbal beverage made from the rhizome of the ginger plant. It has a long history of use in traditional medicine, particularly in East and Southeast Asia, for its warming properties and its effectiveness in alleviating nausea, indigestion, and inflammation. The tea is naturally caffeine-free and offers a distinct spicy, pungent, and warming flavor, which can be intensified by longer steeping times or by using fresh ginger."
+  }
+
+
+,
+  {
+    "tea_name": "Hibiscus Tea",
+    "region_of_origin": "West Africa (widely cultivated in tropical and subtropical regions globally, including Mexico, Central and South America, and the Caribbean)",
+    "traditional_name": "Karkadé (Egypt, Sudan), Agua de Jamaica (Mexico, Central America), Sorrel (Caribbean), Roselle",
+    "amount_of_caffiene": 1,
+    "caffiene_mg_per_8_oz": 0,
+    "main_tea_type": "Herbal",
+    "number_of_steeps": {"minimum": 1, "maximum": 1},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 190, "maximum": 212},
+        "duration": {"minimum": 5, "maximum": 10},
+        "steep_number": 1,
+        "steep_taste_description": "Tart, cranberry-like, with fruity and slightly sweet undertones. Longer steeping can increase tartness."
+      }
+    ],
+    "overall_taste_description": "Vibrant, tart, and fruity, often compared to cranberry, with a refreshing and slightly sweet finish. It has a distinctive deep red color.",
+    "short_summary": "A bright red herbal tea made from the dried calyces of the hibiscus flower, known for its tart flavor and potential health benefits, including lowering blood pressure. It is naturally caffeine-free.",
+    "overall_tea_description": "Hibiscus tea is a popular herbal infusion made from the dried calyces of the Hibiscus sabdariffa flower. It is renowned for its striking deep red color and its distinctive tart, cranberry-like flavor, often with fruity and subtly sweet notes. Naturally caffeine-free, it is enjoyed both hot and cold and is traditionally consumed in various cultures for its refreshing qualities and potential health benefits, such as supporting cardiovascular health and providing antioxidants."
+  }
+
+
+,
+  {
+    "tea_name": "Rooibos Tea",
+    "region_of_origin": "Cederberg region of South Africa",
+    "traditional_name": "Red Bush Tea, Red Tea (from Afrikaans 'rooibos' meaning 'red bush')",
+    "amount_of_caffiene": 1,
+    "caffiene_mg_per_8_oz": 0,
+    "main_tea_type": "Herbal",
+    "number_of_steeps": {"minimum": 1, "maximum": 2},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 200, "maximum": 212},
+        "duration": {"minimum": 5, "maximum": 10},
+        "steep_number": 1,
+        "steep_taste_description": "Full-bodied, earthy, and naturally sweet with notes of honey, vanilla, and caramel. Does not become bitter with longer steeping."
+      }
+    ],
+    "overall_taste_description": "Naturally sweet, earthy, and full-bodied with hints of honey, vanilla, and caramel. It has a smooth, mellow flavor that is not bitter.",
+    "short_summary": "A caffeine-free herbal tea from South Africa, known for its distinctive red color, naturally sweet flavor, and antioxidant properties. It is a popular alternative to black tea.",
+    "overall_tea_description": "Rooibos tea, also known as red bush tea, is a herbal infusion derived from the Aspalathus linearis plant, native exclusively to the Cederberg region of South Africa. It is naturally caffeine-free and low in tannins, making it a smooth and mellow beverage. Rooibos is characterized by its distinctive red color and a naturally sweet, earthy flavor with notes of honey, vanilla, and caramel. Unlike traditional teas, rooibos does not become bitter with prolonged steeping, allowing for a rich and flavorful brew."
+  }
+
+
+,
+  {
+    "tea_name": "Lavender Tea",
+    "region_of_origin": "Mediterranean region (particularly France, Greece, Italy)",
+    "traditional_name": "True Lavender, English Lavender, Garden Lavender",
+    "amount_of_caffiene": 1,
+    "caffiene_mg_per_8_oz": 0,
+    "main_tea_type": "Herbal",
+    "number_of_steeps": {"minimum": 1, "maximum": 1},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 185, "maximum": 212},
+        "duration": {"minimum": 5, "maximum": 10},
+        "steep_number": 1,
+        "steep_taste_description": "Floral, slightly sweet, and aromatic. Can become strong and slightly bitter if oversteeped."
+      }
+    ],
+    "overall_taste_description": "Distinctly floral, aromatic, and slightly sweet with a soothing, calming essence. Can have hints of rosemary and mint.",
+    "short_summary": "A fragrant herbal tea made from lavender flowers, known for its calming and relaxing properties, often used to promote sleep and reduce anxiety. It is naturally caffeine-free.",
+    "overall_tea_description": "Lavender tea is an herbal infusion made from the dried flowers of the lavender plant, primarily Lavandula angustifolia. Originating from the Mediterranean region, it has been used for centuries for its aromatic and therapeutic qualities. This naturally caffeine-free tea is widely consumed for its calming and relaxing effects, often aiding in stress reduction and sleep improvement. Its flavor profile is distinctly floral, slightly sweet, and highly aromatic, though it can become strong and slightly bitter if oversteeped."
+  }
+
+
+,
+  {
+    "tea_name": "Turmeric Tea",
+    "region_of_origin": "Indian subcontinent and Southeast Asia",
+    "traditional_name": "Haldi Doodh (Golden Milk - often includes turmeric), Yu Jin (Chinese)",
+    "amount_of_caffiene": 1,
+    "caffiene_mg_per_8_oz": 0,
+    "main_tea_type": "Herbal",
+    "number_of_steeps": {"minimum": 1, "maximum": 1},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 195, "maximum": 212},
+        "duration": {"minimum": 5, "maximum": 15},
+        "steep_number": 1,
+        "steep_taste_description": "Earthy, warm, and slightly bitter with peppery notes. Longer steeping enhances the spice and earthiness."
+      }
+    ],
+    "overall_taste_description": "Earthy, warm, and subtly spicy with a slight bitterness and peppery undertones. Often described as having a rich, golden flavor.",
+    "short_summary": "A vibrant yellow herbal tea made from the turmeric root, known for its anti-inflammatory properties and earthy, warm flavor. It is naturally caffeine-free.",
+    "overall_tea_description": "Turmeric tea is a herbal infusion made from the rhizome of the Curcuma longa plant, native to the Indian subcontinent and Southeast Asia. It is widely recognized for its vibrant golden color and its potent anti-inflammatory and antioxidant properties, attributed to its active compound, curcumin. This naturally caffeine-free tea has an earthy, warm, and subtly spicy flavor, often with a slight bitterness and peppery notes. It is a popular beverage in traditional medicine systems like Ayurveda and is consumed for overall wellness."
+  }
+
+
+,
+  {
+    "tea_name": "Echinacea Tea",
+    "region_of_origin": "Eastern and Central North America",
+    "traditional_name": "Purple Coneflower, American Coneflower",
+    "amount_of_caffiene": 1,
+    "caffiene_mg_per_8_oz": 0,
+    "main_tea_type": "Herbal",
+    "number_of_steeps": {"minimum": 1, "maximum": 1},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 195, "maximum": 212},
+        "duration": {"minimum": 5, "maximum": 15},
+        "steep_number": 1,
+        "steep_taste_description": "Mild, earthy, and slightly floral with a subtle tingling sensation. Longer steeping can increase earthiness."
+      }
+    ],
+    "overall_taste_description": "Mild, earthy, and slightly floral, often with a unique tingling sensation on the tongue. It has a clean and sometimes subtly sweet finish.",
+    "short_summary": "A popular herbal tea made from the echinacea plant, primarily known for its immune-boosting properties and its use in traditional medicine to combat colds and flu. It is naturally caffeine-free.",
+    "overall_tea_description": "Echinacea tea is a herbal infusion derived from the echinacea plant, native to Eastern and Central North America. It has been traditionally used by Native American tribes for its medicinal properties, particularly its ability to support the immune system and help alleviate symptoms of the common cold and flu. This naturally caffeine-free tea has a mild, earthy, and slightly floral taste, often accompanied by a characteristic tingling sensation on the tongue. It is a popular choice for wellness and is consumed for its potential anti-inflammatory and antioxidant benefits."
+  }
+
+
+,
+  {
+    "tea_name": "Lemon Balm Tea",
+    "region_of_origin": "South-central Europe, Mediterranean, Central Asia, Iran",
+    "traditional_name": "Melissa, Sweet Melissa, Balm Mint",
+    "amount_of_caffiene": 1,
+    "caffiene_mg_per_8_oz": 0,
+    "main_tea_type": "Herbal",
+    "number_of_steeps": {"minimum": 1, "maximum": 3},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 195, "maximum": 212},
+        "duration": {"minimum": 5, "maximum": 10},
+        "steep_number": 1,
+        "steep_taste_description": "Mildly lemony, fresh, and slightly minty. Can become more herbaceous with longer steeping."
+      }
+    ],
+    "overall_taste_description": "Light, fresh, and distinctly lemony with subtle minty undertones. It has a smooth, calming, and slightly sweet flavor.",
+    "short_summary": "A soothing herbal tea made from the lemon balm plant, known for its calming properties, often used to reduce stress, anxiety, and improve sleep. It is naturally caffeine-free.",
+    "overall_tea_description": "Lemon Balm tea is a herbal infusion made from the leaves of the Melissa officinalis plant, native to South-central Europe, the Mediterranean, Central Asia, and Iran. It is widely recognized for its calming and soothing effects, often used to alleviate stress, anxiety, and promote restful sleep. This naturally caffeine-free tea has a light, fresh, and distinctly lemony flavor with subtle minty undertones, making it a refreshing and pleasant beverage."
+  }
+
+
+,
+  {
+    "tea_name": "Rosehip Tea",
+    "region_of_origin": "Europe, Asia, and Northwest Africa (widely found in temperate regions globally)",
+    "traditional_name": "Rose Haw, Hip Berry",
+    "amount_of_caffiene": 1,
+    "caffiene_mg_per_8_oz": 0,
+    "main_tea_type": "Herbal",
+    "number_of_steeps": {"minimum": 1, "maximum": 1},
+    "steep_instructions": [
+      {
+        "temperature": {"minimum": 195, "maximum": 212},
+        "duration": {"minimum": 5, "maximum": 10},
+        "steep_number": 1,
+        "steep_taste_description": "Tart, fruity, and slightly sweet, reminiscent of cranberry or green apple. Longer steeping can increase tartness."
+      }
+    ],
+    "overall_taste_description": "Bright, tart, and fruity with a subtle sweetness, often compared to cranberries or green apples. It has a refreshing and slightly tangy finish.",
+    "short_summary": "A vibrant herbal tea made from the fruit of the rose plant, known for its high vitamin C content and tart, fruity flavor. It is naturally caffeine-free.",
+    "overall_tea_description": "Rosehip tea is a herbal infusion made from the rose hips, the fruit of the rose plant, typically from Rosa canina. These hips are known for their exceptionally high vitamin C content and are widely used in traditional medicine for their immune-boosting and anti-inflammatory properties. This naturally caffeine-free tea has a bright, tart, and fruity flavor, often compared to cranberries or green apples, with a subtle sweetness. It is a refreshing beverage enjoyed both hot and cold."
+  }
+]
+

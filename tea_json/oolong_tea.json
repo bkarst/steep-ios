@@ -1,0 +1,122 @@
+[
+  {
+    "tea_name": "Tie Guan Yin (Iron Goddess of Mercy) Oolong",
+    "region_of_origin": "Anxi County, Fujian Province, China",
+    "traditional_name": "Iron Goddess of Mercy",
+    "amount_of_caffiene": 3,
+    "caffiene_mg_per_8_oz": 30,
+    "main_tea_type": "Oolong",
+    "number_of_steeps": {"minimum": 3, "maximum": 7},
+    "steep_instructions": [
+      {"temperature": {"minimum": 195, "maximum": 205}, "duration": {"minimum": 0.5, "maximum": 1}, "steep_number": 1, "steep_taste_description": "Light, floral, fresh"},
+      {"temperature": {"minimum": 195, "maximum": 205}, "duration": {"minimum": 1, "maximum": 1.5}, "steep_number": 2, "steep_taste_description": "More pronounced floral and sweet notes"},
+      {"temperature": {"minimum": 195, "maximum": 205}, "duration": {"minimum": 1.5, "maximum": 2}, "steep_number": 3, "steep_taste_description": "Balanced, lingering aftertaste"}
+    ],
+    "overall_taste_description": "Vibrant floral aroma, golden color, buttery, velvety texture, sweet aftertaste, notes of orchid.",
+    "short_summary": "A highly prized Chinese oolong tea known for its distinctive floral aroma and smooth, sweet taste.",
+    "overall_tea_description": "Tie Guan Yin, also known as Iron Goddess of Mercy, is a premium Chinese oolong tea originating from Anxi County in Fujian Province. It is celebrated for its unique orchid-like aroma, golden-yellow liquor, and a complex flavor profile that often includes notes of butter, honey, and a lingering sweet finish. The tea leaves are typically tightly rolled into small, dark green pellets that unfurl during brewing. Depending on the processing, Tie Guan Yin can range from a greener, more floral style to a more roasted, nutty profile. It offers a moderate caffeine level and can be steeped multiple times, revealing different nuances with each infusion."
+  },
+  {
+    "tea_name": "Da Hong Pao (Big Red Robe) Oolong",
+    "region_of_origin": "Wuyi Mountains, Fujian Province, China",
+    "traditional_name": "Big Red Robe",
+    "amount_of_caffiene": 4,
+    "caffiene_mg_per_8_oz": 45,
+    "main_tea_type": "Oolong",
+    "number_of_steeps": {"minimum": 5, "maximum": 7},
+    "steep_instructions": [
+      {"temperature": {"minimum": 205, "maximum": 212}, "duration": {"minimum": 0.5, "maximum": 1}, "steep_number": 1, "steep_taste_description": "Bold, roasted, mineral notes"},
+      {"temperature": {"minimum": 205, "maximum": 212}, "duration": {"minimum": 1, "maximum": 1.5}, "steep_number": 2, "steep_taste_description": "More pronounced roasted and fruity notes, complex"},
+      {"temperature": {"minimum": 205, "maximum": 212}, "duration": {"minimum": 1.5, "maximum": 2}, "steep_number": 3, "steep_taste_description": "Sweet aftertaste, lingering warmth"}
+    ],
+    "overall_taste_description": "Rich, roasted, mineral, notes of dark honey, stone fruit, and sometimes cinnamon. Long-lasting sweet aftertaste.",
+    "short_summary": "A highly prized Wuyi rock oolong tea from China, known for its distinctive roasted flavor and complex aroma.",
+    "overall_tea_description": "Da Hong Pao, or Big Red Robe, is a legendary Wuyi rock oolong tea from the Wuyi Mountains in Fujian Province, China. It is characterized by its heavily roasted leaves, which impart a unique mineral taste, often described as 'rock rhyme' (yan yun). The flavor profile is complex, with notes of roasted nuts, dark honey, and ripe stone fruits, often accompanied by a hint of smokiness. Da Hong Pao offers a robust and full-bodied liquor with a long-lasting sweet aftertaste. It has a relatively high caffeine content for an oolong and can be steeped many times, with each infusion revealing new layers of flavor."
+  },
+  {
+    "tea_name": "Dan Cong (Phoenix Oolong) Oolong",
+    "region_of_origin": "Fenghuang Mountains, Guangdong Province, China",
+    "traditional_name": "Phoenix Oolong, Single Bush",
+    "amount_of_caffiene": 3,
+    "caffiene_mg_per_8_oz": 45,
+    "main_tea_type": "Oolong",
+    "number_of_steeps": {"minimum": 5, "maximum": 10},
+    "steep_instructions": [
+      {"temperature": {"minimum": 205, "maximum": 212}, "duration": {"minimum": 0.1, "maximum": 0.2}, "steep_number": 1, "steep_taste_description": "Quick rinse, opening up leaves"},
+      {"temperature": {"minimum": 205, "maximum": 212}, "duration": {"minimum": 0.2, "maximum": 0.3}, "steep_number": 2, "steep_taste_description": "Initial burst of floral/fruity aroma, sweet"},
+      {"temperature": {"minimum": 205, "maximum": 212}, "duration": {"minimum": 0.3, "maximum": 0.4}, "steep_number": 3, "steep_taste_description": "Fuller body, more complex flavor, lingering aftertaste"}
+    ],
+    "overall_taste_description": "Highly aromatic with distinct floral (orchid, gardenia) or fruity (mango, peach) notes, often with a honey-like sweetness and a smooth, rich body. Specific flavors vary greatly by cultivar.",
+    "short_summary": "A unique category of oolong tea from Guangdong, China, known for its naturally occurring aromatic profiles resembling various fruits and flowers.",
+    "overall_tea_description": "Dan Cong, also known as Phoenix Oolong, is a diverse and highly prized category of oolong tea from the Fenghuang Mountains in Guangdong Province, China. The name 'Dan Cong' translates to 'single bush', referring to the traditional practice of processing leaves from individual tea bushes separately to highlight their unique characteristics. These teas are renowned for their naturally occurring aromatic profiles, which can mimic a wide range of fruits, flowers, and even spices, without any added flavorings. Common aromas include orchid, gardenia, honey, almond, and various fruit notes. Dan Cong teas offer a smooth, rich liquor with a lingering sweet aftertaste and can be steeped numerous times, evolving in flavor with each infusion. Caffeine content is moderate."
+  },
+  {
+    "tea_name": "Dong Ding (Frozen Summit) Oolong",
+    "region_of_origin": "Lugu Township, Nantou County, Taiwan",
+    "traditional_name": "Frozen Summit, Icy Peak",
+    "amount_of_caffiene": 3,
+    "caffiene_mg_per_8_oz": 40,
+    "main_tea_type": "Oolong",
+    "number_of_steeps": {"minimum": 5, "maximum": 8},
+    "steep_instructions": [
+      {"temperature": {"minimum": 190, "maximum": 205}, "duration": {"minimum": 0.5, "maximum": 0.75}, "steep_number": 1, "steep_taste_description": "Creamy, sweet, toasted nutty flavor"},
+      {"temperature": {"minimum": 190, "maximum": 205}, "duration": {"minimum": 0.75, "maximum": 1}, "steep_number": 2, "steep_taste_description": "More pronounced honey and roasted notes"},
+      {"temperature": {"minimum": 190, "maximum": 205}, "duration": {"minimum": 1, "maximum": 1.5}, "steep_number": 3, "steep_taste_description": "Lingering sweetness, smooth finish"}
+    ],
+    "overall_taste_description": "Creamy, sweet, toasted nutty flavor with a mildly smoky, long-lasting finish. Often has honey and roasted notes.",
+    "short_summary": "A classic Taiwanese oolong tea known for its distinctive roasted character, creamy texture, and sweet, nutty flavor.",
+    "overall_tea_description": "Dong Ding, or Frozen Summit, is one of Taiwan's most famous oolong teas, originating from the Dong Ding mountain in Nantou County. It is typically a medium-oxidized and medium-roasted oolong, which gives it a unique balance of fresh, floral notes and a warm, roasted character. The flavor profile often includes creamy, nutty, and sweet notes, with a distinctive honey-like aroma and a lingering finish. Dong Ding oolong can be steeped multiple times, with each infusion revealing new layers of its complex flavor. It has a moderate caffeine content and is a staple for oolong enthusiasts."
+  },
+  {
+    "tea_name": "Jin Xuan (Milk Oolong) Oolong",
+    "region_of_origin": "Taiwan (various regions like Alishan, Nantou, Li Shan)",
+    "traditional_name": "Milk Oolong, Tai Cha #12",
+    "amount_of_caffiene": 2,
+    "caffiene_mg_per_8_oz": 30,
+    "main_tea_type": "Oolong",
+    "number_of_steeps": {"minimum": 4, "maximum": 6},
+    "steep_instructions": [
+      {"temperature": {"minimum": 185, "maximum": 205}, "duration": {"minimum": 0.5, "maximum": 1}, "steep_number": 1, "steep_taste_description": "Light, creamy, floral with milky notes"},
+      {"temperature": {"minimum": 185, "maximum": 205}, "duration": {"minimum": 1, "maximum": 1.5}, "steep_number": 2, "steep_taste_description": "More pronounced milky and sweet notes"},
+      {"temperature": {"minimum": 185, "maximum": 205}, "duration": {"minimum": 1.5, "maximum": 2}, "steep_number": 3, "steep_taste_description": "Smooth, buttery, lingering sweetness"}
+    ],
+    "overall_taste_description": "Known for its natural milky, creamy, and buttery notes, often accompanied by a light floral aroma and a sweet, smooth finish.",
+    "short_summary": "A popular Taiwanese oolong tea famous for its naturally occurring milky and creamy aroma and taste.",
+    "overall_tea_description": "Jin Xuan, commonly known as Milk Oolong, is a distinctive Taiwanese oolong tea cultivar (Taiwan Tea #12) celebrated for its naturally occurring creamy, buttery, and sometimes milky aroma and flavor. This unique characteristic is inherent to the tea plant itself and is not due to any added flavorings. It typically has a light oxidation and can be grown in various regions across Taiwan, including Alishan and Nantou. Jin Xuan tea offers a smooth, mellow liquor with a light floral undertone and a sweet, lingering aftertaste. It has a relatively low to moderate caffeine content and can be steeped multiple times, making it a delightful and approachable oolong for many tea drinkers."
+  },
+  {
+    "tea_name": "Oriental Beauty (Dong Fang Mei Ren) Oolong",
+    "region_of_origin": "Hsinchu County, Taiwan",
+    "traditional_name": "Dong Fang Mei Ren, Bai Hao Oolong, Champagne Oolong",
+    "amount_of_caffiene": 3,
+    "caffiene_mg_per_8_oz": 40,
+    "main_tea_type": "Oolong",
+    "number_of_steeps": {"minimum": 4, "maximum": 6},
+    "steep_instructions": [
+      {"temperature": {"minimum": 175, "maximum": 195}, "duration": {"minimum": 1, "maximum": 1.5}, "steep_number": 1, "steep_taste_description": "Sweet, fruity, honey-like with floral notes"},
+      {"temperature": {"minimum": 175, "maximum": 195}, "duration": {"minimum": 1.5, "maximum": 2}, "steep_number": 2, "steep_taste_description": "More pronounced honey and ripe fruit flavors"},
+      {"temperature": {"minimum": 175, "maximum": 195}, "duration": {"minimum": 2, "maximum": 2.5}, "steep_number": 3, "steep_taste_description": "Complex, lingering sweetness, muscatel notes"}
+    ],
+    "overall_taste_description": "Sweet, fruity, and honey-like, with distinct notes of ripe fruit (peach, lychee) and floral undertones. Often described as having a natural muscatel flavor.",
+    "short_summary": "A highly oxidized Taiwanese oolong tea, famous for its natural honey and fruity notes, resulting from insect bites on the tea leaves.",
+    "overall_tea_description": "Oriental Beauty, also known as Dong Fang Mei Ren, is a unique and highly prized Taiwanese oolong tea. It is distinguished by its heavy oxidation and the fact that its leaves are bitten by a small insect called the tea green leafhopper (Jacobiasca formosana) during growth. This interaction causes the tea plant to produce defensive compounds that contribute to the tea's characteristic sweet, honey-like, and fruity flavor profile, often with notes of ripe peach, lychee, and a natural muscatel aroma. The tea has a beautiful amber liquor and a moderate caffeine content. It can be steeped multiple times, offering a complex and evolving taste experience."
+  },
+  {
+    "tea_name": "High-Mountain Oolongs (Gao Shan Cha) Oolong",
+    "region_of_origin": "Central Taiwan (various high-altitude regions like Alishan, Lishan, Shanlinxi)",
+    "traditional_name": "Gao Shan Cha",
+    "amount_of_caffiene": 3,
+    "caffiene_mg_per_8_oz": 45,
+    "main_tea_type": "Oolong",
+    "number_of_steeps": {"minimum": 6, "maximum": 10},
+    "steep_instructions": [
+      {"temperature": {"minimum": 195, "maximum": 205}, "duration": {"minimum": 0.5, "maximum": 0.75}, "steep_number": 1, "steep_taste_description": "Fresh, floral, sweet, often with a creamy mouthfeel"},
+      {"temperature": {"minimum": 195, "maximum": 205}, "duration": {"minimum": 0.75, "maximum": 1}, "steep_number": 2, "steep_taste_description": "More intense floral and fruity notes, complex sweetness"},
+      {"temperature": {"minimum": 195, "maximum": 205}, "duration": {"minimum": 1, "maximum": 1.5}, "steep_number": 3, "steep_taste_description": "Lingering aftertaste, smooth, often with a hint of 'mountain air' freshness"}
+    ],
+    "overall_taste_description": "Fresh, clean, and floral, often with sweet, creamy, and sometimes fruity notes. Known for a smooth mouthfeel and a distinct 'mountain air' freshness.",
+    "short_summary": "A category of Taiwanese oolong teas grown at high altitudes, prized for their fresh, floral, and often creamy flavor profiles.",
+    "overall_tea_description": "High-Mountain Oolongs, or Gao Shan Cha, refer to a prestigious category of Taiwanese oolong teas cultivated at elevations typically above 1,000 meters. The unique climatic conditions at these altitudes—including cooler temperatures, mist, and rich soil—contribute to the tea's distinctive characteristics. These teas are generally lightly oxidized and unroasted, resulting in a fresh, clean, and vibrant flavor profile. Common aromas include floral (orchid, gardenia), sweet, and often a creamy or buttery mouthfeel. Gao Shan Cha is highly valued for its smooth texture, complex aroma, and long-lasting, refreshing aftertaste. While caffeine content is moderate, the overall experience is often described as uplifting and calming. Popular regions for Gao Shan Cha include Alishan, Lishan, and Shanlinxi."
+  }
+]
+

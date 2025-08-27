@@ -1,0 +1,65 @@
+{
+  "tea_name": "Shou Pu-erh (Ripe Pu-erh)",
+  "region_of_origin": "Yunnan Province, China",
+  "traditional_name": "Shou Pu-erh",
+  "amount_of_caffiene": 2,
+  "caffiene_mg_per_8_oz": 50,
+  "main_tea_type": "Pu-erh",
+  "number_of_steeps": {"minimum": 8, "maximum": 12},
+  "steep_instructions": [
+    {
+      "temperature": {"minimum": 190, "maximum": 212},
+      "duration": {"minimum": 0.16, "maximum": 0.33},
+      "steep_number": 1,
+      "steep_taste_description": "Initial rinse to awaken the leaves. Earthy and smooth."
+    },
+    {
+      "temperature": {"minimum": 190, "maximum": 212},
+      "duration": {"minimum": 0.5, "maximum": 1},
+      "steep_number": 2,
+      "steep_taste_description": "First drinkable steep. Deep, earthy, and mellow with notes of wood or dark chocolate."
+    },
+    {
+      "temperature": {"minimum": 190, "maximum": 212},
+      "duration": {"minimum": 1, "maximum": 1.5},
+      "steep_number": 3,
+      "steep_taste_description": "Flavors become richer and more complex, often with a lingering sweetness."
+    }
+  ],
+  "overall_taste_description": "Shou Pu-erh is characterized by its deep, earthy, and smooth flavor profile, often with notes of wood, dark chocolate, or a slight sweetness. It has a thick, rich mouthfeel.",
+  "short_summary": "Shou Pu-erh, or ripe Pu-erh, is a fermented tea from Yunnan, China, known for its smooth, earthy flavor achieved through an accelerated fermentation process.",
+  "overall_tea_description": "Shou Pu-erh is a type of Pu-erh tea that undergoes an accelerated fermentation process, resulting in a mature, dark, and mellow tea. This process gives Shou Pu-erh its characteristic earthy, woody, and sometimes sweet flavor profile. It is known for its smooth and thick mouthfeel and is often enjoyed for its comforting and grounding qualities. Shou Pu-erh is believed to aid digestion and support overall well-being."
+},
+{
+  "tea_name": "Sheng Pu-erh (Raw Pu-erh)",
+  "region_of_origin": "Yunnan Province, China",
+  "traditional_name": "Sheng Pu-erh",
+  "amount_of_caffiene": 3,
+  "caffiene_mg_per_8_oz": 65,
+  "main_tea_type": "Pu-erh",
+  "number_of_steeps": {"minimum": 8, "maximum": 10},
+  "steep_instructions": [
+    {
+      "temperature": {"minimum": 208, "maximum": 212},
+      "duration": {"minimum": 0.16, "maximum": 0.33},
+      "steep_number": 1,
+      "steep_taste_description": "Initial steep, often used for rinsing and awakening the leaves. Light, fresh, and slightly vegetal."
+    },
+    {
+      "temperature": {"minimum": 208, "maximum": 212},
+      "duration": {"minimum": 0.25, "maximum": 0.5},
+      "steep_number": 2,
+      "steep_taste_description": "First drinkable steep. More pronounced flavors, often vegetal, fruity, or hay-like."
+    },
+    {
+      "temperature": {"minimum": 208, "maximum": 212},
+      "duration": {"minimum": 0.33, "maximum": 0.75},
+      "steep_number": 3,
+      "steep_taste_description": "Flavors deepen and become more complex. Notes of sweetness and a pleasant bitterness may emerge."
+    }
+  ],
+  "overall_taste_description": "Young Sheng Pu-erh often presents vegetal, fruity, and sometimes hay-like flavors with a pleasant bitterness and a sweet aftertaste. As it ages, it develops more complex, earthy, woody, and sometimes camphor notes.",
+  "short_summary": "Sheng Pu-erh, or raw Pu-erh, is a naturally fermented tea from Yunnan, China, known for its evolving flavor profile that deepens with age.",
+  "overall_tea_description": "Sheng Pu-erh is a type of Pu-erh tea that undergoes natural fermentation over a long aging period, similar to the ripening of cheese. Young Sheng Pu-erh is biologically similar to green tea, offering fresh, vegetal, and fruity notes. With proper aging, its flavor profile transforms, developing richer, more earthy, woody, and complex characteristics. It is traditionally pressed into cakes or bricks and is highly valued for its aging potential and health benefits, including supporting gut health and lowering cholesterol."
+}
+
