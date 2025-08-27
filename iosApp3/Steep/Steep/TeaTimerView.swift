@@ -519,16 +519,6 @@ struct TeaTimerView: View {
                         // Image at top-right (sample iOS icon)
                         HStack {
                             Spacer()
-                            Image(systemName: "cup.and.saucer.fill")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 130, height: 90)
-                                .foregroundColor(Color(red: 0.88, green: 0.86, blue: 0.70))
-                                .padding(10)
-                                .background(Color.white.opacity(0.75))
-                                .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
-                                .padding(.trailing, 24)
-                                .offset(y: 6)
                         }
                         .padding(.top, 6)
                         
@@ -610,28 +600,37 @@ struct TeaTimerView: View {
                     ZStack {
                         infoStrip
                         HStack {
-                            Text(selectedTea.temperature)
-                                .font(.system(size: 28, weight: .regular, design: .serif))
-                                .foregroundColor(teaOrange)
+                            HStack {
+                                Spacer()
+                                Text(selectedTea.temperature)
+                                    .font(.system(size: 24, weight: .regular, design: .serif))
+                                    .foregroundColor(teaOrange)
+                                Spacer()
+                                    .frame(width: 30)
+                            }
+                            .frame(maxWidth: .infinity)
                             
-                            Spacer()
-                            
+                            HStack {
+                                Spacer()
+                                    .frame(width: 30)
+                                VStack(alignment: .leading, spacing: 0) {
+                                    Text(selectedTea.dosage)
+                                        .font(.system(size: 28, weight: .regular, design: .serif))
+                                        .foregroundColor(teaOrange)
+                                    Text("per 8 oz")
+                                        .font(.system(size: 16, weight: .regular, design: .serif))
+                                        .foregroundColor(teaOrange.opacity(0.75))
+                                        .padding(.top, 2)
+                                }
+                                Spacer()
+                            }
+                            .frame(maxWidth: .infinity)
+                        }
+                        .overlay(
                             Circle()
                                 .fill(teaOrange.opacity(0.9))
                                 .frame(width: 12, height: 12)
-                            
-                            Spacer()
-                            
-                            VStack(alignment: .leading, spacing: 0) {
-                                Text(selectedTea.dosage)
-                                    .font(.system(size: 28, weight: .regular, design: .serif))
-                                    .foregroundColor(teaOrange)
-                                Text("per 8 oz")
-                                    .font(.system(size: 16, weight: .regular, design: .serif))
-                                    .foregroundColor(teaOrange.opacity(0.75))
-                                    .padding(.top, 2)
-                            }
-                        }
+                        )
                         .padding(.horizontal, 28)
                     }
                     .frame(height: 86)
