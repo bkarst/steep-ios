@@ -15,6 +15,8 @@ struct TeaTimerView: View {
     @State private var paused = true
     @State private var isComplete = false
     @State private var showingTeaSelection = false
+    @State private var showingTimeSelection = false
+    @State private var selectedMinutes: Int = 0
     @State private var selectedTea = Tea.greenJasmine
     @State private var timer: Timer? = nil
     
@@ -68,6 +70,18 @@ struct TeaTimerView: View {
                 return last.duration.minimum * 60
             } else {
                 return 0
+            }
+        }
+        
+        func steepingDuration(for infusion: Int) -> MinMax<Int> {
+            let adjustedInfusion = max(1, infusion)
+            if let instruction = steep_instructions.first(where: { $0.steep_number == adjustedInfusion }) {
+                return instruction.duration
+            } else if let last = steep_instructions.last {
+                // Use the last one if infusion exceeds
+                return last.duration
+            } else {
+                return MinMax(minimum: 0, maximum: 0)
             }
         }
         
@@ -414,6 +428,60 @@ struct TeaTimerView: View {
         }
     }
     
+    struct TimeSelectionSheet: View {
+        @Binding var selectedMinutes: Int
+        let minMinutes: Int
+        let maxMinutes: Int
+        @Environment(\.dismiss) private var dismiss
+        @State private var localMinutes: Int
+        
+        // Match the tea timer colors
+        private let paper = Color(red: 1.00, green: 0.97, blue: 0.86)
+        private let teaOrange = Color(red: 0.73, green: 0.37, blue: 0.09)
+        
+        init(selectedMinutes: Binding<Int>, minMinutes: Int, maxMinutes: Int) {
+            self._selectedMinutes = selectedMinutes
+            self.minMinutes = minMinutes
+            self.maxMinutes = maxMinutes
+            self._localMinutes = State(initialValue: selectedMinutes.wrappedValue)
+        }
+        
+        var body: some View {
+            NavigationView {
+                ZStack {
+                    paper.ignoresSafeArea()
+                    
+                    Picker("Steep Time", selection: $localMinutes) {
+                        ForEach(minMinutes...maxMinutes, id: \.self) { minutes in
+                            Text("\(minutes) minutes").tag(minutes)
+                        }
+                    }
+                    .pickerStyle(.wheel)
+                    .labelsHidden()
+                }
+                .navigationTitle("Select Time")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button("Cancel") {
+                            dismiss()
+                        }
+                        .foregroundColor(teaOrange)
+                        .font(.system(size: 18, weight: .regular, design: .serif))
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button("Done") {
+                            selectedMinutes = localMinutes
+                            dismiss()
+                        }
+                        .foregroundColor(teaOrange)
+                        .font(.system(size: 18, weight: .regular, design: .serif))
+                    }
+                }
+            }
+        }
+    }
+    
     // Colors tuned to the screenshot
     private let paper      = Color(red: 1.00, green: 0.97, blue: 0.86) // main background
     private let titleStrip = Color(red: 0.97, green: 0.92, blue: 0.75) // behind "Green (Jasmine)"
@@ -495,51 +563,38 @@ struct TeaTimerView: View {
                         .padding(.top, -6)
                         
                         // Timer
-                        Text(String(format: "%d:%02d", seconds/60, seconds%60))
-                            .font(.system(size: 70, weight: .regular, design: .serif))
-                            .foregroundColor(teaOrange)
-                            .padding(.top, 10)
-                        
-                        // Pause/Reset button
                         Button {
-                            if isComplete {
-                                // Reset
+                            showingTimeSelection = true
+                        } label: {
+                            Text(String(format: "%d:%02d", seconds/60, seconds%60))
+                                .font(.system(size: 70, weight: .regular, design: .serif))
+                                .foregroundColor(teaOrange)
+                        }
+                        .buttonStyle(.plain)
+                        .padding(.top, 10)
+                        
+                        if isComplete {
+                            controlButton(title: "Reset") {
                                 resetTimer()
-                            } else {
-                                // Pause/Resume
-                                paused.toggle()
-                                if paused {
-                                    timer?.invalidate()
-                                    timer = nil
-                                    cancelNotification()
-                                } else {
-                                    scheduleNotification()
-                                    timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
-                                        if seconds > 0 {
-                                            seconds -= 1
-                                        } else {
-                                            // Timer complete
-                                            paused = true
-                                            isComplete = true
-                                            timer?.invalidate()
-                                            timer = nil
-                                        }
-                                    }
+                            }
+                            .padding(.top, 6)
+                        } else if paused {
+                            HStack(spacing: 20) {
+                                controlButton(title: "Reset") {
+                                    resetTimer()
+                                }
+                                
+                                controlButton(title: "Resume") {
+                                    startTimer()
                                 }
                             }
-                        } label: {
-                            Text(isComplete ? "Reset" : (paused ? "Resume" : "Pause"))
-                                .font(.system(size: 36, weight: .regular, design: .serif))
-                                .foregroundColor(creamInk)
-                                .padding(.vertical, 14)
-                                .padding(.horizontal, 38)
-                                .background(
-                                    RoundedRectangle(cornerRadius: 26, style: .continuous)
-                                        .fill(teaOrange)
-                                )
+                            .padding(.top, 6)
+                        } else {
+                            controlButton(title: "Pause") {
+                                pauseTimer()
+                            }
+                            .padding(.top, 6)
                         }
-                        .shadow(color: Color.black.opacity(0.18), radius: 8, x: 0, y: 6)
-                        .padding(.top, 6)
                     }
                     .padding(.bottom, 18)
                     
@@ -589,11 +644,27 @@ struct TeaTimerView: View {
                 .presentationDetents([.medium, .large])
                 .presentationDragIndicator(.visible)
         }
+        .sheet(isPresented: $showingTimeSelection) {
+            let duration = selectedTea.steepingDuration(for: infusion)
+            TimeSelectionSheet(selectedMinutes: $selectedMinutes,
+                               minMinutes: duration.minimum,
+                               maxMinutes: duration.maximum)
+                .presentationDetents([.height(300)])
+                .presentationDragIndicator(.visible)
+        }
         .onChange(of: selectedTea) { _ in
             resetTimer()
         }
         .onChange(of: infusion) { _ in
             resetTimer()
+        }
+        .onChange(of: selectedMinutes) { _ in
+            seconds = selectedMinutes * 60
+            paused = true
+            isComplete = false
+            timer?.invalidate()
+            timer = nil
+            cancelNotification()
         }
         .onAppear {
             requestNotificationPermission()
@@ -601,13 +672,59 @@ struct TeaTimerView: View {
         }
     }
     
+    private func controlButton(title: String, action: @escaping () -> Void) -> some View {
+        Button {
+            action()
+        } label: {
+            Text(title)
+                .font(.system(size: 36, weight: .regular, design: .serif))
+                .foregroundColor(creamInk)
+                .padding(.vertical, 14)
+                .padding(.horizontal, 28)
+                .background(
+                    RoundedRectangle(cornerRadius: 26, style: .continuous)
+                        .fill(teaOrange)
+                )
+        }
+        .shadow(color: Color.black.opacity(0.18), radius: 8, x: 0, y: 6)
+    }
+    
     private func resetTimer() {
         timer?.invalidate()
         timer = nil
         cancelNotification()
-        seconds = selectedTea.steepingTime(for: infusion)
+        let duration = selectedTea.steepingDuration(for: infusion)
+        selectedMinutes = duration.minimum
+        seconds = selectedMinutes * 60
         paused = true
         isComplete = false
+    }
+    
+    private func startTimer() {
+        if seconds <= 0 {
+            isComplete = true
+            return
+        }
+        paused = false
+        isComplete = false
+        scheduleNotification()
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
+            if seconds > 0 {
+                seconds -= 1
+            } else {
+                paused = true
+                isComplete = true
+                timer?.invalidate()
+                timer = nil
+            }
+        }
+    }
+    
+    private func pauseTimer() {
+        paused = true
+        timer?.invalidate()
+        timer = nil
+        cancelNotification()
     }
     
     private func requestNotificationPermission() {
