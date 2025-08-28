@@ -166,7 +166,7 @@ struct TeaTimerView: View {
         // Computed property to group filtered teas by main tea type
         private var groupedTeas: [(String, [TeaVariety])] {
             let grouped = Dictionary(grouping: filteredTeas) { $0.main_tea_type }
-            let sortedKeys = ["Green", "Black", "Oolong", "Yellow", "Herbal"] // Custom order
+            let sortedKeys = ["Green", "Black", "Oolong", "Pu-erh", "Yellow", "Herbal"] // Custom order
             return sortedKeys.compactMap { key in
                 guard let teas = grouped[key], !teas.isEmpty else { return nil }
                 return (key, teas.sorted { $0.tea_name < $1.tea_name })
@@ -249,13 +249,20 @@ struct TeaTimerView: View {
     private let plus_minus_button_size: CGFloat = 80
     private let portion_text_size: CGFloat = 40
     private let description_text_size: CGFloat = 18
-    private let button_text_padding_vertical: CGFloat = 20
-    private let button_text_padding_horizontal: CGFloat = 28
+    private let button_text_padding_vertical: CGFloat = 28
+    private let button_text_padding_horizontal: CGFloat = 38
     private let description_gutter_size: CGFloat = 48
     private let description_top_padding: CGFloat = 28
     private let tea_name_padding: CGFloat = 0
     private let description_bottom_padding: CGFloat = 0
     private let tea_name_horizontal_padding: CGFloat = 30
+    private let steep_button_text_size: CGFloat = 32
+    private let infusion_text_size: CGFloat = 28
+    
+    // Leaf background image positioning variables
+    private let leaf_image_top_offset: CGFloat = -50
+    private let leaf_image_trailing_padding: CGFloat = -10
+    private let leaf_image_size: CGFloat = 70
     
     
     var body: some View {
@@ -268,20 +275,24 @@ struct TeaTimerView: View {
                     titleStrip
                         .frame(height: 120)
                         .overlay(
-                            Button(action: {
-                                showingTeaSelection = true
-                            }) {
-                                Text(selectedTea.name)
-                                    .font(.system(size: tea_name_max_text_size, weight: .regular, design: .serif))
-                                    .kerning(1)
-                                    .foregroundColor(teaOrange)
-                                    .multilineTextAlignment(.center)
-                                    .minimumScaleFactor(0.5)
-                                    .lineLimit(1)
-                                    .padding(.top, tea_name_padding)
-                                    .padding(.horizontal, tea_name_horizontal_padding)
+                            ZStack {
+                                
+                                // Tea name button on top
+                                Button(action: {
+                                    showingTeaSelection = true
+                                }) {
+                                    Text(selectedTea.name)
+                                        .font(.system(size: tea_name_max_text_size, weight: .regular, design: .serif))
+                                        .kerning(1)
+                                        .foregroundColor(teaOrange)
+                                        .multilineTextAlignment(.center)
+                                        .minimumScaleFactor(0.5)
+                                        .lineLimit(1)
+                                        .padding(.top, tea_name_padding)
+                                        .padding(.horizontal, tea_name_horizontal_padding)
+                                }
+                                .buttonStyle(.plain)
                             }
-                            .buttonStyle(.plain)
                         )
                     
                     // Content
@@ -294,30 +305,46 @@ struct TeaTimerView: View {
                         
                         // Infusion picker
                         Text("infusion")
-                            .font(.system(size: 28, weight: .regular, design: .serif))
+                            .font(.system(size: infusion_text_size, weight: .regular, design: .serif))
                             .foregroundColor(teaOrange.opacity(0.95))
                             .padding(.top, -10)
                         
-                        HStack(spacing: 34) {
-                            RoundSymbolButton(symbol: "minus",
-                                              fill: infusion > 1 ? teaOrange : olive,
-                                              symbolColor: creamInk,
-                                              size: plus_minus_button_size) {
-                                if infusion > 1 {
-                                    infusion -= 1
+                        ZStack {
+                            // Background leaf image positioned higher and more to the right
+                            HStack {
+                                Spacer()
+                                VStack {
+                                    Image(systemName: "leaf.fill")
+                                        .font(.system(size: leaf_image_size))
+                                        .foregroundColor(teaOrange.opacity(0.2))
+                                        .padding(.trailing, leaf_image_trailing_padding)
+                                        .padding(.top, leaf_image_top_offset)
+                                    Spacer()
                                 }
                             }
                             
-                            Text("\(infusion)")
-                                .font(.system(size: portion_text_size, weight: .regular, design: .serif))
-                                .foregroundColor(teaOrange)
-                            
-                            RoundSymbolButton(symbol: "plus",
-                                              fill: infusion < Int(selectedTea.number_of_steeps.maximum) ? teaOrange : olive,
-                                              symbolColor: creamInk,
-                                              size: plus_minus_button_size) {
-                                if infusion < Int(selectedTea.number_of_steeps.maximum) {
-                                    infusion += 1
+                            // Infusion controls in foreground
+                            HStack(spacing: 34) {
+                                RoundSymbolButton(symbol: "minus",
+                                                  fill: infusion > 1 ? teaOrange : olive,
+                                                  symbolColor: creamInk,
+                                                  size: plus_minus_button_size) {
+                                    if infusion > 1 {
+                                        infusion -= 1
+                                    }
+                                }
+                                
+                                Text("\(infusion)")
+                                    .font(.system(size: portion_text_size, weight: .regular, design: .serif))
+                                    .foregroundColor(teaOrange)
+                                
+                                RoundSymbolButton(symbol: "plus",
+                                                  fill: infusion < Int(selectedTea.number_of_steeps.maximum) ? teaOrange : olive,
+                                                  symbolColor: creamInk,
+                                                  size: plus_minus_button_size) {
+                                    if infusion < Int(selectedTea.number_of_steeps.maximum) {
+                                        infusion += 1
+                                    }
                                 }
                             }
                         }
@@ -458,7 +485,7 @@ struct TeaTimerView: View {
             action()
         } label: {
             Text(title)
-                .font(.system(size: 36, weight: .regular, design: .serif))
+                .font(.system(size: steep_button_text_size, weight: .regular, design: .serif))
                 .foregroundColor(creamInk)
                 .padding(.vertical, button_text_padding_vertical)
                 .padding(.horizontal, button_text_padding_horizontal)
