@@ -215,6 +215,18 @@ struct TeaTimerView: View {
     private let olive      = Color(red: 0.62, green: 0.62, blue: 0.46)
     private let creamInk   = Color(red: 1.00, green: 0.94, blue: 0.80)
     
+    // Text size variables
+    private let tea_name_text_size: CGFloat = 37
+    private let timer_text_size: CGFloat = 62
+    private let plus_minus_button_size: CGFloat = 80
+    private let portion_text_size: CGFloat = 40
+    private let description_text_size: CGFloat = 18
+    private let button_text_padding_vertical: CGFloat = 20
+    private let button_text_padding_horizontal: CGFloat = 28
+    private let description_gutter_size: CGFloat = 48
+    private let description_top_padding: CGFloat = 28
+    
+    
     var body: some View {
         ZStack(alignment: .top) {
             paper.ignoresSafeArea()
@@ -229,9 +241,10 @@ struct TeaTimerView: View {
                                 showingTeaSelection = true
                             }) {
                                 Text(selectedTea.name)
-                                    .font(.system(size: 42, weight: .regular, design: .serif))
+                                    .font(.system(size: tea_name_text_size, weight: .regular, design: .serif))
                                     .kerning(1)
                                     .foregroundColor(teaOrange)
+                                    .multilineTextAlignment(.center)
                                     .padding(.top, 12)
                             }
                             .buttonStyle(.plain)
@@ -255,20 +268,20 @@ struct TeaTimerView: View {
                             RoundSymbolButton(symbol: "minus",
                                               fill: teaOrange,
                                               symbolColor: creamInk,
-                                              size: 112) {
+                                              size: plus_minus_button_size) {
                                 if infusion > Int(selectedTea.number_of_steeps.minimum) {
                                     infusion -= 1
                                 }
                             }
                             
                             Text("\(infusion)")
-                                .font(.system(size: 56, weight: .regular, design: .serif))
+                                .font(.system(size: portion_text_size, weight: .regular, design: .serif))
                                 .foregroundColor(teaOrange)
                             
                             RoundSymbolButton(symbol: "plus",
                                               fill: olive,
                                               symbolColor: creamInk,
-                                              size: 112) {
+                                              size: plus_minus_button_size) {
                                 if infusion < Int(selectedTea.number_of_steeps.maximum) {
                                     infusion += 1
                                 }
@@ -281,8 +294,9 @@ struct TeaTimerView: View {
                             showingTimeSelection = true
                         } label: {
                             Text(String(format: "%d:%02d", seconds/60, seconds%60))
-                                .font(.system(size: 70, weight: .regular, design: .serif))
+                                .font(.system(size: timer_text_size, weight: .regular, design: .serif))
                                 .foregroundColor(teaOrange)
+                                .multilineTextAlignment(.center)
                         }
                         .buttonStyle(.plain)
                         .padding(.top, 10)
@@ -360,11 +374,11 @@ struct TeaTimerView: View {
                     
                     // Body text
                     Text(selectedTea.description)
-                        .font(.system(size: 24, weight: .regular, design: .serif))
+                        .font(.system(size: description_text_size, weight: .regular, design: .serif))
                         .foregroundColor(teaOrange)
                         .lineSpacing(6)
-                        .padding(.horizontal, 26)
-                        .padding(.top, 18)
+                        .padding(.horizontal, description_gutter_size)
+                        .padding(.top, description_top_padding)
                         .padding(.bottom, 24)
                 }
             }
@@ -410,8 +424,8 @@ struct TeaTimerView: View {
             Text(title)
                 .font(.system(size: 36, weight: .regular, design: .serif))
                 .foregroundColor(creamInk)
-                .padding(.vertical, 14)
-                .padding(.horizontal, 28)
+                .padding(.vertical, button_text_padding_vertical)
+                .padding(.horizontal, button_text_padding_horizontal)
                 .background(
                     RoundedRectangle(cornerRadius: 26, style: .continuous)
                         .fill(teaOrange)
