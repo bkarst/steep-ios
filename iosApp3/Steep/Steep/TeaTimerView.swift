@@ -86,6 +86,7 @@ extension TeaVariety {
 }
 
 struct TeaTimerView: View {
+    @Environment(\.managedObjectContext) private var viewContext
     @State private var infusion = 1
     @State private var seconds = 0
     @State private var initialSeconds = 0
@@ -95,6 +96,8 @@ struct TeaTimerView: View {
     @State private var showingTimeSelection = false
     @State private var selectedSeconds: Int = 0
     @State private var selectedTea = allTeas.first { $0.tea_name == "English Breakfast Tea" }!
+    @State private var previousTea: TeaVariety?
+    @State private var previousInfusion: Int?
     @State private var timer: Timer? = nil
     
     struct TeaSelectionSheet: View {
@@ -522,10 +525,24 @@ struct TeaTimerView: View {
                 .presentationDragIndicator(.visible)
         }
         .onChange(of: selectedTea) { _ in
+            // Save preferences for the previous tea before switching
+            if let prevTea = previousTea, let prevInfusion = previousInfusion {
+                savePreviousTeaPreferences(tea: prevTea, infusion: prevInfusion)
+            }
+            
             infusion = 1
+            previousTea = selectedTea
+            previousInfusion = infusion
+            saveLastSelectedTea()
             resetTimer()
         }
         .onChange(of: infusion) { _ in
+            // Save preferences for the previous infusion before switching
+            if let prevTea = previousTea, let prevInfusion = previousInfusion {
+                savePreviousTeaPreferences(tea: prevTea, infusion: prevInfusion)
+            }
+            
+            previousInfusion = infusion
             resetTimer()
         }
         .onChange(of: selectedSeconds) { _ in
@@ -536,9 +553,13 @@ struct TeaTimerView: View {
             timer?.invalidate()
             timer = nil
             cancelNotification()
+            saveCurrentPreferences()
         }
         .onAppear {
             requestNotificationPermission()
+            loadLastSelectedTea()
+            previousTea = selectedTea
+            previousInfusion = infusion
             resetTimer()
         }
     }
@@ -583,12 +604,67 @@ struct TeaTimerView: View {
         timer?.invalidate()
         timer = nil
         cancelNotification()
-        let duration = selectedTea.steepingDuration(for: infusion)
-        selectedSeconds = calculateDefaultSteepTime(duration: duration)
+        
+        // Try to load saved preference first
+        if let savedPreference = PersistenceController.shared.getTeaPreference(
+            teaID: selectedTea.id.uuidString,
+            infusion: infusion,
+            context: viewContext
+        ) {
+            selectedSeconds = Int(savedPreference.preferredTimeSeconds)
+        } else {
+            // Fall back to calculated default
+            let duration = selectedTea.steepingDuration(for: infusion)
+            selectedSeconds = calculateDefaultSteepTime(duration: duration)
+        }
+        
         seconds = selectedSeconds
         initialSeconds = seconds
         paused = true
         isComplete = false
+    }
+    
+    private func saveCurrentPreferences() {
+        print("💾 Saving current preferences for tea: \(selectedTea.name), infusion: \(infusion), time: \(selectedSeconds)s")
+        
+        // Save the current tea preference
+        PersistenceController.shared.saveTeaPreference(
+            teaID: selectedTea.id.uuidString,
+            infusion: infusion,
+            preferredTimeSeconds: selectedSeconds,
+            context: viewContext
+        )
+    }
+    
+    private func savePreviousTeaPreferences(tea: TeaVariety, infusion: Int) {
+        print("💾 Saving previous tea preferences for: \(tea.name), infusion: \(infusion), time: \(selectedSeconds)s")
+        
+        PersistenceController.shared.saveTeaPreference(
+            teaID: tea.id.uuidString,
+            infusion: infusion,
+            preferredTimeSeconds: selectedSeconds,
+            context: viewContext
+        )
+    }
+    
+    private func saveLastSelectedTea() {
+        print("💾 Saving last selected tea: \(selectedTea.name)")
+        
+        PersistenceController.shared.saveLastSelectedTea(
+            teaID: selectedTea.id.uuidString,
+            context: viewContext
+        )
+    }
+    
+    private func loadLastSelectedTea() {
+        print("🔍 Loading last selected tea on app launch...")
+        if let lastTeaID = PersistenceController.shared.getLastSelectedTeaID(context: viewContext),
+           let tea = allTeas.first(where: { $0.id.uuidString == lastTeaID }) {
+            print("✅ Found and loaded last selected tea: \(tea.name)")
+            selectedTea = tea
+        } else {
+            print("⚠️ No last selected tea found, using default")
+        }
     }
     
     private func startTimer() {

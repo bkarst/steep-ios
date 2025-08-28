@@ -28,6 +28,73 @@ struct PersistenceController {
         }
         return result
     }()
+    
+    // MARK: - Tea Preferences Management
+    
+    func saveTeaPreference(teaID: String, infusion: Int, preferredTimeSeconds: Int, context: NSManagedObjectContext) {
+        let request: NSFetchRequest<TeaPreference> = TeaPreference.fetchRequest()
+        request.predicate = NSPredicate(format: "teaID == %@ AND infusionNumber == %d", teaID, infusion)
+        
+        do {
+            let results = try context.fetch(request)
+            let preference = results.first ?? TeaPreference(context: context)
+            
+            preference.teaID = teaID
+            preference.infusionNumber = Int16(infusion)
+            preference.preferredTimeSeconds = Int32(preferredTimeSeconds)
+            preference.lastSelected = Date()
+            
+            try context.save()
+        } catch {
+            print("Failed to save tea preference: \(error)")
+        }
+    }
+    
+    func getTeaPreference(teaID: String, infusion: Int, context: NSManagedObjectContext) -> TeaPreference? {
+        let request: NSFetchRequest<TeaPreference> = TeaPreference.fetchRequest()
+        request.predicate = NSPredicate(format: "teaID == %@ AND infusionNumber == %d", teaID, infusion)
+        request.fetchLimit = 1
+        
+        do {
+            return try context.fetch(request).first
+        } catch {
+            print("Failed to fetch tea preference: \(error)")
+            return nil
+        }
+    }
+    
+    func saveLastSelectedTea(teaID: String, context: NSManagedObjectContext) {
+        print("💾 Saving last selected tea: \(teaID)")
+        let request: NSFetchRequest<UserPreferences> = UserPreferences.fetchRequest()
+        request.fetchLimit = 1
+        
+        do {
+            let results = try context.fetch(request)
+            let userPrefs = results.first ?? UserPreferences(context: context)
+            
+            userPrefs.lastSelectedTeaID = teaID
+            userPrefs.lastUpdated = Date()
+            
+            try context.save()
+            print("✅ Successfully saved last selected tea: \(teaID)")
+        } catch {
+            print("❌ Failed to save last selected tea: \(error)")
+        }
+    }
+    
+    func getLastSelectedTeaID(context: NSManagedObjectContext) -> String? {
+        let request: NSFetchRequest<UserPreferences> = UserPreferences.fetchRequest()
+        request.fetchLimit = 1
+        
+        do {
+            let result = try context.fetch(request).first?.lastSelectedTeaID
+            print("🔍 Loading last selected tea from CoreData: \(result ?? "none")")
+            return result
+        } catch {
+            print("❌ Failed to fetch last selected tea: \(error)")
+            return nil
+        }
+    }
 
     let container: NSPersistentContainer
 

@@ -3,7 +3,19 @@
     <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
+    <entity name="TeaPreference" representedClassName="TeaPreference" syncable="YES" codeGenerationType="class">
+        <attribute name="infusionNumber" optional="NO" attributeType="Integer 16" defaultValueString="1" usesScalarValueType="YES"/>
+        <attribute name="lastSelected" optional="NO" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="preferredTimeSeconds" optional="NO" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="teaID" optional="NO" attributeType="String"/>
+    </entity>
+    <entity name="UserPreferences" representedClassName="UserPreferences" syncable="YES" codeGenerationType="class">
+        <attribute name="lastSelectedTeaID" optional="YES" attributeType="String"/>
+        <attribute name="lastUpdated" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
     <elements>
         <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
+        <element name="TeaPreference" positionX="-54" positionY="9" width="128" height="89"/>
+        <element name="UserPreferences" positionX="-36" positionY="36" width="128" height="59"/>
     </elements>
 </model>
