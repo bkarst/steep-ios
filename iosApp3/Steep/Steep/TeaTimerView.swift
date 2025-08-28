@@ -67,7 +67,7 @@ struct TeaTimerView: View {
     @State private var isComplete = false
     @State private var showingTeaSelection = false
     @State private var showingTimeSelection = false
-    @State private var selectedMinutes: Int = 0
+    @State private var selectedSeconds: Int = 0
     @State private var selectedTea = allTeas.first { $0.tea_name == "English Breakfast Tea" }!
     @State private var timer: Timer? = nil
     
@@ -153,21 +153,21 @@ struct TeaTimerView: View {
     }
     
     struct TimeSelectionSheet: View {
-        @Binding var selectedMinutes: Int
-        let minMinutes: Double
-        let maxMinutes: Double
+        @Binding var selectedSeconds: Int
+        let minSeconds: Int
+        let maxSeconds: Int
         @Environment(\.dismiss) private var dismiss
-        @State private var localMinutes: Int
+        @State private var localSeconds: Int
         
         // Match the tea timer colors
         private let paper = Color(red: 1.00, green: 0.97, blue: 0.86)
         private let teaOrange = Color(red: 0.73, green: 0.37, blue: 0.09)
         
-        init(selectedMinutes: Binding<Int>, minMinutes: Double, maxMinutes: Double) {
-            self._selectedMinutes = selectedMinutes
-            self.minMinutes = minMinutes
-            self.maxMinutes = maxMinutes
-            self._localMinutes = State(initialValue: selectedMinutes.wrappedValue)
+        init(selectedSeconds: Binding<Int>, minSeconds: Int, maxSeconds: Int) {
+            self._selectedSeconds = selectedSeconds
+            self.minSeconds = minSeconds
+            self.maxSeconds = maxSeconds
+            self._localSeconds = State(initialValue: selectedSeconds.wrappedValue)
         }
         
         var body: some View {
@@ -175,9 +175,15 @@ struct TeaTimerView: View {
                 ZStack {
                     paper.ignoresSafeArea()
                     
-                    Picker("Steep Time", selection: $localMinutes) {
-                        ForEach(Int(minMinutes)...Int(maxMinutes), id: \.self) { minutes in
-                            Text("\(minutes) minutes").tag(minutes)
+                    Picker("Steep Time", selection: $localSeconds) {
+                        ForEach(Array(stride(from: minSeconds, through: maxSeconds, by: 30)), id: \.self) { seconds in
+                            let minutes = seconds / 60
+                            let remainingSeconds = seconds % 60
+                            if remainingSeconds == 0 {
+                                Text("\(minutes) min").tag(seconds)
+                            } else {
+                                Text("\(minutes):\(String(format: "%02d", remainingSeconds))").tag(seconds)
+                            }
                         }
                     }
                     .pickerStyle(.wheel)
@@ -195,7 +201,7 @@ struct TeaTimerView: View {
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button("Done") {
-                            selectedMinutes = localMinutes
+                            selectedSeconds = localSeconds
                             dismiss()
                         }
                         .foregroundColor(teaOrange)
@@ -275,7 +281,7 @@ struct TeaTimerView: View {
                                               fill: teaOrange,
                                               symbolColor: creamInk,
                                               size: plus_minus_button_size) {
-                                if infusion > Int(selectedTea.number_of_steeps.minimum) {
+                                if infusion > 1 {
                                     infusion -= 1
                                 }
                             }
@@ -396,20 +402,21 @@ struct TeaTimerView: View {
         }
         .sheet(isPresented: $showingTimeSelection) {
             let duration = selectedTea.steepingDuration(for: infusion)
-            TimeSelectionSheet(selectedMinutes: $selectedMinutes,
-                               minMinutes: duration.minimum,
-                               maxMinutes: duration.maximum)
+            TimeSelectionSheet(selectedSeconds: $selectedSeconds,
+                               minSeconds: Int(duration.minimum * 60),
+                               maxSeconds: Int(duration.maximum * 60))
                 .presentationDetents([.height(300)])
                 .presentationDragIndicator(.visible)
         }
         .onChange(of: selectedTea) { _ in
+            infusion = 1
             resetTimer()
         }
         .onChange(of: infusion) { _ in
             resetTimer()
         }
-        .onChange(of: selectedMinutes) { _ in
-            seconds = selectedMinutes * 60
+        .onChange(of: selectedSeconds) { _ in
+            seconds = selectedSeconds
             initialSeconds = seconds
             paused = true
             isComplete = false
@@ -445,8 +452,8 @@ struct TeaTimerView: View {
         timer = nil
         cancelNotification()
         let duration = selectedTea.steepingDuration(for: infusion)
-        selectedMinutes = Int(duration.minimum)
-        seconds = selectedMinutes * 60
+        selectedSeconds = Int(duration.minimum * 60)
+        seconds = selectedSeconds
         initialSeconds = seconds
         paused = true
         isComplete = false
