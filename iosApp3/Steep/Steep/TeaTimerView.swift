@@ -237,7 +237,7 @@ struct TeaTimerView: View {
     // Colors tuned to the screenshot
     private let paper      = Color(red: 1.00, green: 0.97, blue: 0.86) // main background
     private let titleStrip = Color(red: 0.97, green: 0.92, blue: 0.75) // behind "Green (Jasmine)"
-    private let infoStrip  = Color(red: 0.98, green: 0.95, blue: 0.83) // behind temp/dosage row
+    private let infoStrip  = Color.white.opacity(0.55)
     
     private let teaOrange  = Color(red: 0.73, green: 0.37, blue: 0.09)
     private let olive      = Color(red: 0.62, green: 0.62, blue: 0.46)
@@ -268,6 +268,7 @@ struct TeaTimerView: View {
     private let leaf_image_trailing_padding: CGFloat = -5
     private let leaf_image_size: CGFloat = 70
     private let title_strip_height: CGFloat = 70
+    private let top_strip_top_spacing: CGFloat = 12
     
     
     var body: some View {
@@ -276,6 +277,10 @@ struct TeaTimerView: View {
             
             ScrollView {
                 VStack(spacing: 0) {
+                    // Top spacing
+                    Spacer()
+                        .frame(height: top_strip_top_spacing)
+                    
                     // Title strip
                     titleStrip
                         .frame(height: title_strip_height)
@@ -487,7 +492,9 @@ struct TeaTimerView: View {
     
     private func controlButton(title: String, action: @escaping () -> Void) -> some View {
         Button {
-            action()
+            withAnimation(.bouncy(duration: 0.7)) {
+                action()
+            }
         } label: {
             HStack(spacing: steep_button_text_icon_spacing) {
                 Text(title)

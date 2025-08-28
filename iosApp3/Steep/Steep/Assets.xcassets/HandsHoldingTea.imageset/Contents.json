@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "20250825_1323_Tea Bag Removed_remix_01k3h7e3wkfybtenvxeyy3x8wt.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
