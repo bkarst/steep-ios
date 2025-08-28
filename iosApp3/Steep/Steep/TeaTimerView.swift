@@ -8,6 +8,9 @@
 import SwiftUI
 import Foundation // For Timer
 import UserNotifications
+import AVFoundation
+import AudioToolbox
+import UIKit
 
 // MARK: - Color Utilities
 func rgbToAppleColor(red: Int, green: Int, blue: Int) -> Color {
@@ -99,6 +102,7 @@ struct TeaTimerView: View {
     @State private var previousTea: TeaVariety?
     @State private var previousInfusion: Int?
     @State private var timer: Timer? = nil
+    @State private var audioPlayer: AVAudioPlayer?
     
     struct TeaSelectionSheet: View {
         @Binding var selectedTea: TeaVariety
@@ -604,6 +608,7 @@ struct TeaTimerView: View {
         timer?.invalidate()
         timer = nil
         cancelNotification()
+        stopAlarmSound()
         
         // Try to load saved preference first
         if let savedPreference = PersistenceController.shared.getTeaPreference(
@@ -683,6 +688,7 @@ struct TeaTimerView: View {
                 isComplete = true
                 timer?.invalidate()
                 timer = nil
+                playAlarmSound()
             }
         }
     }
@@ -720,6 +726,55 @@ struct TeaTimerView: View {
     
     private func cancelNotification() {
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["tea-timer"])
+    }
+    
+    private func playAlarmSound() {
+        print("🔔 Playing alarm sound for timer completion")
+        
+        // Configure audio session for playback
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch {
+            print("❌ Failed to set up audio session: \(error)")
+        }
+        
+        // Use system alarm sound
+        guard let soundURL = Bundle.main.url(forResource: "alarm", withExtension: "wav") else {
+            // Fallback to system sound if custom alarm file doesn't exist
+            print("⚠️ Custom alarm sound not found, using system sound")
+            AudioServicesPlaySystemSound(1005) // System alarm sound
+            return
+        }
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: soundURL)
+            audioPlayer?.numberOfLoops = 3 // Play 4 times total (0 = once, 3 = 4 times)
+            audioPlayer?.volume = 1.0
+            audioPlayer?.play()
+        } catch {
+            print("❌ Failed to play custom alarm sound: \(error)")
+            // Fallback to system sound
+            AudioServicesPlaySystemSound(1005)
+        }
+        
+        // Add haptic feedback
+        let impactFeedback = UIImpactFeedbackGenerator(style: .heavy)
+        impactFeedback.prepare()
+        impactFeedback.impactOccurred()
+        
+        // Additional vibration pattern
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            impactFeedback.impactOccurred()
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            impactFeedback.impactOccurred()
+        }
+    }
+    
+    private func stopAlarmSound() {
+        audioPlayer?.stop()
+        audioPlayer = nil
     }
 }
 
