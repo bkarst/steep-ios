@@ -9,6 +9,56 @@ import SwiftUI
 import Foundation // For Timer
 import UserNotifications
 
+extension TeaVariety: Equatable {
+    static func == (lhs: TeaVariety, rhs: TeaVariety) -> Bool {
+        lhs.id == rhs.id
+    }
+}
+
+extension TeaVariety {
+    var name: String {
+        return tea_name
+    }
+    
+    var temperature: String {
+        let temp = steep_instructions.first?.temperature
+        return "\(Int(temp?.minimum ?? 0))-\(Int(temp?.maximum ?? 0))°F"
+    }
+    
+    var dosage: String {
+        let d = tsp_per_8_oz
+        return d.minimum == d.maximum ? "\(d.minimum) tsp" : "\(d.minimum)-\(d.maximum) tsp"
+    }
+    
+    var description: String {
+        overall_tea_description
+    }
+    
+    func steepingTime(for infusion: Int) -> Int {
+        let adjustedInfusion = max(1, infusion)
+        if let instruction = steep_instructions.first(where: { $0.steep_number == adjustedInfusion }) {
+            return Int(instruction.duration.minimum * 60)
+        } else if let last = steep_instructions.last {
+            // Use the last one if infusion exceeds
+            return Int(last.duration.minimum * 60)
+        } else {
+            return 0
+        }
+    }
+    
+    func steepingDuration(for infusion: Int) -> ValueRange {
+        let adjustedInfusion = max(1, infusion)
+        if let instruction = steep_instructions.first(where: { $0.steep_number == adjustedInfusion }) {
+            return instruction.duration
+        } else if let last = steep_instructions.last {
+            // Use the last one if infusion exceeds
+            return last.duration
+        } else {
+            return ValueRange(minimum: 0, maximum: 0)
+        }
+    }
+}
+
 struct TeaTimerView: View {
     @State private var infusion = 1
     @State private var seconds = 0
@@ -18,338 +68,11 @@ struct TeaTimerView: View {
     @State private var showingTeaSelection = false
     @State private var showingTimeSelection = false
     @State private var selectedMinutes: Int = 0
-    @State private var selectedTea = Tea.greenJasmine
+    @State private var selectedTea = allTeas.first { $0.tea_name == "English Breakfast Tea" }!
     @State private var timer: Timer? = nil
     
-    struct MinMax<T: Codable & Equatable>: Codable, Equatable {
-        let minimum: T
-        let maximum: T
-    }
-    
-    struct SteepInstruction: Codable, Equatable {
-        let temperature: MinMax<Int>
-        let duration: MinMax<Int> // in minutes
-        let steep_number: Int
-        let steep_taste_description: String
-    }
-    
-    struct Tea: Identifiable, Equatable {
-        let id: String
-        let name: String
-        let tea_name: String
-        let tsp_per_8_oz: MinMax<Int>
-        let region_of_origin: String
-        let traditional_name: String
-        let amount_of_caffiene: Int
-        let main_tea_type: String
-        let number_of_steeps: MinMax<Int>
-        let steep_instructions: [SteepInstruction]
-        let overall_taste_description: String
-        let short_summary: String
-        let overall_tea_description: String
-        
-        var temperature: String {
-            let temp = steep_instructions.first?.temperature ?? MinMax(minimum: 0, maximum: 0)
-            return "\(temp.minimum)-\(temp.maximum)°F"
-        }
-        
-        var dosage: String {
-            let d = tsp_per_8_oz
-            return d.minimum == d.maximum ? "\(d.minimum) tsp" : "\(d.minimum)-\(d.maximum) tsp"
-        }
-        
-        var description: String {
-            overall_tea_description
-        }
-        
-        func steepingTime(for infusion: Int) -> Int {
-            let adjustedInfusion = max(1, infusion)
-            if let instruction = steep_instructions.first(where: { $0.steep_number == adjustedInfusion }) {
-                return instruction.duration.minimum * 60
-            } else if let last = steep_instructions.last {
-                // Use the last one if infusion exceeds
-                return last.duration.minimum * 60
-            } else {
-                return 0
-            }
-        }
-        
-        func steepingDuration(for infusion: Int) -> MinMax<Int> {
-            let adjustedInfusion = max(1, infusion)
-            if let instruction = steep_instructions.first(where: { $0.steep_number == adjustedInfusion }) {
-                return instruction.duration
-            } else if let last = steep_instructions.last {
-                // Use the last one if infusion exceeds
-                return last.duration
-            } else {
-                return MinMax(minimum: 0, maximum: 0)
-            }
-        }
-        
-        static let greenJasmine = Tea(
-            id: "greenJasmine",
-            name: "Green (Jasmine)",
-            tea_name: "Jasmine Green Tea",
-            tsp_per_8_oz: MinMax(minimum: 1, maximum: 2),
-            region_of_origin: "China (primarily Fujian province)",
-            traditional_name: "Jasmine Green Tea",
-            amount_of_caffiene: 2,
-            main_tea_type: "Green",
-            number_of_steeps: MinMax(minimum: 1, maximum: 2),
-            steep_instructions: [
-                SteepInstruction(
-                    temperature: MinMax(minimum: 160, maximum: 180),
-                    duration: MinMax(minimum: 2, maximum: 4),
-                    steep_number: 1,
-                    steep_taste_description: "Delicate, fragrant, floral, subtly sweet"
-                ),
-                SteepInstruction(
-                    temperature: MinMax(minimum: 160, maximum: 180),
-                    duration: MinMax(minimum: 3, maximum: 5),
-                    steep_number: 2,
-                    steep_taste_description: "Lighter floral notes, refreshing"
-                )
-            ],
-            overall_taste_description: "A delicate and fragrant tea with a prominent floral aroma and taste from jasmine blossoms, balanced with the fresh, sometimes slightly grassy notes of green tea. Can be subtly sweet.",
-            short_summary: "A popular scented green tea from China, infused with the aroma of jasmine blossoms, offering a delicate floral and refreshing taste.",
-            overall_tea_description: "Jasmine green tea is a subtly sweet and highly fragrant tea, scented with the aroma of jasmine blossoms. It offers floral notes, a fresh grassy finish, and antioxidant benefits for health and relaxation."
-        )
-        
-        static let blackEarlGrey = Tea(
-            id: "blackEarlGrey",
-            name: "Black (Earl Grey)",
-            tea_name: "Earl Grey Black Tea",
-            tsp_per_8_oz: MinMax(minimum: 1, maximum: 1),
-            region_of_origin: "China / Sri Lanka",
-            traditional_name: "Earl Grey",
-            amount_of_caffiene: 3,
-            main_tea_type: "Black",
-            number_of_steeps: MinMax(minimum: 1, maximum: 2),
-            steep_instructions: [
-                SteepInstruction(
-                    temperature: MinMax(minimum: 200, maximum: 212),
-                    duration: MinMax(minimum: 3, maximum: 5),
-                    steep_number: 1,
-                    steep_taste_description: "Smooth, citrusy, aromatic with bergamot"
-                ),
-                SteepInstruction(
-                    temperature: MinMax(minimum: 200, maximum: 212),
-                    duration: MinMax(minimum: 4, maximum: 6),
-                    steep_number: 2,
-                    steep_taste_description: "Milder, subtle citrus notes"
-                )
-            ],
-            overall_taste_description: "Smooth, citrusy, and slightly floral taste.",
-            short_summary: "A quintessentially British black tea flavored with bergamot oil.",
-            overall_tea_description: "Earl Grey is a black tea flavored with bergamot oil, offering a smooth, citrusy, and slightly floral taste. This quintessentially British tea may support heart health and provide a mild caffeine boost."
-        )
-        
-        static let oolong = Tea(
-            id: "oolong",
-            name: "Oolong",
-            tea_name: "Oolong Tea",
-            tsp_per_8_oz: MinMax(minimum: 1, maximum: 2),
-            region_of_origin: "China / Taiwan",
-            traditional_name: "Oolong",
-            amount_of_caffiene: 3,
-            main_tea_type: "Oolong",
-            number_of_steeps: MinMax(minimum: 1, maximum: 4),
-            steep_instructions: [
-                SteepInstruction(
-                    temperature: MinMax(minimum: 185, maximum: 205),
-                    duration: MinMax(minimum: 2, maximum: 3),
-                    steep_number: 1,
-                    steep_taste_description: "Floral and fruity"
-                ),
-                SteepInstruction(
-                    temperature: MinMax(minimum: 185, maximum: 205),
-                    duration: MinMax(minimum: 3, maximum: 4),
-                    steep_number: 2,
-                    steep_taste_description: "Balanced, with emerging woody notes"
-                ),
-                SteepInstruction(
-                    temperature: MinMax(minimum: 185, maximum: 205),
-                    duration: MinMax(minimum: 4, maximum: 5),
-                    steep_number: 3,
-                    steep_taste_description: "Roasted and mellow"
-                ),
-                SteepInstruction(
-                    temperature: MinMax(minimum: 185, maximum: 205),
-                    duration: MinMax(minimum: 5, maximum: 6),
-                    steep_number: 4,
-                    steep_taste_description: "Light and lingering"
-                )
-            ],
-            overall_taste_description: "Flavors ranging from floral and fruity to woody and roasted.",
-            short_summary: "A semi-oxidized tea with a wide range of flavors.",
-            overall_tea_description: "Oolong is a semi-oxidized tea with flavors ranging from floral and fruity to woody and roasted. It aids metabolism, digestion, and offers a balanced caffeine level for sustained energy."
-        )
-        
-        static let whiteSilverNeedle = Tea(
-            id: "whiteSilverNeedle",
-            name: "White (Silver Needle)",
-            tea_name: "Silver Needle White Tea",
-            tsp_per_8_oz: MinMax(minimum: 2, maximum: 3),
-            region_of_origin: "China (Fujian province)",
-            traditional_name: "Bai Hao Yin Zhen",
-            amount_of_caffiene: 2,
-            main_tea_type: "White",
-            number_of_steeps: MinMax(minimum: 1, maximum: 3),
-            steep_instructions: [
-                SteepInstruction(
-                    temperature: MinMax(minimum: 160, maximum: 175),
-                    duration: MinMax(minimum: 2, maximum: 3),
-                    steep_number: 1,
-                    steep_taste_description: "Subtle sweet, light body"
-                ),
-                SteepInstruction(
-                    temperature: MinMax(minimum: 160, maximum: 175),
-                    duration: MinMax(minimum: 3, maximum: 4),
-                    steep_number: 2,
-                    steep_taste_description: "Mild honey notes"
-                ),
-                SteepInstruction(
-                    temperature: MinMax(minimum: 160, maximum: 175),
-                    duration: MinMax(minimum: 4, maximum: 5),
-                    steep_number: 3,
-                    steep_taste_description: "Light and refreshing"
-                )
-            ],
-            overall_taste_description: "Subtle sweet flavor and light body.",
-            short_summary: "A delicate white tea made from tender buds.",
-            overall_tea_description: "Silver Needle white tea is a delicate brew made from tender buds, with a subtle sweet flavor and light body. High in antioxidants, it promotes relaxation and healthy aging."
-        )
-        
-        static let puErh = Tea(
-            id: "puErh",
-            name: "Pu-erh",
-            tea_name: "Pu-erh Tea",
-            tsp_per_8_oz: MinMax(minimum: 1, maximum: 2),
-            region_of_origin: "China (Yunnan province)",
-            traditional_name: "Pu-erh",
-            amount_of_caffiene: 3,
-            main_tea_type: "Pu-erh",
-            number_of_steeps: MinMax(minimum: 1, maximum: 5),
-            steep_instructions: [
-                SteepInstruction(
-                    temperature: MinMax(minimum: 200, maximum: 212),
-                    duration: MinMax(minimum: 1, maximum: 2),
-                    steep_number: 1,
-                    steep_taste_description: "Earthy and bold"
-                ),
-                SteepInstruction(
-                    temperature: MinMax(minimum: 200, maximum: 212),
-                    duration: MinMax(minimum: 1, maximum: 2),
-                    steep_number: 2,
-                    steep_taste_description: "Mellow earthy flavors"
-                ),
-                SteepInstruction(
-                    temperature: MinMax(minimum: 200, maximum: 212),
-                    duration: MinMax(minimum: 2, maximum: 3),
-                    steep_number: 3,
-                    steep_taste_description: "Smooth and deep"
-                ),
-                SteepInstruction(
-                    temperature: MinMax(minimum: 200, maximum: 212),
-                    duration: MinMax(minimum: 2, maximum: 3),
-                    steep_number: 4,
-                    steep_taste_description: "Subtle earthiness"
-                ),
-                SteepInstruction(
-                    temperature: MinMax(minimum: 200, maximum: 212),
-                    duration: MinMax(minimum: 3, maximum: 4),
-                    steep_number: 5,
-                    steep_taste_description: "Light and lingering"
-                )
-            ],
-            overall_taste_description: "Earthy, mellow flavors that deepen with age.",
-            short_summary: "A fermented tea with unique earthy taste.",
-            overall_tea_description: "Pu-erh is a fermented tea with earthy, mellow flavors that deepen with age. It supports digestion, weight management, and provides a unique probiotic-like benefit."
-        )
-        
-        static let rooibos = Tea(
-            id: "rooibos",
-            name: "Rooibos",
-            tea_name: "Rooibos Tea",
-            tsp_per_8_oz: MinMax(minimum: 1, maximum: 2),
-            region_of_origin: "South Africa",
-            traditional_name: "Rooibos",
-            amount_of_caffiene: 0,
-            main_tea_type: "Herbal",
-            number_of_steeps: MinMax(minimum: 1, maximum: 1),
-            steep_instructions: [
-                SteepInstruction(
-                    temperature: MinMax(minimum: 200, maximum: 212),
-                    duration: MinMax(minimum: 5, maximum: 7),
-                    steep_number: 1,
-                    steep_taste_description: "Sweet, nutty, woody notes"
-                )
-            ],
-            overall_taste_description: "Sweet, nutty taste and woody notes.",
-            short_summary: "A caffeine-free herbal tea from South Africa.",
-            overall_tea_description: "Rooibos is a caffeine-free herbal tea with a sweet, nutty taste and woody notes. Rich in antioxidants, it supports heart health and offers a soothing, hydrating alternative to traditional teas."
-        )
-        
-        static let chamomile = Tea(
-            id: "chamomile",
-            name: "Chamomile",
-            tea_name: "Chamomile Tea",
-            tsp_per_8_oz: MinMax(minimum: 1, maximum: 2),
-            region_of_origin: "Egypt / Europe",
-            traditional_name: "Chamomile",
-            amount_of_caffiene: 0,
-            main_tea_type: "Herbal",
-            number_of_steeps: MinMax(minimum: 1, maximum: 1),
-            steep_instructions: [
-                SteepInstruction(
-                    temperature: MinMax(minimum: 200, maximum: 212),
-                    duration: MinMax(minimum: 5, maximum: 7),
-                    steep_number: 1,
-                    steep_taste_description: "Floral with apple-like sweetness"
-                )
-            ],
-            overall_taste_description: "Floral herbal tea with apple-like sweetness and calming properties.",
-            short_summary: "A soothing herbal tea known for its calming effects.",
-            overall_tea_description: "Chamomile is a floral herbal tea with apple-like sweetness and calming properties. It aids sleep, reduces anxiety, and soothes digestion for a relaxing experience."
-        )
-        
-        static let matcha = Tea(
-            id: "matcha",
-            name: "Matcha",
-            tea_name: "Matcha Tea",
-            tsp_per_8_oz: MinMax(minimum: 1, maximum: 2),
-            region_of_origin: "Japan",
-            traditional_name: "Matcha",
-            amount_of_caffiene: 4,
-            main_tea_type: "Green",
-            number_of_steeps: MinMax(minimum: 1, maximum: 1),
-            steep_instructions: [
-                SteepInstruction(
-                    temperature: MinMax(minimum: 160, maximum: 180),
-                    duration: MinMax(minimum: 1, maximum: 2),
-                    steep_number: 1,
-                    steep_taste_description: "Umami, grassy, frothy"
-                )
-            ],
-            overall_taste_description: "Umami, grassy flavors and a frothy texture.",
-            short_summary: "A powdered green tea with vibrant flavor.",
-            overall_tea_description: "Matcha is a powdered green tea with umami, grassy flavors and a frothy texture. Packed with antioxidants, it boosts energy, focus, and metabolism without the crash of coffee."
-        )
-        
-        static let allCases: [Tea] = [
-            .greenJasmine,
-            .blackEarlGrey,
-            .oolong,
-            .whiteSilverNeedle,
-            .puErh,
-            .rooibos,
-            .chamomile,
-            .matcha
-        ]
-    }
-    
     struct TeaSelectionSheet: View {
-        @Binding var selectedTea: Tea
+        @Binding var selectedTea: TeaVariety
         @Environment(\.dismiss) private var dismiss
         @State private var searchText = ""  // New state for search input
         
@@ -420,19 +143,19 @@ struct TeaTimerView: View {
         }
         
         // Computed property to filter teas based on search text
-        private var filteredTeas: [Tea] {
+        private var filteredTeas: [TeaVariety] {
             if searchText.isEmpty {
-                return Tea.allCases
+                return allTeas
             } else {
-                return Tea.allCases.filter { $0.name.lowercased().contains(searchText.lowercased()) }
+                return allTeas.filter { $0.name.lowercased().contains(searchText.lowercased()) }
             }
         }
     }
     
     struct TimeSelectionSheet: View {
         @Binding var selectedMinutes: Int
-        let minMinutes: Int
-        let maxMinutes: Int
+        let minMinutes: Double
+        let maxMinutes: Double
         @Environment(\.dismiss) private var dismiss
         @State private var localMinutes: Int
         
@@ -440,7 +163,7 @@ struct TeaTimerView: View {
         private let paper = Color(red: 1.00, green: 0.97, blue: 0.86)
         private let teaOrange = Color(red: 0.73, green: 0.37, blue: 0.09)
         
-        init(selectedMinutes: Binding<Int>, minMinutes: Int, maxMinutes: Int) {
+        init(selectedMinutes: Binding<Int>, minMinutes: Double, maxMinutes: Double) {
             self._selectedMinutes = selectedMinutes
             self.minMinutes = minMinutes
             self.maxMinutes = maxMinutes
@@ -453,7 +176,7 @@ struct TeaTimerView: View {
                     paper.ignoresSafeArea()
                     
                     Picker("Steep Time", selection: $localMinutes) {
-                        ForEach(minMinutes...maxMinutes, id: \.self) { minutes in
+                        ForEach(Int(minMinutes)...Int(maxMinutes), id: \.self) { minutes in
                             Text("\(minutes) minutes").tag(minutes)
                         }
                     }
@@ -533,7 +256,7 @@ struct TeaTimerView: View {
                                               fill: teaOrange,
                                               symbolColor: creamInk,
                                               size: 112) {
-                                if infusion > selectedTea.number_of_steeps.minimum {
+                                if infusion > Int(selectedTea.number_of_steeps.minimum) {
                                     infusion -= 1
                                 }
                             }
@@ -546,7 +269,7 @@ struct TeaTimerView: View {
                                               fill: olive,
                                               symbolColor: creamInk,
                                               size: 112) {
-                                if infusion < selectedTea.number_of_steeps.maximum {
+                                if infusion < Int(selectedTea.number_of_steeps.maximum) {
                                     infusion += 1
                                 }
                             }
@@ -702,7 +425,7 @@ struct TeaTimerView: View {
         timer = nil
         cancelNotification()
         let duration = selectedTea.steepingDuration(for: infusion)
-        selectedMinutes = duration.minimum
+        selectedMinutes = Int(duration.minimum)
         seconds = selectedMinutes * 60
         initialSeconds = seconds
         paused = true
