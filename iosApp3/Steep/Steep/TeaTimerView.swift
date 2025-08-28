@@ -34,6 +34,27 @@ extension TeaVariety {
         overall_tea_description
     }
     
+    var backgroundImageName: String {
+        switch main_tea_type {
+        case "Green":
+            return "green-tea"
+        case "Black":
+            return "black-tea"
+        case "Oolong":
+            return "oolong-tea"
+        case "Pu-erh":
+            return "puer-eh"
+        case "Yellow":
+            return "yellow-tea"
+        case "White":
+            return "white-tea"
+        case "Herbal":
+            return "herbal-tea"
+        default:
+            return "black-tea"
+        }
+    }
+    
     func steepingTime(for infusion: Int) -> Int {
         let adjustedInfusion = max(1, infusion)
         if let instruction = steep_instructions.first(where: { $0.steep_number == adjustedInfusion }) {
@@ -234,41 +255,57 @@ struct TeaTimerView: View {
         }
     }
     
-    // Colors tuned to the screenshot
+    // MARK: - Global Colors
     private let paper      = Color(red: 1.00, green: 0.97, blue: 0.86) // main background
-    private let titleStrip = Color(red: 0.97, green: 0.92, blue: 0.75) // behind "Green (Jasmine)"
-    private let infoStrip  = Color.white.opacity(0.55)
-    
     private let teaOrange  = Color(red: 0.73, green: 0.37, blue: 0.09)
     private let olive      = Color(red: 0.62, green: 0.62, blue: 0.46)
     private let creamInk   = Color(red: 1.00, green: 0.94, blue: 0.80)
+    private let lightButtonBackground = Color(red: 0.98, green: 0.96, blue: 0.90)
+    private let button_shadow_opacity: Double = 0.15
     
-    // Text size variables
+    // MARK: - Tea Name Button
     private let tea_name_max_text_size: CGFloat = 34
-    private let timer_text_size: CGFloat = 62
-    private let plus_minus_button_size: CGFloat = 80
-    private let portion_text_size: CGFloat = 40
-    private let description_text_size: CGFloat = 18
-    private let button_text_padding_vertical: CGFloat = 28
-    private let button_text_padding_horizontal: CGFloat = 38
-    private let description_gutter_size: CGFloat = 48
-    private let description_top_padding: CGFloat = 28
     private let tea_name_padding: CGFloat = 0
     private let tea_name_horizontal_padding: CGFloat = 30
+    private let tea_name_button_background = Color(red: 0.73, green: 0.37, blue: 0.09).opacity(0.04)
     
-    private let description_bottom_padding: CGFloat = 0
-    private let steep_button_text_size: CGFloat = 32
-    private let steep_button_icon_size: CGFloat = 32
-    private let steep_button_text_icon_spacing: CGFloat = 14
+    // MARK: - Timer Button
+    private let timer_text_size: CGFloat = 62
+    private let timer_button_background = Color(red: 0.73, green: 0.37, blue: 0.09).opacity(0.04)
+    private let timer_button_padding_vertical: CGFloat = 4
+    
+    // MARK: - Infusion Controls
+    private let plus_minus_button_size: CGFloat = 80
+    private let portion_text_size: CGFloat = 40
     private let infusion_text_size: CGFloat = 22
     private let infusion_text_to_controls_spacing: CGFloat = -0
     
-    // Leaf background image positioning variables
-    private let leaf_image_top_offset: CGFloat = -70
-    private let leaf_image_trailing_padding: CGFloat = -5
-    private let leaf_image_size: CGFloat = 70
+    // MARK: - Control Buttons (Begin Steep, Reset, etc.)
+    private let steep_button_text_size: CGFloat = 32
+    private let steep_button_icon_size: CGFloat = 32
+    private let steep_button_text_icon_spacing: CGFloat = 14
+    private let button_text_padding_vertical: CGFloat = 28
+    private let button_text_padding_horizontal: CGFloat = 38
+    private let control_button_corner_radius: CGFloat = 8
+    
+    // MARK: - Description Text
+    private let description_text_size: CGFloat = 18
+    private let description_gutter_size: CGFloat = 48
+    private let description_top_padding: CGFloat = 28
+    private let description_bottom_padding: CGFloat = 0
+    
+    // MARK: - Info Strip (Temperature & Dosage)
+    private let infoStrip  = Color.white.opacity(0.55)
+    
+    // MARK: - Layout & Spacing
     private let title_strip_height: CGFloat = 70
     private let top_strip_top_spacing: CGFloat = 12
+    private let light_button_corner_radius: CGFloat = 8
+    
+    // MARK: - Leaf Background Image
+    private let leaf_image_top_offset: CGFloat = -90
+    private let leaf_image_trailing_padding: CGFloat = 0
+    private let leaf_image_size: CGFloat = 75
     
     
     var body: some View {
@@ -281,29 +318,26 @@ struct TeaTimerView: View {
                     Spacer()
                         .frame(height: top_strip_top_spacing)
                     
-                    // Title strip
-                    titleStrip
-                        .frame(height: title_strip_height)
-                        .overlay(
-                            ZStack {
-                                
-                                // Tea name button on top
-                                Button(action: {
-                                    showingTeaSelection = true
-                                }) {
-                                    Text(selectedTea.name)
-                                        .font(.system(size: tea_name_max_text_size, weight: .regular, design: .serif))
-                                        .kerning(1)
-                                        .foregroundColor(teaOrange)
-                                        .multilineTextAlignment(.center)
-                                        .minimumScaleFactor(0.5)
-                                        .lineLimit(1)
-                                        .padding(.top, tea_name_padding)
-                                        .padding(.horizontal, tea_name_horizontal_padding)
-                                }
-                                .buttonStyle(.plain)
-                            }
-                        )
+                    // Tea name button
+                    Button(action: {
+                        showingTeaSelection = true
+                    }) {
+                        Text(selectedTea.name)
+                            .font(.system(size: tea_name_max_text_size, weight: .regular, design: .serif))
+                            .kerning(1)
+                            .foregroundColor(teaOrange)
+                            .multilineTextAlignment(.center)
+                            .minimumScaleFactor(0.5)
+                            .lineLimit(1)
+                            .padding(.vertical, button_text_padding_vertical)
+                            .padding(.horizontal, button_text_padding_horizontal)
+                            .background(
+                                RoundedRectangle(cornerRadius: light_button_corner_radius, style: .continuous)
+                                    .fill(tea_name_button_background)
+                            )
+                    }
+                    .shadow(color: Color.black.opacity(button_shadow_opacity), radius: 2, x: 0, y: 1)
+                    .padding(.horizontal, tea_name_horizontal_padding)
                     
                     // Content
                     VStack(spacing: 26) {
@@ -324,9 +358,11 @@ struct TeaTimerView: View {
                             HStack {
                                 Spacer()
                                 VStack {
-                                    Image(systemName: "leaf.fill")
-                                        .font(.system(size: leaf_image_size))
-                                        .foregroundColor(teaOrange.opacity(0.2))
+                                    Image(selectedTea.backgroundImageName)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: leaf_image_size, height: leaf_image_size)
+                                        .opacity(1.0)
                                         .padding(.trailing, leaf_image_trailing_padding)
                                         .padding(.top, leaf_image_top_offset)
                                     Spacer()
@@ -368,8 +404,14 @@ struct TeaTimerView: View {
                                 .font(.system(size: timer_text_size, weight: .regular, design: .serif))
                                 .foregroundColor(teaOrange)
                                 .multilineTextAlignment(.center)
+                                .padding(.vertical, timer_button_padding_vertical)
+                                .padding(.horizontal, button_text_padding_horizontal)
+                                .background(
+                                    RoundedRectangle(cornerRadius: light_button_corner_radius, style: .continuous)
+                                        .fill(timer_button_background)
+                                )
                         }
-                        .buttonStyle(.plain)
+                        .shadow(color: Color.black.opacity(button_shadow_opacity), radius: 2, x: 0, y: 1)
                         .padding(.top, 10)
                         
                         if isComplete {
@@ -510,11 +552,11 @@ struct TeaTimerView: View {
             .padding(.vertical, button_text_padding_vertical)
             .padding(.horizontal, button_text_padding_horizontal)
             .background(
-                RoundedRectangle(cornerRadius: 26, style: .continuous)
+                RoundedRectangle(cornerRadius: control_button_corner_radius, style: .continuous)
                     .fill(teaOrange)
             )
         }
-        .shadow(color: Color.black.opacity(0.18), radius: 8, x: 0, y: 6)
+        .shadow(color: Color.black.opacity(0.4), radius: 2, x: 0, y: 1)
     }
     
     private func resetTimer() {
@@ -605,7 +647,7 @@ struct RoundSymbolButton: View {
             }
         }
         .buttonStyle(.plain)
-        .shadow(color: Color.black.opacity(0.12), radius: 5, x: 0, y: 3)
+        .shadow(color: Color.black.opacity(0.4), radius: 2, x: 0, y: 1)
     }
 }
 
