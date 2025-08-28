@@ -9,6 +9,11 @@ import SwiftUI
 import Foundation // For Timer
 import UserNotifications
 
+// MARK: - Color Utilities
+func rgbToAppleColor(red: Int, green: Int, blue: Int) -> Color {
+    return Color(red: Double(red) / 255.0, green: Double(green) / 255.0, blue: Double(blue) / 255.0)
+}
+
 extension TeaVariety: Equatable {
     static func == (lhs: TeaVariety, rhs: TeaVariety) -> Bool {
         lhs.id == rhs.id
@@ -261,6 +266,10 @@ struct TeaTimerView: View {
     private let olive      = Color(red: 0.62, green: 0.62, blue: 0.46)
     private let creamInk   = Color(red: 1.00, green: 0.94, blue: 0.80)
     private let lightButtonBackground = Color(red: 0.98, green: 0.96, blue: 0.90)
+//    private let darkForestGreen = Color(red: 0.0862, green: 0.364, blue: 0.1372)
+    let myColor = rgbToAppleColor(red: 17, green: 69, blue: 27).opacity(0.7)
+    private let darkForestGreen = rgbToAppleColor(red: 17, green: 69, blue: 27)
+    private let darkForestGreenDisabled = Color(red: 0.73, green: 0.37, blue: 0.09).opacity(0.18)
     private let button_shadow_opacity: Double = 0.15
     
     // MARK: - Tea Name Button
@@ -270,6 +279,7 @@ struct TeaTimerView: View {
     private let tea_name_button_background = Color(red: 0.73, green: 0.37, blue: 0.09).opacity(0.04)
     
     // MARK: - Timer Button
+    private let timer_button_background_color =  Color(red: 0.73, green: 0.37, blue: 0.09)
     private let timer_text_size: CGFloat = 62
     private let timer_button_background = Color(red: 0.73, green: 0.37, blue: 0.09).opacity(0.04)
     private let timer_button_padding_vertical: CGFloat = 4
@@ -281,12 +291,14 @@ struct TeaTimerView: View {
     private let infusion_text_to_controls_spacing: CGFloat = -0
     
     // MARK: - Control Buttons (Begin Steep, Reset, etc.)
-    private let steep_button_text_size: CGFloat = 32
-    private let steep_button_icon_size: CGFloat = 32
+    private let steep_button_text_size: CGFloat = 27
+    private let steep_button_icon_size: CGFloat = 27
     private let steep_button_text_icon_spacing: CGFloat = 14
     private let button_text_padding_vertical: CGFloat = 28
     private let button_text_padding_horizontal: CGFloat = 38
-    private let control_button_corner_radius: CGFloat = 8
+    private let control_button_corner_radius: CGFloat = 16
+    private let steep_timer_spacing: CGFloat = 16
+    private let steep_button_bottom_spacing: CGFloat = 40
     
     // MARK: - Description Text
     private let description_text_size: CGFloat = 18
@@ -372,7 +384,7 @@ struct TeaTimerView: View {
                             // Infusion controls in foreground
                             HStack(spacing: 34) {
                                 RoundSymbolButton(symbol: "minus",
-                                                  fill: infusion > 1 ? teaOrange : olive,
+                                                  fill: infusion > 1 ? teaOrange : darkForestGreenDisabled,
                                                   symbolColor: creamInk,
                                                   size: plus_minus_button_size) {
                                     if infusion > 1 {
@@ -385,7 +397,7 @@ struct TeaTimerView: View {
                                     .foregroundColor(teaOrange)
                                 
                                 RoundSymbolButton(symbol: "plus",
-                                                  fill: infusion < Int(selectedTea.number_of_steeps.maximum) ? teaOrange : olive,
+                                                  fill: infusion < Int(selectedTea.number_of_steeps.maximum) ? teaOrange : darkForestGreenDisabled,
                                                   symbolColor: creamInk,
                                                   size: plus_minus_button_size) {
                                     if infusion < Int(selectedTea.number_of_steeps.maximum) {
@@ -418,13 +430,13 @@ struct TeaTimerView: View {
                             controlButton(title: "Reset") {
                                 resetTimer()
                             }
-                            .padding(.top, 6)
+                            .padding(.top, steep_timer_spacing)
                         } else if paused {
                             if seconds == initialSeconds {
                                 controlButton(title: "Begin Steep") {
                                     startTimer()
                                 }
-                                .padding(.top, 6)
+                                .padding(.top, steep_timer_spacing)
                             } else {
                                 HStack(spacing: 20) {
                                     controlButton(title: "Reset") {
@@ -434,17 +446,16 @@ struct TeaTimerView: View {
                                     controlButton(title: "Resume") {
                                         startTimer()
                                     }
-                                }
-                                .padding(.top, 6)
+                                }.padding(.top, steep_timer_spacing)
                             }
                         } else {
                             controlButton(title: "Pause") {
                                 pauseTimer()
                             }
-                            .padding(.top, 6)
+                            .padding(.top, steep_timer_spacing)
                         }
                     }
-                    .padding(.bottom, 18)
+                    .padding(.bottom, steep_button_bottom_spacing)
                     
                     // Info strip (temperature & dosage)
                     ZStack {
@@ -553,7 +564,7 @@ struct TeaTimerView: View {
             .padding(.horizontal, button_text_padding_horizontal)
             .background(
                 RoundedRectangle(cornerRadius: control_button_corner_radius, style: .continuous)
-                    .fill(teaOrange)
+                    .fill(title == "Begin Steep" ? teaOrange : teaOrange)
             )
         }
         .shadow(color: Color.black.opacity(0.4), radius: 2, x: 0, y: 1)
