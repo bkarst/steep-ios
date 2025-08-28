@@ -86,43 +86,55 @@ struct TeaTimerView: View {
                 ZStack {
                     paper.ignoresSafeArea()
                     
-                    List(filteredTeas) { tea in
-                        Button(action: {
-                            selectedTea = tea
-                            dismiss()
-                        }) {
-                            HStack {
-                                VStack(alignment: .leading, spacing: 4) {
-                                    Text(tea.name)
-                                        .font(.system(size: 20, weight: .regular, design: .serif))
-                                        .foregroundColor(teaOrange)
-                                    
-                                    HStack {
-                                        Text(tea.temperature)
-                                            .font(.system(size: 16, weight: .regular, design: .serif))
-                                            .foregroundColor(teaOrange.opacity(0.75))
-                                        
-                                        Text("•")
-                                            .foregroundColor(teaOrange.opacity(0.5))
-                                        
-                                        Text("\(tea.dosage) per 8 oz")
-                                            .font(.system(size: 16, weight: .regular, design: .serif))
-                                            .foregroundColor(teaOrange.opacity(0.75))
+                    List {
+                        ForEach(groupedTeas, id: \.0) { teaType, teas in
+                            Section {
+                                ForEach(teas) { tea in
+                                    Button(action: {
+                                        selectedTea = tea
+                                        dismiss()
+                                    }) {
+                                        HStack {
+                                            VStack(alignment: .leading, spacing: 4) {
+                                                Text(tea.name)
+                                                    .font(.system(size: 20, weight: .regular, design: .serif))
+                                                    .foregroundColor(teaOrange)
+                                                
+                                                HStack {
+                                                    Text(tea.temperature)
+                                                        .font(.system(size: 16, weight: .regular, design: .serif))
+                                                        .foregroundColor(teaOrange.opacity(0.75))
+                                                    
+                                                    Text("•")
+                                                        .foregroundColor(teaOrange.opacity(0.5))
+                                                    
+                                                    Text("\(tea.dosage) per 8 oz")
+                                                        .font(.system(size: 16, weight: .regular, design: .serif))
+                                                        .foregroundColor(teaOrange.opacity(0.75))
+                                                }
+                                            }
+                                            
+                                            Spacer()
+                                            
+                                            if tea == selectedTea {
+                                                Image(systemName: "checkmark")
+                                                    .foregroundColor(teaOrange)
+                                                    .font(.system(size: 18, weight: .semibold))
+                                            }
+                                        }
+                                        .padding(.vertical, 8)
                                     }
+                                    .buttonStyle(.plain)
+                                    .listRowBackground(Color.clear)
                                 }
-                                
-                                Spacer()
-                                
-                                if tea == selectedTea {
-                                    Image(systemName: "checkmark")
-                                        .foregroundColor(teaOrange)
-                                        .font(.system(size: 18, weight: .semibold))
-                                }
+                            } header: {
+                                Text(teaType)
+                                    .font(.system(size: 18, weight: .semibold, design: .serif))
+                                    .foregroundColor(teaOrange)
+                                    .textCase(.uppercase)
+                                    .padding(.top, 8)
                             }
-                            .padding(.vertical, 8)
                         }
-                        .buttonStyle(.plain)
-                        .listRowBackground(Color.clear)
                     }
                     .listStyle(.plain)
                     .scrollContentBackground(.hidden)
@@ -148,6 +160,16 @@ struct TeaTimerView: View {
                 return allTeas
             } else {
                 return allTeas.filter { $0.name.lowercased().contains(searchText.lowercased()) }
+            }
+        }
+        
+        // Computed property to group filtered teas by main tea type
+        private var groupedTeas: [(String, [TeaVariety])] {
+            let grouped = Dictionary(grouping: filteredTeas) { $0.main_tea_type }
+            let sortedKeys = ["Green", "Black", "Oolong", "Yellow", "Herbal"] // Custom order
+            return sortedKeys.compactMap { key in
+                guard let teas = grouped[key], !teas.isEmpty else { return nil }
+                return (key, teas.sorted { $0.tea_name < $1.tea_name })
             }
         }
     }
@@ -278,7 +300,7 @@ struct TeaTimerView: View {
                         
                         HStack(spacing: 34) {
                             RoundSymbolButton(symbol: "minus",
-                                              fill: teaOrange,
+                                              fill: infusion > 1 ? teaOrange : olive,
                                               symbolColor: creamInk,
                                               size: plus_minus_button_size) {
                                 if infusion > 1 {
@@ -291,7 +313,7 @@ struct TeaTimerView: View {
                                 .foregroundColor(teaOrange)
                             
                             RoundSymbolButton(symbol: "plus",
-                                              fill: olive,
+                                              fill: infusion < Int(selectedTea.number_of_steeps.maximum) ? teaOrange : olive,
                                               symbolColor: creamInk,
                                               size: plus_minus_button_size) {
                                 if infusion < Int(selectedTea.number_of_steeps.maximum) {
@@ -376,9 +398,10 @@ struct TeaTimerView: View {
                             .frame(maxWidth: .infinity)
                         }
                         .overlay(
-                            Circle()
+                            Rectangle()
                                 .fill(teaOrange.opacity(0.9))
-                                .frame(width: 12, height: 12)
+                                .frame(width: 8, height: 8)
+                                .rotationEffect(.degrees(45))
                         )
                         .padding(.horizontal, 28)
                     }
