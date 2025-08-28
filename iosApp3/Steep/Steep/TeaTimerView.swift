@@ -102,7 +102,10 @@ struct TeaTimerView: View {
     @State private var previousTea: TeaVariety?
     @State private var previousInfusion: Int?
     @State private var timer: Timer? = nil
+    @State private var alarmTimer: Timer? = nil
     @State private var audioPlayer: AVAudioPlayer?
+    @State private var timerStartTime: Date?
+    @State private var backgroundTime: Date?
     
     struct TeaSelectionSheet: View {
         @Binding var selectedTea: TeaVariety
@@ -566,10 +569,21 @@ struct TeaTimerView: View {
             previousInfusion = infusion
             resetTimer()
         }
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+            handleAppWillBackground()
+        }
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
+            handleAppDidForeground()
+        }
     }
     
     private func controlButton(title: String, action: @escaping () -> Void) -> some View {
         Button {
+            // Stop alarm on any user action
+            if isComplete {
+                stopAlarmSound()
+            }
+            
             withAnimation(.bouncy(duration: 0.7)) {
                 action()
             }
@@ -607,6 +621,7 @@ struct TeaTimerView: View {
     private func resetTimer() {
         timer?.invalidate()
         timer = nil
+        timerStartTime = nil
         cancelNotification()
         stopAlarmSound()
         
@@ -679,24 +694,47 @@ struct TeaTimerView: View {
         }
         paused = false
         isComplete = false
+        
+        // Record when the timer starts
+        timerStartTime = Date()
+        
         scheduleNotification()
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
-            if seconds > 0 {
-                seconds -= 1
-            } else {
-                paused = true
-                isComplete = true
-                timer?.invalidate()
-                timer = nil
-                playAlarmSound()
-            }
+            updateTimerFromBackground()
+        }
+    }
+    
+    private func updateTimerFromBackground() {
+        guard let startTime = timerStartTime, !paused else { return }
+        
+        let elapsed = Date().timeIntervalSince(startTime)
+        let newSeconds = max(0, initialSeconds - Int(elapsed))
+        
+        if newSeconds != seconds {
+            seconds = newSeconds
+        }
+        
+        if seconds <= 0 {
+            paused = true
+            isComplete = true
+            timer?.invalidate()
+            timer = nil
+            timerStartTime = nil
+            playAlarmSound()
         }
     }
     
     private func pauseTimer() {
+        // Update seconds based on elapsed time before pausing
+        if let startTime = timerStartTime, !paused {
+            let elapsed = Date().timeIntervalSince(startTime)
+            seconds = max(0, initialSeconds - Int(elapsed))
+        }
+        
         paused = true
         timer?.invalidate()
         timer = nil
+        timerStartTime = nil
         cancelNotification()
     }
     
@@ -729,7 +767,7 @@ struct TeaTimerView: View {
     }
     
     private func playAlarmSound() {
-        print("🔔 Playing alarm sound for timer completion")
+        print("🔔 Playing continuous alarm sound for timer completion")
         
         // Configure audio session for playback
         do {
@@ -739,42 +777,89 @@ struct TeaTimerView: View {
             print("❌ Failed to set up audio session: \(error)")
         }
         
-        // Use system alarm sound
+        // Use system alarm sound for continuous playback
         guard let soundURL = Bundle.main.url(forResource: "alarm", withExtension: "wav") else {
-            // Fallback to system sound if custom alarm file doesn't exist
-            print("⚠️ Custom alarm sound not found, using system sound")
-            AudioServicesPlaySystemSound(1005) // System alarm sound
+            // Fallback to continuous system sound if custom alarm file doesn't exist
+            print("⚠️ Custom alarm sound not found, using continuous system sound")
+            playSystemSoundContinuously()
             return
         }
         
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: soundURL)
-            audioPlayer?.numberOfLoops = 3 // Play 4 times total (0 = once, 3 = 4 times)
+            audioPlayer?.numberOfLoops = -1 // Play indefinitely until stopped
             audioPlayer?.volume = 1.0
             audioPlayer?.play()
+            print("🔔 Alarm playing continuously - tap Reset to stop")
         } catch {
             print("❌ Failed to play custom alarm sound: \(error)")
-            // Fallback to system sound
-            AudioServicesPlaySystemSound(1005)
+            // Fallback to continuous system sound
+            playSystemSoundContinuously()
         }
         
-        // Add haptic feedback
+        // Add initial haptic feedback
         let impactFeedback = UIImpactFeedbackGenerator(style: .heavy)
         impactFeedback.prepare()
         impactFeedback.impactOccurred()
         
-        // Additional vibration pattern
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            impactFeedback.impactOccurred()
+        // Continue vibration pattern every 2 seconds
+        startContinuousVibration()
+    }
+    
+    private func playSystemSoundContinuously() {
+        // Play system sound and schedule it to repeat
+        AudioServicesPlaySystemSound(1005)
+        
+        // Schedule repeated system sounds every 2 seconds
+        alarmTimer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { _ in
+            AudioServicesPlaySystemSound(1005)
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+    }
+    
+    private func startContinuousVibration() {
+        // Create repeating vibration pattern every 2 seconds
+        alarmTimer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { _ in
+            let impactFeedback = UIImpactFeedbackGenerator(style: .heavy)
+            impactFeedback.prepare()
             impactFeedback.impactOccurred()
         }
     }
     
     private func stopAlarmSound() {
+        print("🔕 Stopping alarm sound")
+        
+        // Stop audio player
         audioPlayer?.stop()
         audioPlayer = nil
+        
+        // Stop alarm timer (for system sounds or vibration)
+        alarmTimer?.invalidate()
+        alarmTimer = nil
+    }
+    
+    private func handleAppWillBackground() {
+        print("📱 App going to background - timer running: \(!paused)")
+        backgroundTime = Date()
+        
+        // Don't invalidate the timer when going to background
+        // Keep the start time so we can calculate elapsed time when returning
+    }
+    
+    private func handleAppDidForeground() {
+        print("📱 App returning to foreground")
+        
+        guard let backgroundStart = backgroundTime else { return }
+        
+        // Calculate how long we were in background
+        let backgroundDuration = Date().timeIntervalSince(backgroundStart)
+        print("📱 Was in background for \(backgroundDuration) seconds")
+        
+        // Update timer if it was running
+        if !paused && !isComplete {
+            updateTimerFromBackground()
+        }
+        
+        backgroundTime = nil
     }
 }
 
