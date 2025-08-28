@@ -159,6 +159,8 @@ struct TeaTimerView: View {
                                             }
                                         }
                                         .padding(.vertical, 8)
+                                        .padding(.horizontal, 16)
+                                        .contentShape(Rectangle())
                                     }
                                     .buttonStyle(.plain)
                                     .listRowBackground(Color.clear)
