@@ -216,7 +216,7 @@ struct TeaTimerView: View {
     private let creamInk   = Color(red: 1.00, green: 0.94, blue: 0.80)
     
     // Text size variables
-    private let tea_name_text_size: CGFloat = 37
+    private let tea_name_max_text_size: CGFloat = 34
     private let timer_text_size: CGFloat = 62
     private let plus_minus_button_size: CGFloat = 80
     private let portion_text_size: CGFloat = 40
@@ -225,6 +225,9 @@ struct TeaTimerView: View {
     private let button_text_padding_horizontal: CGFloat = 28
     private let description_gutter_size: CGFloat = 48
     private let description_top_padding: CGFloat = 28
+    private let tea_name_padding: CGFloat = 0
+    private let description_bottom_padding: CGFloat = 0
+    private let tea_name_horizontal_padding: CGFloat = 30
     
     
     var body: some View {
@@ -241,11 +244,14 @@ struct TeaTimerView: View {
                                 showingTeaSelection = true
                             }) {
                                 Text(selectedTea.name)
-                                    .font(.system(size: tea_name_text_size, weight: .regular, design: .serif))
+                                    .font(.system(size: tea_name_max_text_size, weight: .regular, design: .serif))
                                     .kerning(1)
                                     .foregroundColor(teaOrange)
                                     .multilineTextAlignment(.center)
-                                    .padding(.top, 12)
+                                    .minimumScaleFactor(0.5)
+                                    .lineLimit(1)
+                                    .padding(.top, tea_name_padding)
+                                    .padding(.horizontal, tea_name_horizontal_padding)
                             }
                             .buttonStyle(.plain)
                         )
@@ -379,7 +385,7 @@ struct TeaTimerView: View {
                         .lineSpacing(6)
                         .padding(.horizontal, description_gutter_size)
                         .padding(.top, description_top_padding)
-                        .padding(.bottom, 24)
+                        .padding(.bottom, description_bottom_padding)
                 }
             }
         }
