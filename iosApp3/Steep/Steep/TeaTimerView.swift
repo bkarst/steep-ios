@@ -254,15 +254,20 @@ struct TeaTimerView: View {
     private let description_gutter_size: CGFloat = 48
     private let description_top_padding: CGFloat = 28
     private let tea_name_padding: CGFloat = 0
-    private let description_bottom_padding: CGFloat = 0
     private let tea_name_horizontal_padding: CGFloat = 30
+    
+    private let description_bottom_padding: CGFloat = 0
     private let steep_button_text_size: CGFloat = 32
-    private let infusion_text_size: CGFloat = 28
+    private let steep_button_icon_size: CGFloat = 32
+    private let steep_button_text_icon_spacing: CGFloat = 14
+    private let infusion_text_size: CGFloat = 22
+    private let infusion_text_to_controls_spacing: CGFloat = -0
     
     // Leaf background image positioning variables
-    private let leaf_image_top_offset: CGFloat = -50
-    private let leaf_image_trailing_padding: CGFloat = -10
+    private let leaf_image_top_offset: CGFloat = -70
+    private let leaf_image_trailing_padding: CGFloat = -5
     private let leaf_image_size: CGFloat = 70
+    private let title_strip_height: CGFloat = 70
     
     
     var body: some View {
@@ -273,7 +278,7 @@ struct TeaTimerView: View {
                 VStack(spacing: 0) {
                     // Title strip
                     titleStrip
-                        .frame(height: 120)
+                        .frame(height: title_strip_height)
                         .overlay(
                             ZStack {
                                 
@@ -307,7 +312,7 @@ struct TeaTimerView: View {
                         Text("infusion")
                             .font(.system(size: infusion_text_size, weight: .regular, design: .serif))
                             .foregroundColor(teaOrange.opacity(0.95))
-                            .padding(.top, -10)
+                            .padding(.top, infusion_text_to_controls_spacing)
                         
                         ZStack {
                             // Background leaf image positioned higher and more to the right
@@ -484,15 +489,23 @@ struct TeaTimerView: View {
         Button {
             action()
         } label: {
-            Text(title)
-                .font(.system(size: steep_button_text_size, weight: .regular, design: .serif))
-                .foregroundColor(creamInk)
-                .padding(.vertical, button_text_padding_vertical)
-                .padding(.horizontal, button_text_padding_horizontal)
-                .background(
-                    RoundedRectangle(cornerRadius: 26, style: .continuous)
-                        .fill(teaOrange)
-                )
+            HStack(spacing: steep_button_text_icon_spacing) {
+                Text(title)
+                    .font(.system(size: steep_button_text_size, weight: .regular, design: .serif))
+                    .foregroundColor(creamInk)
+                
+                if title == "Begin Steep" {
+                    Image(systemName: "leaf.fill")
+                        .font(.system(size: steep_button_icon_size, weight: .regular))
+                        .foregroundColor(creamInk)
+                }
+            }
+            .padding(.vertical, button_text_padding_vertical)
+            .padding(.horizontal, button_text_padding_horizontal)
+            .background(
+                RoundedRectangle(cornerRadius: 26, style: .continuous)
+                    .fill(teaOrange)
+            )
         }
         .shadow(color: Color.black.opacity(0.18), radius: 8, x: 0, y: 6)
     }
