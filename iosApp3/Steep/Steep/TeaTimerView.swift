@@ -570,12 +570,21 @@ struct TeaTimerView: View {
         .shadow(color: Color.black.opacity(0.4), radius: 2, x: 0, y: 1)
     }
     
+    private func calculateDefaultSteepTime(duration: ValueRange) -> Int {
+        let minSeconds = Int(duration.minimum * 60)
+        let maxSeconds = Int(duration.maximum * 60)
+        let averageSeconds = (minSeconds + maxSeconds) / 2
+        
+        // Round to nearest 30-second increment
+        return Int(round(Double(averageSeconds) / 30.0) * 30)
+    }
+    
     private func resetTimer() {
         timer?.invalidate()
         timer = nil
         cancelNotification()
         let duration = selectedTea.steepingDuration(for: infusion)
-        selectedSeconds = Int(duration.minimum * 60)
+        selectedSeconds = calculateDefaultSteepTime(duration: duration)
         seconds = selectedSeconds
         initialSeconds = seconds
         paused = true
