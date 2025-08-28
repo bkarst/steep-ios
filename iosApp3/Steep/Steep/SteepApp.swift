@@ -11,11 +11,29 @@ import CoreData
 @main
 struct SteepApp: App {
     let persistenceController = PersistenceController.shared
+    @State private var showingLoadingScreen = true
 
     var body: some Scene {
         WindowGroup {
-            TeaTimerView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            ZStack {
+                // Main view always present
+                TeaTimerView()
+                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                
+                // Loading screen overlays on top
+                if showingLoadingScreen {
+                    LoadingScreenView()
+                        .onAppear {
+                            // Show loading screen for 1.4 seconds (0.5s scale + 0.3s hold + 0.6s fade)
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.4) {
+                                withAnimation(.easeInOut(duration: 0.1)) {
+                                    showingLoadingScreen = false
+                                }
+                            }
+                        }
+                        .transition(.opacity)
+                }
+            }
         }
     }
 }
