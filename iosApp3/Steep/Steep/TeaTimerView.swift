@@ -108,6 +108,7 @@ struct TeaTimerView: View {
     @State private var timerStartTime: Date?
     @State private var backgroundTime: Date?
     @State private var currentActivity: Activity<TeaTimerActivityAttributes>?
+    @StateObject private var alarmManager = TeaAlarmManager.shared
     
     struct TeaSelectionSheet: View {
         @Binding var selectedTea: TeaVariety
@@ -563,11 +564,13 @@ struct TeaTimerView: View {
             isComplete = false
             timer?.invalidate()
             timer = nil
-            cancelNotification()
+            cancelAlarm()
             saveCurrentPreferences()
         }
         .onAppear {
-            requestNotificationPermission()
+            Task {
+                await requestAlarmPermissions()
+            }
             loadLastSelectedTea()
             previousTea = selectedTea
             previousInfusion = infusion
@@ -626,7 +629,7 @@ struct TeaTimerView: View {
         timer?.invalidate()
         timer = nil
         timerStartTime = nil
-        cancelNotification()
+        cancelAlarm()
         stopAlarmSound()
         endLiveActivity()
         
@@ -703,12 +706,20 @@ struct TeaTimerView: View {
         // Record when the timer starts
         timerStartTime = Date()
         
-        // Start Live Activity if this is a fresh timer
+        // Start Live Activity or alarm based on system capability
         if seconds == initialSeconds {
-            startLiveActivity()
+            print("🔍 Starting fresh timer - checking Live Activity support")
+            print("🔍 Should use Live Activity: \(alarmManager.shouldUseLiveActivity())")
+            print("🔍 Alarm system type: \(alarmManager.alarmSystemType)")
+            
+            if alarmManager.shouldUseLiveActivity() {
+                print("🔍 Starting Live Activity...")
+                startLiveActivity()
+            } else {
+                print("🔍 Skipping Live Activity - using alarm system instead")
+            }
+            scheduleAlarm()
         }
-        
-        scheduleNotification()
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
             updateTimerFromBackground()
         }
@@ -722,6 +733,11 @@ struct TeaTimerView: View {
         
         if newSeconds != seconds {
             seconds = newSeconds
+            
+            // Update Live Activity with new countdown time
+            if currentActivity != nil && !isComplete {
+                updateLiveActivity()
+            }
         }
         
         if seconds <= 0 {
@@ -730,8 +746,17 @@ struct TeaTimerView: View {
             timer?.invalidate()
             timer = nil
             timerStartTime = nil
-            completeLiveActivity()
-            playAlarmSound()
+            
+            // Handle completion based on alarm system
+            if alarmManager.shouldUseLiveActivity() {
+                completeLiveActivity()
+            }
+            
+            // For legacy systems, we still play our custom alarm sound
+            // AlarmKit handles its own alarm sound automatically
+            if alarmManager.alarmSystemType == .legacy {
+                playAlarmSound()
+            }
         }
     }
     
@@ -746,35 +771,33 @@ struct TeaTimerView: View {
         timer?.invalidate()
         timer = nil
         timerStartTime = nil
-        cancelNotification()
+        cancelAlarm()
     }
     
-    private func requestNotificationPermission() {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { granted, error in
-            if let error = error {
-                print("Notification permission error: \(error)")
+    private func requestAlarmPermissions() async {
+        _ = await alarmManager.requestPermissions()
+        let status = await alarmManager.getAlarmStatus()
+        print("🔔 Alarm system: \(alarmManager.alarmSystemType), Status: \(status)")
+    }
+    
+    private func scheduleAlarm() {
+        alarmManager.scheduleAlarm(
+            teaName: selectedTea.name,
+            infusion: infusion,
+            duration: TimeInterval(seconds)
+        ) { success in
+            if success {
+                print("🔔 Alarm scheduled successfully")
+            } else {
+                print("❌ Failed to schedule alarm")
             }
         }
     }
     
-    private func scheduleNotification() {
-        let content = UNMutableNotificationContent()
-        content.title = "Tea Timer"
-        content.body = "Your \(selectedTea.name) (infusion \(infusion)) is ready!"
-        content.sound = .default
-        
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(seconds), repeats: false)
-        let request = UNNotificationRequest(identifier: "tea-timer", content: content, trigger: trigger)
-        
-        UNUserNotificationCenter.current().add(request) { error in
-            if let error = error {
-                print("Error scheduling notification: \(error)")
-            }
+    private func cancelAlarm() {
+        Task {
+            await alarmManager.cancelCurrentAlarm()
         }
-    }
-    
-    private func cancelNotification() {
-        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["tea-timer"])
     }
     
     private func playAlarmSound() {
@@ -876,8 +899,11 @@ struct TeaTimerView: View {
     // MARK: - Live Activities
     
     private func startLiveActivity() {
+        print("🔍 Attempting to start Live Activity...")
+        print("🔍 Live Activities enabled: \(ActivityAuthorizationInfo().areActivitiesEnabled)")
+        
         guard ActivityAuthorizationInfo().areActivitiesEnabled else {
-            print("Live Activities not authorized")
+            print("❌ Live Activities not authorized - check iOS Settings > Face ID & Passcode > Live Activities")
             return
         }
         
@@ -897,6 +923,11 @@ struct TeaTimerView: View {
             endTime: endTime
         )
         
+        print("🔍 Creating Live Activity with:")
+        print("   Tea: \(selectedTea.name), Infusion: \(infusion)")
+        print("   Duration: \(seconds) seconds")
+        print("   End time: \(endTime)")
+        
         do {
             let activity = try Activity.request(
                 attributes: attributes,
@@ -905,14 +936,21 @@ struct TeaTimerView: View {
             )
             
             currentActivity = activity
-            print("🔴 Live Activity started: \(activity.id)")
+            print("✅ Live Activity started successfully!")
+            print("   Activity ID: \(activity.id)")
+            print("   Activity State: \(activity.activityState)")
+            print("🔍 Lock your screen to see the Live Activity")
         } catch {
             print("❌ Failed to start Live Activity: \(error)")
+            print("   Error details: \(error.localizedDescription)")
         }
     }
     
     private func updateLiveActivity() {
-        guard let activity = currentActivity else { return }
+        guard let activity = currentActivity else { 
+            print("⚠️ No current activity to update")
+            return 
+        }
         
         let endTime = timerStartTime?.addingTimeInterval(TimeInterval(initialSeconds)) ?? Date()
         
@@ -925,11 +963,18 @@ struct TeaTimerView: View {
             endTime: endTime
         )
         
+        print("🔄 Updating Live Activity - remaining: \(seconds)s")
+        
         Task {
-            await activity.update(.init(
-                state: updatedContentState,
-                staleDate: endTime
-            ))
+            do {
+                await activity.update(.init(
+                    state: updatedContentState,
+                    staleDate: endTime
+                ))
+                print("✅ Live Activity updated successfully")
+            } catch {
+                print("❌ Failed to update Live Activity: \(error)")
+            }
         }
     }
     

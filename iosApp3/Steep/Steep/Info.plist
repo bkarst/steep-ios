@@ -8,5 +8,7 @@
 	</array>
 	<key>NSSupportsLiveActivities</key>
 	<true/>
+	<key>NSAlarmKitUsageDescription</key>
+	<string>This app uses alarms to notify you when your tea steeping time is complete. Alarms will sound even in Silent mode to ensure you don't over-steep your tea.</string>
 </dict>
 </plist>
