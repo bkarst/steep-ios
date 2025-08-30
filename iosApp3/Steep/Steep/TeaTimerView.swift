@@ -11,6 +11,7 @@ import UserNotifications
 import AVFoundation
 import AudioToolbox
 import UIKit
+import ActivityKit
 
 // MARK: - Color Utilities
 func rgbToAppleColor(red: Int, green: Int, blue: Int) -> Color {
@@ -106,6 +107,7 @@ struct TeaTimerView: View {
     @State private var audioPlayer: AVAudioPlayer?
     @State private var timerStartTime: Date?
     @State private var backgroundTime: Date?
+    @State private var currentActivity: Activity<TeaTimerActivityAttributes>?
     
     struct TeaSelectionSheet: View {
         @Binding var selectedTea: TeaVariety
@@ -626,6 +628,7 @@ struct TeaTimerView: View {
         timerStartTime = nil
         cancelNotification()
         stopAlarmSound()
+        endLiveActivity()
         
         // Try to load saved preference first
         if let savedPreference = PersistenceController.shared.getTeaPreference(
@@ -700,6 +703,11 @@ struct TeaTimerView: View {
         // Record when the timer starts
         timerStartTime = Date()
         
+        // Start Live Activity if this is a fresh timer
+        if seconds == initialSeconds {
+            startLiveActivity()
+        }
+        
         scheduleNotification()
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
             updateTimerFromBackground()
@@ -722,6 +730,7 @@ struct TeaTimerView: View {
             timer?.invalidate()
             timer = nil
             timerStartTime = nil
+            completeLiveActivity()
             playAlarmSound()
         }
     }
@@ -862,6 +871,104 @@ struct TeaTimerView: View {
         }
         
         backgroundTime = nil
+    }
+    
+    // MARK: - Live Activities
+    
+    private func startLiveActivity() {
+        guard ActivityAuthorizationInfo().areActivitiesEnabled else {
+            print("Live Activities not authorized")
+            return
+        }
+        
+        let attributes = TeaTimerActivityAttributes(
+            teaName: selectedTea.name,
+            infusion: infusion
+        )
+        
+        let endTime = Date().addingTimeInterval(TimeInterval(seconds))
+        
+        let initialContentState = TeaTimerActivityAttributes.ContentState(
+            teaName: selectedTea.name,
+            infusion: infusion,
+            remainingSeconds: seconds,
+            totalSeconds: initialSeconds,
+            isComplete: false,
+            endTime: endTime
+        )
+        
+        do {
+            let activity = try Activity.request(
+                attributes: attributes,
+                content: .init(state: initialContentState, staleDate: endTime),
+                pushType: nil
+            )
+            
+            currentActivity = activity
+            print("🔴 Live Activity started: \(activity.id)")
+        } catch {
+            print("❌ Failed to start Live Activity: \(error)")
+        }
+    }
+    
+    private func updateLiveActivity() {
+        guard let activity = currentActivity else { return }
+        
+        let endTime = timerStartTime?.addingTimeInterval(TimeInterval(initialSeconds)) ?? Date()
+        
+        let updatedContentState = TeaTimerActivityAttributes.ContentState(
+            teaName: selectedTea.name,
+            infusion: infusion,
+            remainingSeconds: seconds,
+            totalSeconds: initialSeconds,
+            isComplete: false,
+            endTime: endTime
+        )
+        
+        Task {
+            await activity.update(.init(
+                state: updatedContentState,
+                staleDate: endTime
+            ))
+        }
+    }
+    
+    private func completeLiveActivity() {
+        guard let activity = currentActivity else { return }
+        
+        let completedContentState = TeaTimerActivityAttributes.ContentState(
+            teaName: selectedTea.name,
+            infusion: infusion,
+            remainingSeconds: 0,
+            totalSeconds: initialSeconds,
+            isComplete: true,
+            endTime: Date()
+        )
+        
+        Task {
+            await activity.update(.init(
+                state: completedContentState,
+                staleDate: Date().addingTimeInterval(60)
+            ))
+            
+            // End the activity after 1 minute
+            try? await Task.sleep(nanoseconds: 60 * 1_000_000_000)
+            await activity.end(nil, dismissalPolicy: .immediate)
+        }
+        
+        currentActivity = nil
+        print("🔴 Live Activity completed and ended")
+    }
+    
+    private func endLiveActivity() {
+        guard let activity = currentActivity else { return }
+        
+        Task {
+            await activity.end(nil, dismissalPolicy: .immediate)
+        }
+        
+        currentActivity = nil
+        print("🔴 Live Activity ended")
     }
 }
 
