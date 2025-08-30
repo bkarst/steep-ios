@@ -771,9 +771,9 @@ struct TeaTimerView: View {
     private func playAlarmSound() {
         print("🔔 Playing continuous alarm sound for timer completion")
         
-        // Configure audio session for playback
+        // Configure audio session for playback with background capability
         do {
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.mixWithOthers])
             try AVAudioSession.sharedInstance().setActive(true)
         } catch {
             print("❌ Failed to set up audio session: \(error)")
