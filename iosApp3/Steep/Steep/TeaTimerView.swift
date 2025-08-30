@@ -706,19 +706,26 @@ struct TeaTimerView: View {
         // Record when the timer starts
         timerStartTime = Date()
         
-        // Start Live Activity or alarm based on system capability
+        // Start alarm based on system capability (exclusive - either AlarmKit OR notifications+Live Activities)
         if seconds == initialSeconds {
-            print("🔍 Starting fresh timer - checking Live Activity support")
-            print("🔍 Should use Live Activity: \(alarmManager.shouldUseLiveActivity())")
+            print("🔍 Starting fresh timer")
             print("🔍 Alarm system type: \(alarmManager.alarmSystemType)")
             
-            if alarmManager.shouldUseLiveActivity() {
-                print("🔍 Starting Live Activity...")
-                startLiveActivity()
-            } else {
-                print("🔍 Skipping Live Activity - using alarm system instead")
+            switch alarmManager.alarmSystemType {
+            case .alarmKit:
+                // AlarmKit handles both alarms AND Live Activities automatically
+                print("🔍 Using AlarmKit - scheduling system alarm")
+                scheduleAlarm() // This will use AlarmKit
+            case .legacy:
+                // For legacy systems, use notifications + manual Live Activities
+                print("🔍 Using legacy system - scheduling notification + Live Activities")
+                scheduleAlarm() // This will use notifications
+                
+                if alarmManager.shouldUseLiveActivity() {
+                    print("🔍 Starting Live Activity...")
+                    startLiveActivity()
+                }
             }
-            scheduleAlarm()
         }
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
             updateTimerFromBackground()
@@ -734,8 +741,8 @@ struct TeaTimerView: View {
         if newSeconds != seconds {
             seconds = newSeconds
             
-            // Update Live Activity with new countdown time
-            if currentActivity != nil && !isComplete {
+            // Update Live Activity with new countdown time (only for legacy systems)
+            if currentActivity != nil && !isComplete && alarmManager.alarmSystemType == .legacy {
                 updateLiveActivity()
             }
         }
@@ -748,13 +755,15 @@ struct TeaTimerView: View {
             timerStartTime = nil
             
             // Handle completion based on alarm system
-            if alarmManager.shouldUseLiveActivity() {
-                completeLiveActivity()
-            }
-            
-            // For legacy systems, we still play our custom alarm sound
-            // AlarmKit handles its own alarm sound automatically
-            if alarmManager.alarmSystemType == .legacy {
+            switch alarmManager.alarmSystemType {
+            case .alarmKit:
+                // AlarmKit handles everything automatically - no need to play sound or manage Live Activities
+                print("🔔 Timer complete - AlarmKit will handle the alarm and presentation")
+            case .legacy:
+                // For legacy systems, handle Live Activities and alarm sound manually
+                if currentActivity != nil {
+                    completeLiveActivity()
+                }
                 playAlarmSound()
             }
         }
@@ -966,15 +975,11 @@ struct TeaTimerView: View {
         print("🔄 Updating Live Activity - remaining: \(seconds)s")
         
         Task {
-            do {
-                await activity.update(.init(
-                    state: updatedContentState,
-                    staleDate: endTime
-                ))
-                print("✅ Live Activity updated successfully")
-            } catch {
-                print("❌ Failed to update Live Activity: \(error)")
-            }
+            await activity.update(.init(
+                state: updatedContentState,
+                staleDate: endTime
+            ))
+            print("✅ Live Activity updated successfully")
         }
     }
     

@@ -3,6 +3,7 @@ import UserNotifications
 import AVFoundation
 import ActivityKit
 import Combine
+import AppIntents
 
 // AlarmKit imports with availability checking
 #if canImport(AlarmKit)
@@ -14,13 +15,32 @@ enum AlarmSystemType {
     case legacy   // iOS < 26
 }
 
+// AlarmKit metadata structure
+#if canImport(AlarmKit)
+@available(iOS 26.0, *)
+nonisolated struct TeaTimerAlarmData: AlarmMetadata {
+    let teaName: String
+    let infusion: Int
+}
+#endif
+
 class TeaAlarmManager: ObservableObject {
     static let shared = TeaAlarmManager()
     
-    private var currentAlarmID: String?
     private var legacyNotificationID = "tea-timer"
     
+    // AlarmKit alarm reference
+    #if canImport(AlarmKit)
+    @available(iOS 26.0, *)
+    private var currentAlarmKitID: Alarm.ID?
+    #endif
+    
     var alarmSystemType: AlarmSystemType {
+        // Since AlarmKit implementation is incomplete, use legacy system for now
+        // TODO: Change back to AlarmKit detection when implementation is complete
+        return .legacy
+        
+        /*
         #if canImport(AlarmKit)
         if #available(iOS 26.0, *) {
             return .alarmKit
@@ -30,6 +50,7 @@ class TeaAlarmManager: ObservableObject {
         #else
         return .legacy
         #endif
+        */
     }
     
     private init() {}
@@ -53,10 +74,15 @@ class TeaAlarmManager: ObservableObject {
     #if canImport(AlarmKit)
     @available(iOS 26.0, *)
     private func requestAlarmKitPermission() async -> Bool {
-        // TODO: Update with actual AlarmKit API when available
-        // For now, fall back to notifications
-        print("📱 AlarmKit available but API needs implementation")
-        return await requestNotificationPermission()
+        do {
+            let authStatus = try await AlarmManager.shared.requestAuthorization()
+            let isAuthorized = (authStatus == .authorized)
+            print(isAuthorized ? "✅ AlarmKit authorized" : "❌ AlarmKit authorization denied")
+            return isAuthorized
+        } catch {
+            print("❌ AlarmKit authorization error: \(error)")
+            return false
+        }
     }
     #endif
     
@@ -118,9 +144,10 @@ class TeaAlarmManager: ObservableObject {
         infusion: Int,
         duration: TimeInterval
     ) async -> Bool {
-        // TODO: Implement actual AlarmKit scheduling when API is available
-        // For now, fall back to enhanced notifications
-        print("📱 AlarmKit scheduling - falling back to enhanced notifications")
+        // TODO: Implement actual AlarmKit when the API is finalized
+        // For now, fall back to the working notification system
+        print("📱 AlarmKit detected but API implementation incomplete")
+        print("   Falling back to enhanced notifications with Live Activities")
         return await scheduleLegacyNotification(teaName: teaName, infusion: infusion, duration: duration)
     }
     #endif
@@ -169,8 +196,8 @@ class TeaAlarmManager: ObservableObject {
     #if canImport(AlarmKit)
     @available(iOS 26.0, *)
     private func cancelAlarmKitAlarm() async {
-        // TODO: Implement actual AlarmKit cancellation when API is available
-        print("📱 AlarmKit cancellation - falling back to legacy")
+        // TODO: Implement actual AlarmKit cancellation when API is finalized
+        print("📱 AlarmKit cancellation - using legacy system")
         cancelLegacyNotification()
     }
     #endif
@@ -199,9 +226,7 @@ class TeaAlarmManager: ObservableObject {
     #if canImport(AlarmKit)
     @available(iOS 26.0, *)
     private func getAlarmKitStatus() async -> String {
-        // TODO: Implement actual AlarmKit status when API is available
-        let legacyStatus = await getLegacyNotificationStatus()
-        return "AlarmKit available - using: \(legacyStatus)"
+        return "AlarmKit available but implementation pending - using legacy system"
     }
     #endif
     
@@ -228,8 +253,7 @@ class TeaAlarmManager: ObservableObject {
 
 extension TeaAlarmManager {
     func shouldUseLiveActivity() -> Bool {
-        // Since we're falling back to notifications for AlarmKit implementation,
-        // we should still use our Live Activities for visual feedback
+        // Since AlarmKit implementation is pending, use our working Live Activities system
         let isEnabled = ActivityAuthorizationInfo().areActivitiesEnabled
         print("🔍 Live Activities authorization status: \(isEnabled)")
         return isEnabled
